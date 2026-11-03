@@ -1,11 +1,13 @@
 # CQ5, Dublin Core only: no venue term, so search descriptions and citations for whole words
-# that suggest a court, censor, customs office, or publisher.
-SELECT DISTINCT ?challenge ?title ?date ?text WHERE {
+# that suggest a court, censor, customs office, or publisher. One row per challenge, even when
+# both its description and its citation match.
+SELECT ?challenge ?title ?date (SAMPLE(?matched) AS ?text) WHERE {
   ?challenge a dcmitype:Event ;
              dcterms:relation ?work ;
-             (dcterms:description|dcterms:source) ?text .
+             (dcterms:description|dcterms:source) ?matched .
   ?work dcterms:title ?title .
   OPTIONAL { ?challenge dcterms:date ?date }
-  FILTER regex(?text, "(^|[^a-z])(court|courts|trial|suit|lawsuit|censor|censors|customs|publisher)([^a-z]|$)", "i")
+  FILTER regex(?matched, "(^|[^a-z])(court|courts|trial|suit|lawsuit|censor|censors|customs|publisher)([^a-z]|$)", "i")
 }
+GROUP BY ?challenge ?title ?date
 ORDER BY ?title
