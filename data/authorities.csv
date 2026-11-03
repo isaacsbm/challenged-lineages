@@ -112,9 +112,9 @@ work,W.C.12,Beloved,http://id.loc.gov/authorities/names/no2008161670,"Morrison, 
 work,W.C.13,Adventures of Huckleberry Finn,http://id.loc.gov/authorities/names/n79132705,"Twain, Mark, 1835-1910. Adventures of Huckleberry Finn",http://viaf.org/viaf/178806136,http://www.wikidata.org/entity/Q215410,,LC name-title from the author's heading,proposed,yes
 work,W.C.14,James,,,,http://www.wikidata.org/entity/Q126679110,,Wikidata: work item whose author matches the creator's Wikidata,no LC work record; Wikidata approved 2026-11-03,yes
 work,W.D.1,The Diary of a Young Girl,http://id.loc.gov/authorities/names/n80048914,"Frank, Anne, 1929-1945. Achterhuis",http://viaf.org/viaf/214026744,http://www.wikidata.org/entity/Q6911,,LC name-title under the original title,approved after review,yes
-work,W.D.1 I1,Anne Frank's Diary: The Graphic Adaptation,,,,,,no LC work record,no LC work record; try Wikidata later,
+work,W.D.1 I1,Anne Frank's Diary: The Graphic Adaptation,,,,http://www.wikidata.org/entity/Q97213086,,Wikidata: same work or tale (judged; no author to match for a traditional tale),no LC work record; Wikidata approved after review 2026-11-03,yes
 work,W.D.2,Maus,http://id.loc.gov/authorities/names/no2025038235,"Spiegelman, Art. Maus",,http://www.wikidata.org/entity/Q59696,,LC name-title: author and title agree,proposed,yes
-work,W.D.3,Persepolis,,,,,,no LC work record,no LC work record; try Wikidata later,
+work,W.D.3,Persepolis,,,,http://www.wikidata.org/entity/Q756604,,Wikidata: same work or tale (judged; no author to match for a traditional tale),no LC work record; Wikidata approved after review 2026-11-03,yes
 work,W.D.4,Fun Home,http://id.loc.gov/authorities/names/no2015170707,"Bechdel, Alison, 1960- Fun home",http://viaf.org/viaf/306911266,http://www.wikidata.org/entity/Q428680,,LC name-title: author and title agree,proposed,yes
 work,W.E.1,Ulysses,http://id.loc.gov/authorities/names/n92029109,"Joyce, James, 1882-1941. Ulysses",http://viaf.org/viaf/174999739,http://www.wikidata.org/entity/Q6511,,LC name-title: author and title agree,proposed,yes
 work,W.E.2,As I Lay Dying,http://id.loc.gov/authorities/names/no2006015877,"Faulkner, William, 1897-1962. As I lay dying",http://viaf.org/viaf/178482013,http://www.wikidata.org/entity/Q1544119,,LC name-title: author and title agree,proposed,yes
@@ -137,7 +137,7 @@ work,W.F.8,Slaughterhouse-Five,http://id.loc.gov/authorities/names/n97111472,"Vo
 work,W.F.9,Catch-22,http://id.loc.gov/authorities/names/no2018085338,"Heller, Joseph. Catch-22",http://viaf.org/viaf/176599686,,,LC name-title: author and title agree,proposed,yes
 work,W.S.1,The Odyssey,http://id.loc.gov/authorities/names/n80008528,Homer. Odyssey,http://viaf.org/viaf/214278437,http://www.wikidata.org/entity/Q35160,,LC title form 'Homer. Odyssey',approved after review,yes
 work,W.S.2,Beowulf,http://id.loc.gov/authorities/names/n79018834,Beowulf,http://viaf.org/viaf/316753795,http://www.wikidata.org/entity/Q48328,,"LC title authority, title only",approved after review,yes
-work,W.S.3,Theseus and the Minotaur,,,,,,no LC work record,no LC work record; try Wikidata later,
+work,W.S.3,Theseus and the Minotaur,,,,http://www.wikidata.org/entity/Q108118096,,Wikidata: same work or tale (judged; no author to match for a traditional tale),no LC work record; Wikidata approved after review 2026-11-03,yes
 work,W.S.4,Ecclesiastes,http://id.loc.gov/authorities/names/n80008490,Bible. Ecclesiastes,http://viaf.org/viaf/316620548,http://www.wikidata.org/entity/Q131072,,LC title form 'Bible. Ecclesiastes',approved after review,yes
 work,W.S.5,Song of Songs,http://id.loc.gov/authorities/names/n80106714,Bible. Song of Solomon,http://viaf.org/viaf/1205148523891420970000,http://www.wikidata.org/entity/Q51670,,LC title form 'Bible. Song of Solomon',approved after review,yes
 work,W.S.6,Hamlet,http://id.loc.gov/authorities/names/n80008522,"Shakespeare, William, 1564-1616. Hamlet",http://viaf.org/viaf/176993890,http://www.wikidata.org/entity/Q41567,,LC name-title from the author's heading,proposed,yes
@@ -148,9 +148,9 @@ work,W.S.10,A Midsummer Night's Dream,http://id.loc.gov/authorities/names/n79151
 work,W.S.11,Meditation XVII,,,,,http://www.wikidata.org/entity/Q5267926,Wikidata has only the whole book this is part of,"no LC or Wikidata record for the part; book linked as rdfs:seeAlso, approved 2026-11-03",yes
 work,W.S.12,Paradise Lost,http://id.loc.gov/authorities/names/n85227530,"Milton, John, 1608-1674. Paradise lost",http://viaf.org/viaf/314808661,http://www.wikidata.org/entity/Q28754,,LC name-title: author and title agree,proposed,yes
 work,W.S.13,Reputed last words (“the Great Perhaps”),,,,,,no LC work record,no LC or Wikidata record (checked 2026-11-03),
-work,W.S.14,Beauty and the Beast,,,,,,no LC work record,no LC work record; try Wikidata later,
-work,W.S.15,Cinderella,,,,,,no LC work record,no LC work record; try Wikidata later,
-work,W.S.16,Tam Lin,,,,,,no LC work record,no LC work record; try Wikidata later,
+work,W.S.14,Beauty and the Beast,,,,http://www.wikidata.org/entity/Q495442,,Wikidata: same work or tale (judged; no author to match for a traditional tale),no LC work record; Wikidata approved after review 2026-11-03,yes
+work,W.S.15,Cinderella,,,,http://www.wikidata.org/entity/Q11841,,Wikidata: same work or tale (judged; no author to match for a traditional tale),no LC work record; Wikidata approved after review 2026-11-03,yes
+work,W.S.16,Tam Lin,,,,http://www.wikidata.org/entity/Q524708,,Wikidata: same work or tale (judged; no author to match for a traditional tale),no LC work record; Wikidata approved after review 2026-11-03,yes
 work,W.S.17,To a Mouse,http://id.loc.gov/authorities/names/no2013056873,"Burns, Robert, 1759-1796. To a mouse",http://viaf.org/viaf/302663684,,,LC name-title: author and title agree,proposed,yes
 work,W.S.18,Pride and Prejudice,http://id.loc.gov/authorities/names/n2002041181,"Austen, Jane, 1775-1817. Pride and prejudice",http://viaf.org/viaf/386144783111321996488,http://www.wikidata.org/entity/Q170583,,LC name-title from the author's heading,proposed,yes
 work,W.S.19,Wuthering Heights,http://id.loc.gov/authorities/names/no00002947,"Brontë, Emily, 1818-1848. Wuthering Heights",http://viaf.org/viaf/179440625,http://www.wikidata.org/entity/Q202975,,LC name-title from the author's heading,proposed,yes

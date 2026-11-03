@@ -1567,7 +1567,8 @@
     dcterms:language "eng" ;
     dcterms:isVersionOf <W.D.1> ;
     ccv:challengeLineage <W.D.1> ;
-    ccv:influenceEvidence ccv:evidence-adaptation .
+    ccv:influenceEvidence ccv:evidence-adaptation ;
+    owl:sameAs <http://www.wikidata.org/entity/Q97213086> .
 
 <W.D.1-I1-C1>
     a dcmitype:Event ;
@@ -1621,7 +1622,8 @@
     dcterms:relation <W.D.2> ;
     dcterms:isPartOf <cluster/D> ;
     ccv:challengeLineage <W.D.2> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    owl:sameAs <http://www.wikidata.org/entity/Q756604> .
 
 <W.D.3-C1>
     a dcmitype:Event ;
@@ -2288,7 +2290,8 @@
     dcterms:title "Theseus and the Minotaur" ;
     dcterms:type dcmitype:Text ;
     dcterms:language "eng" ;
-    dcterms:description "Greek myth" .
+    dcterms:description "Greek myth" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q108118096> .
 
 <W.S.4>
     a bf:Work ;
@@ -2402,7 +2405,8 @@
     dcterms:title "Beauty and the Beast" ;
     dcterms:type dcmitype:Text ;
     dcterms:language "eng" ;
-    dcterms:description "Fairy tale" .
+    dcterms:description "Fairy tale" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q495442> .
 
 <W.S.15>
     a bf:Work ;
@@ -2410,7 +2414,8 @@
     dcterms:title "Cinderella" ;
     dcterms:type dcmitype:Text ;
     dcterms:language "eng" ;
-    dcterms:description "Fairy tale" .
+    dcterms:description "Fairy tale" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q11841> .
 
 <W.S.16>
     a bf:Work ;
@@ -2418,7 +2423,8 @@
     dcterms:title "Tam Lin" ;
     dcterms:type dcmitype:Text ;
     dcterms:language "eng" ;
-    dcterms:description "Ballad" .
+    dcterms:description "Ballad" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q524708> .
 
 <W.S.17>
     a bf:Work ;

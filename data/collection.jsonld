@@ -4553,6 +4553,11 @@
         {
           "@id": "ccv:evidence-adaptation"
         }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q97213086"
+        }
       ]
     },
     {
@@ -4703,6 +4708,11 @@
       "ccv:influenceEvidence": [
         {
           "@id": "ccv:evidence-author-acknowledged"
+        }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q756604"
         }
       ]
     },
@@ -6684,6 +6694,11 @@
       ],
       "dcterms:description": [
         "Greek myth"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q108118096"
+        }
       ]
     },
     {
@@ -6999,6 +7014,11 @@
       ],
       "dcterms:description": [
         "Fairy tale"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q495442"
+        }
       ]
     },
     {
@@ -7016,6 +7036,11 @@
       ],
       "dcterms:description": [
         "Fairy tale"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q11841"
+        }
       ]
     },
     {
@@ -7033,6 +7058,11 @@
       ],
       "dcterms:description": [
         "Ballad"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q524708"
+        }
       ]
     },
     {
