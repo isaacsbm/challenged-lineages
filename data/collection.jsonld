@@ -821,6 +821,11 @@
         {
           "@id": "ccv:evidence-genre-lineage"
         }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q258953"
+        }
       ]
     },
     {
@@ -896,6 +901,11 @@
       "ccv:influenceEvidence": [
         {
           "@id": "ccv:evidence-author-acknowledged"
+        }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q11678"
         }
       ]
     },
@@ -1350,6 +1360,11 @@
       "ccv:influenceEvidence": [
         {
           "@id": "ccv:evidence-explicit-reference"
+        }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q7723889"
         }
       ]
     },
@@ -2073,7 +2088,12 @@
       ],
       "dcterms:isPartOf": {
         "@id": "cluster/B"
-      }
+      },
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q4659417"
+        }
+      ]
     },
     {
       "@id": "W.B.5-C1",
@@ -2208,6 +2228,11 @@
       "ccv:influenceEvidence": [
         {
           "@id": "ccv:evidence-explicit-reference"
+        }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q1150792"
         }
       ]
     },
@@ -2433,6 +2458,11 @@
         {
           "@id": "ccv:evidence-title-or-epigraph-allusion"
         }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q658375"
+        }
       ]
     },
     {
@@ -2511,6 +2541,11 @@
       "ccv:influenceEvidence": [
         {
           "@id": "ccv:evidence-explicit-reference"
+        }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q7574195"
         }
       ]
     },
@@ -3103,7 +3138,12 @@
       ],
       "dcterms:isPartOf": {
         "@id": "cluster/C"
-      }
+      },
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q1444052"
+        }
+      ]
     },
     {
       "@id": "W.C.5-C1",
@@ -4414,6 +4454,11 @@
         {
           "@id": "ccv:outcome-none-recorded"
         }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q126679110"
+        }
       ]
     },
     {
@@ -5261,6 +5306,11 @@
         {
           "@id": "ccv:evidence-author-acknowledged"
         }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q838776"
+        }
       ]
     },
     {
@@ -5709,6 +5759,11 @@
       "ccv:influenceEvidence": [
         {
           "@id": "ccv:evidence-parody"
+        }
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q7775056"
         }
       ]
     },
@@ -6868,6 +6923,11 @@
       ],
       "dcterms:language": [
         "eng"
+      ],
+      "rdfs:seeAlso": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q5267926"
+        }
       ]
     },
     {
@@ -7143,6 +7203,11 @@
       ],
       "dcterms:language": [
         "eng"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q4232653"
+        }
       ]
     },
     {
@@ -7251,6 +7316,11 @@
       ],
       "dcterms:description": [
         "Poem"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q19072652"
+        }
       ]
     },
     {
@@ -7337,6 +7407,11 @@
       ],
       "dcterms:description": [
         "Poem"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q7062760"
+        }
       ]
     },
     {
@@ -7356,6 +7431,11 @@
       ],
       "dcterms:language": [
         "eng"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q1198739"
+        }
       ]
     },
     {
@@ -7397,6 +7477,11 @@
       ],
       "dcterms:language": [
         "eng"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q16385696"
+        }
       ]
     },
     {
@@ -7448,6 +7533,11 @@
       ],
       "dcterms:language": [
         "eng"
+      ],
+      "owl:sameAs": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q1193847"
+        }
       ]
     },
     {

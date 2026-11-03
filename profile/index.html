@@ -250,14 +250,14 @@ pyshacl -s profile/shapes.ttl -e terms/ccv.ttl data/collection.ttl</code></pre>
             <td>No</td>
             <td>Yes</td>
             <td>IRI<br>a URI starting <code>http://www.wikidata.org/entity/</code></td>
-            <td>Wikidata, as linked from the LC record.</td>
+            <td>Wikidata, as linked from the LC record, or found directly where LC has no record for the work.</td>
           </tr>
           <tr class="">
             <th scope="row"><code>rdfs:seeAlso</code></th>
             <td>No</td>
             <td>Yes</td>
-            <td>IRI<br>a URI starting <code>http://viaf.org/viaf/</code></td>
-            <td>VIAF, as linked from the LC record.</td>
+            <td>IRI<br>a URI starting <code>http://viaf.org/viaf/</code> or <code>http://www.wikidata.org/entity/</code></td>
+            <td>VIAF, as linked from the LC record; or a related Wikidata item that is not the same thing, such as the book a work is part of.</td>
           </tr></tbody>
         </table></div>
       </section>

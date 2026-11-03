@@ -27,8 +27,8 @@ Work,,ccv:challengeLineage,Challenge Lineage,FALSE,TRUE,IRI,,,,Work,Each target 
 Work,,ccv:influenceEvidence,Influence Evidence,FALSE,TRUE,IRI,,ccv:evidence-,IRIstem,,Per-link evidence is on the LineageLink statements.
 Work,,ccv:challengeOutcome,Challenge Outcome,FALSE,FALSE,IRI,,ccv:outcome-none-recorded,picklist,,"Only for a work with no challenge record, such as James."
 Work,,madsrdf:isIdentifiedByAuthority,Identified By Authority,FALSE,FALSE,IRI,,http://id.loc.gov/authorities/names/,IRIstem,,The Library of Congress name-title authority record for the work.
-Work,,owl:sameAs,Same As,FALSE,TRUE,IRI,,http://www.wikidata.org/entity/,IRIstem,,"Wikidata, as linked from the LC record."
-Work,,rdfs:seeAlso,See Also,FALSE,TRUE,IRI,,http://viaf.org/viaf/,IRIstem,,"VIAF, as linked from the LC record."
+Work,,owl:sameAs,Same As,FALSE,TRUE,IRI,,http://www.wikidata.org/entity/,IRIstem,,"Wikidata, as linked from the LC record, or found directly where LC has no record for the work."
+Work,,rdfs:seeAlso,See Also,FALSE,TRUE,IRI,,http://viaf.org/viaf/ http://www.wikidata.org/entity/,IRIstem,,"VIAF, as linked from the LC record; or a related Wikidata item that is not the same thing, such as the book a work is part of."
 Instance,Instance,rdf:type,Type,TRUE,FALSE,IRI,,bf:Instance,picklist,,An edition or adaptation challenged separately from its work.
 Instance,,dcterms:identifier,Identifier,TRUE,FALSE,literal,xsd:string,^W\.[A-F]\.\d+ I\d+$,pattern,,W.A.3 I1 is the first instance of W.A.3.
 Instance,,dcterms:title,Title,TRUE,FALSE,literal,xsd:string,,,,

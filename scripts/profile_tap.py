@@ -111,7 +111,8 @@ class Profile:
         elif kind == "pattern":
             ps["sh:pattern"] = constraint
         elif kind == "IRIstem":
-            ps["sh:pattern"] = "^" + re.escape(rdf.expand(constraint))
+            stems = [re.escape(rdf.expand(s)) for s in constraint.split()]
+            ps["sh:pattern"] = "^" + (stems[0] if len(stems) == 1 else "(" + "|".join(stems) + ")")
         targets = [self.shapes[s]["class"] for s in r["valueShape"].split()]
         if len(targets) == 1:
             ps["sh:class"] = {"@id": targets[0]}
@@ -187,7 +188,7 @@ class Profile:
             elif kind == "pattern":
                 parts.append(f"matching <code>{e(c)}</code>")
             elif kind == "IRIstem" and not c.startswith("ccv:"):
-                parts.append(f"a URI starting <code>{e(c)}</code>")
+                parts.append("a URI starting " + " or ".join(f"<code>{e(s)}</code>" for s in c.split()))
             elif kind == "IRIstem":
                 scheme = next((p["scheme"] for p in self.vocab.properties
                                if any(x["scheme"] == p["scheme"] and f"ccv:{x['id']}".startswith(c)

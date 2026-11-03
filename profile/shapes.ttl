@@ -212,13 +212,13 @@ ccvp:WorkShape
         sh:name "Same As"@en ;
         sh:nodeKind sh:IRI ;
         sh:pattern "^http://www\\.wikidata\\.org/entity/" ;
-        sh:description "Wikidata, as linked from the LC record."@en
+        sh:description "Wikidata, as linked from the LC record, or found directly where LC has no record for the work."@en
     ], [
         sh:path rdfs:seeAlso ;
         sh:name "See Also"@en ;
         sh:nodeKind sh:IRI ;
-        sh:pattern "^http://viaf\\.org/viaf/" ;
-        sh:description "VIAF, as linked from the LC record."@en
+        sh:pattern "^(http://viaf\\.org/viaf/|http://www\\.wikidata\\.org/entity/)" ;
+        sh:description "VIAF, as linked from the LC record; or a related Wikidata item that is not the same thing, such as the book a work is part of."@en
     ] ;
     sh:sparql [
         a sh:SPARQLConstraint ;

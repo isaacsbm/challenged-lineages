@@ -72,7 +72,9 @@ A work can have several links. List the targets in `ccv:challengeLineage` and ei
 
 In the published data, `dcterms:creator` and `dcterms:spatial` point to agent and location records (`agent/margaret-atwood`, `place/medford-or`). Those carry the links: `madsrdf:isIdentifiedByAuthority` for the LC record, `owl:sameAs` for Wikidata, and `rdfs:seeAlso` for VIAF.
 
-The `match` and `status` columns record how each link was found and reviewed. Rows marked "no LC work record; try Wikidata later" are works LC has no record for, so they are waiting for a Wikidata lookup.
+Where LC has no record for a work, the `wikidata` column can hold a Wikidata item found directly. It was accepted only when the item's author matches the creator's Wikidata. The `seeAlso` column is for a related record that is not the same thing, such as the book a short work is part of; it becomes `rdfs:seeAlso`, never `owl:sameAs`.
+
+The `match` and `status` columns record how each link was found and reviewed. Rows marked "no LC or Wikidata record" were checked and have nothing to link to.
 
 ### Editing the application profile
 

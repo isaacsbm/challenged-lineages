@@ -311,7 +311,8 @@
     dcterms:relation <W.A.2>, <W.A.4> ;
     dcterms:isPartOf <cluster/A> ;
     ccv:challengeLineage <W.A.2>, <W.A.4> ;
-    ccv:influenceEvidence ccv:evidence-genre-lineage .
+    ccv:influenceEvidence ccv:evidence-genre-lineage ;
+    owl:sameAs <http://www.wikidata.org/entity/Q258953> .
 
 <W.A.6-C1>
     a dcmitype:Event ;
@@ -340,7 +341,8 @@
     dcterms:relation <W.S.3> ;
     dcterms:isPartOf <cluster/A> ;
     ccv:challengeLineage <W.S.3> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    owl:sameAs <http://www.wikidata.org/entity/Q11678> .
 
 <W.A.7-C1>
     a dcmitype:Event ;
@@ -485,7 +487,8 @@
     dcterms:references <W.B.1>, <W.B.3>, <W.B.4>, <W.B.5>, <W.B.6>, <W.S.33>, <W.S.6> ;
     dcterms:isPartOf <cluster/B> ;
     ccv:challengeLineage <W.B.1>, <W.B.3>, <W.B.4>, <W.B.5>, <W.B.6>, <W.S.33>, <W.S.6> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7723889> .
 
 <W.B.2-C1>
     a dcmitype:Event ;
@@ -715,7 +718,8 @@
     dcterms:date "1959" ;
     dcterms:type dcmitype:Text ;
     dcterms:language "eng" ;
-    dcterms:isPartOf <cluster/B> .
+    dcterms:isPartOf <cluster/B> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4659417> .
 
 <W.B.5-C1>
     a dcmitype:Event ;
@@ -764,7 +768,8 @@
     dcterms:references <W.S.13>, <W.S.34> ;
     dcterms:isPartOf <cluster/B> ;
     ccv:challengeLineage <W.S.13>, <W.S.34> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1150792> .
 
 <W.B.7-C1>
     a dcmitype:Event ;
@@ -841,7 +846,8 @@
     dcterms:references <W.S.7> ;
     dcterms:isPartOf <cluster/B> ;
     ccv:challengeLineage <W.S.7> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    owl:sameAs <http://www.wikidata.org/entity/Q658375> .
 
 <W.B.8-C1>
     a dcmitype:Event ;
@@ -867,7 +873,8 @@
     dcterms:references <W.S.20> ;
     dcterms:isPartOf <cluster/B> ;
     ccv:challengeLineage <W.S.20> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7574195> .
 
 <W.B.9-C1>
     a dcmitype:Event ;
@@ -1075,7 +1082,8 @@
     dcterms:date "1953" ;
     dcterms:type dcmitype:Text ;
     dcterms:language "eng" ;
-    dcterms:isPartOf <cluster/C> .
+    dcterms:isPartOf <cluster/C> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1444052> .
 
 <W.C.5-C1>
     a dcmitype:Event ;
@@ -1525,7 +1533,8 @@
     dcterms:isPartOf <cluster/C> ;
     ccv:challengeLineage <W.C.13> ;
     ccv:influenceEvidence ccv:evidence-retelling ;
-    ccv:challengeOutcome ccv:outcome-none-recorded .
+    ccv:challengeOutcome ccv:outcome-none-recorded ;
+    owl:sameAs <http://www.wikidata.org/entity/Q126679110> .
 
 <W.D.1>
     a bf:Work ;
@@ -1801,7 +1810,8 @@
     dcterms:relation <W.S.31> ;
     dcterms:isPartOf <cluster/E> ;
     ccv:challengeLineage <W.S.31> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    owl:sameAs <http://www.wikidata.org/entity/Q838776> .
 
 <W.E.5-C1>
     a dcmitype:Event ;
@@ -1950,7 +1960,8 @@
     dcterms:source <W.B.11> ;
     dcterms:isPartOf <cluster/E> ;
     ccv:challengeLineage <W.B.11> ;
-    ccv:influenceEvidence ccv:evidence-parody .
+    ccv:influenceEvidence ccv:evidence-parody ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7775056> .
 
 <W.E.10-C1>
     a dcmitype:Event ;
@@ -2362,7 +2373,8 @@
     dcterms:title "Meditation XVII" ;
     dcterms:creator <agent/john-donne> ;
     dcterms:type dcmitype:Text ;
-    dcterms:language "eng" .
+    dcterms:language "eng" ;
+    rdfs:seeAlso <http://www.wikidata.org/entity/Q5267926> .
 
 <W.S.12>
     a bf:Work ;
@@ -2468,7 +2480,8 @@
     dcterms:title "The Coral Island" ;
     dcterms:creator <agent/r-m-ballantyne> ;
     dcterms:type dcmitype:Text ;
-    dcterms:language "eng" .
+    dcterms:language "eng" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4232653> .
 
 <W.S.23>
     a bf:Work ;
@@ -2508,7 +2521,8 @@
     dcterms:creator <agent/paul-laurence-dunbar> ;
     dcterms:type dcmitype:Text ;
     dcterms:language "eng" ;
-    dcterms:description "Poem" .
+    dcterms:description "Poem" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q19072652> .
 
 <W.S.27>
     a bf:Work ;
@@ -2539,7 +2553,8 @@
     dcterms:creator <agent/robert-frost> ;
     dcterms:type dcmitype:Text ;
     dcterms:language "eng" ;
-    dcterms:description "Poem" .
+    dcterms:description "Poem" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7062760> .
 
 <W.S.30>
     a bf:Work ;
@@ -2547,7 +2562,8 @@
     dcterms:title "A Happy Death" ;
     dcterms:creator <agent/albert-camus> ;
     dcterms:type dcmitype:Text ;
-    dcterms:language "eng" .
+    dcterms:language "eng" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1198739> .
 
 <W.S.31>
     a bf:Work ;
@@ -2564,7 +2580,8 @@
     dcterms:title "The Fire Next Time" ;
     dcterms:creator <agent/james-baldwin> ;
     dcterms:type dcmitype:Text ;
-    dcterms:language "eng" .
+    dcterms:language "eng" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q16385696> .
 
 <W.S.33>
     a bf:Work ;
@@ -2583,7 +2600,8 @@
     dcterms:title "The General in His Labyrinth" ;
     dcterms:creator <agent/gabriel-garcia-marquez> ;
     dcterms:type dcmitype:Text ;
-    dcterms:language "eng" .
+    dcterms:language "eng" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1193847> .
 
 <agent/albert-camus>
     a dcterms:Agent, foaf:Person ;

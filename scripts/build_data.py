@@ -319,7 +319,8 @@ def ref(identifier):
 # to its Library of Congress authority record, plus the VIAF and Wikidata links LC gives.
 #   madsrdf:isIdentifiedByAuthority  -> the LC authority record (LC's own property for this)
 #   owl:sameAs                       -> Wikidata, which describes the same real-world thing
-#   rdfs:seeAlso                     -> VIAF
+#   rdfs:seeAlso                     -> VIAF, and the seeAlso column: a related record that is
+#                                       not the same thing (a work this one is part of)
 # Rows without approved = yes are ignored, so nothing unreviewed reaches the data.
 
 AUTHORITIES_PATH = DATA / "authorities.csv"
@@ -358,8 +359,9 @@ def authority_links(kind, local):
         links["madsrdf:isIdentifiedByAuthority"] = {"@id": row["lc"]}
     if split(row["wikidata"]):
         links["owl:sameAs"] = [{"@id": v} for v in split(row["wikidata"])]
-    if split(row["viaf"]):
-        links["rdfs:seeAlso"] = [{"@id": v} for v in split(row["viaf"])]
+    see_also = split(row["viaf"]) + split(row.get("seeAlso") or "")
+    if see_also:
+        links["rdfs:seeAlso"] = [{"@id": v} for v in see_also]
     return links
 
 
