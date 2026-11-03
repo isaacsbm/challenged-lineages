@@ -109,14 +109,34 @@ python -m http.server
 
 Then visit <http://localhost:8000>. D3 v7.9.0 and EB Garamond load from cdnjs and Google Fonts, so you need an internet connection.
 
-## Deploying to GitHub Pages
+## The live site
 
-1. Create a GitHub repository and push this folder to it, including `data/collection.jsonld`. The site doesn't need `References/`. The OIF overviews in it are ALA publications, so consider leaving that folder out of a public repository (add `References/` to a `.gitignore` file).
-2. In the repository, go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, then select `main` and `/ (root)`, and save.
-4. After a minute the site is live at `https://<your-username>.github.io/<repository-name>/`.
+The site is published with GitHub Pages:
 
-All paths are relative, so the site works from that sub-path with no changes. After editing the data, run the build script, then commit and push the CSV, JSON-LD, and Turtle files together.
+- **Site:** <https://isaacsbm.github.io/challenged-lineages/>
+- **Repository:** <https://github.com/isaacsbm/challenged-lineages>
+
+Pages serves the `main` branch from the repository root. `References/` is listed in `.gitignore`, so the source documents never leave your computer.
+
+### Publishing a change
+
+Edit, rebuild, check locally, then commit and push. Pages republishes about a minute after each push.
+
+```
+python scripts/build_data.py
+python -m http.server
+git add -A
+git commit -m "Describe what changed"
+git push
+```
+
+Always commit the generated files (`data/`, `terms/`, `profile/`) together with the CSVs they come from, so the published data matches its sources.
+
+### Setting it up again elsewhere
+
+1. Create a public GitHub repository and push this folder to it.
+2. In the repository, go to **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then select `main` and `/ (root)`.
+3. Set `SITE` in `scripts/rdf.py` to the new address, rebuild, and push. All paths are relative, so nothing else needs to change.
 
 ## Using the site
 
