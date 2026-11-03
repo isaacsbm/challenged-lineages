@@ -1,0 +1,151 @@
+/* Documentation pages (vocabulary, profile, questions): the map's paper, red, and Garamond,
+   set as a readable single column. */
+
+:root {
+  --paper: #fbf8f1;
+  --paper-raised: #fffdf8;
+  --ink: #1b1a18;
+  --ink-soft: #3a3733;
+  --grey: #6b6760;
+  --rule: #ddd4c6;
+  --red: #b0181e;
+  --serif: "EB Garamond", Garamond, "Times New Roman", serif;
+  --mono: ui-monospace, Consolas, "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); }
+body {
+  margin: 0;
+  padding: 12px;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1.2rem 2rem 3rem;
+  border: 1px solid var(--red);
+  min-height: calc(100vh - 24px);
+}
+
+a { color: var(--red); }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+code { font-family: var(--serif); color: var(--red); font-size: 0.95em; }
+pre {
+  overflow-x: auto;
+  padding: 0.7rem 0.9rem;
+  background: #f4efe5;
+  border: 1px solid var(--rule);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+pre code { font-family: var(--mono); color: var(--ink); font-size: 1em; }
+.hint { color: var(--grey); font-size: 0.85em; font-style: italic; }
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.site-nav a { color: var(--ink-soft); text-decoration: none; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--red); }
+.site-nav a[aria-current="page"] { border-bottom: 1px solid var(--red); }
+
+header { margin: 2rem 0 1.5rem; }
+.eyebrow {
+  margin: 0;
+  color: var(--red);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+h1 { margin: 0.2rem 0 0.4rem; font-size: 2.1rem; line-height: 1.15; }
+.lede { margin: 0 0 1rem; font-size: 1.1rem; color: var(--ink-soft); max-width: 46rem; }
+h2 {
+  margin: 2.4rem 0 0.8rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+dl.meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15rem 1.2rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+dl.meta dt { color: var(--grey); }
+dl.meta dd { margin: 0; overflow-wrap: anywhere; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 0 3rem; }
+.toc h3 { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin: 1rem 0 0.3rem; }
+.toc ul { margin: 0; padding-left: 1.1rem; }
+
+/* One vocabulary term or one profile shape */
+.term {
+  margin: 1.2rem 0;
+  padding: 0.9rem 1.1rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  scroll-margin-top: 1rem;
+}
+.term:target { border-color: var(--red); box-shadow: 0 0 0 1px var(--red); }
+.term h3 { margin: 0; font-size: 1.3rem; }
+.term .prefix { color: var(--red); font-weight: 400; }
+.term-label { margin: 0 0 0.5rem; color: var(--grey); font-style: italic; }
+.term dl {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0;
+}
+.term dt { color: var(--grey); font-size: 0.9rem; }
+.term dd { margin: 0; overflow-wrap: anywhere; }
+.concepts { margin: 0.4rem 0 0; padding-left: 1.4rem; columns: 2 18rem; }
+.concepts li { break-inside: avoid; padding: 0.1rem 0; scroll-margin-top: 1rem; }
+.concepts li:target { background: #f6e3df; }
+.concepts .narrower { margin: 0.1rem 0 0.2rem; padding-left: 1.2rem; list-style: "↳ "; }
+.concept { font-weight: 600; }
+
+/* Profile tables */
+.table-wrap { overflow-x: auto; }
+.profile-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.profile-table th, .profile-table td {
+  padding: 0.3rem 0.6rem 0.3rem 0;
+  border-bottom: 1px dotted var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+.profile-table thead th {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  font-weight: 600;
+}
+.profile-table tbody th { font-weight: 400; white-space: nowrap; }
+.profile-table tr.ccv th code { font-weight: 700; }
+.profile-table.pairing { max-width: 32rem; }
+
+@media (max-width: 700px) {
+  body { padding: 6px; font-size: 17px; }
+  .page { padding: 1rem 1rem 2rem; }
+  h1 { font-size: 1.7rem; }
+  .term dl { grid-template-columns: 1fr; }
+  .term dt { margin-top: 0.3rem; }
+}

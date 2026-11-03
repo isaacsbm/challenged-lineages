@@ -1,0 +1,8 @@
+# CQ3, Dublin Core only: the closest it can get is every link in the catch-all dcterms:relation,
+# which mixes weak evidence with links the authors themselves acknowledged.
+SELECT ?later ?earlier ?laterTitle ?earlierTitle WHERE {
+  ?later dcterms:relation ?earlier ;
+         dcterms:title ?laterTitle .
+  ?earlier dcterms:title ?earlierTitle .
+}
+ORDER BY ?laterTitle ?earlierTitle

@@ -1,0 +1,135 @@
+/* Competency questions page (on top of doc.css). */
+
+.page.wide { max-width: 78rem; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Verdicts and row tags always carry words; colour only reinforces them. */
+.verdict, .tag {
+  display: inline-block;
+  padding: 0 0.45em;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  vertical-align: 0.15em;
+  white-space: nowrap;
+}
+.verdict.answers { color: #2f5d3a; }
+.verdict.parses { color: #7a5a12; }
+.verdict.guesses, .verdict.cannot { color: var(--red); }
+.tag.extra { color: #7a5a12; }
+.tag.missed { color: var(--red); }
+
+/* Summary table */
+.summary { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin-top: 1rem; }
+.summary caption { text-align: left; color: var(--grey); font-style: italic; padding-bottom: 0.3rem; }
+.summary th, .summary td { padding: 0.35rem 0.6rem 0.35rem 0; border-bottom: 1px dotted var(--rule); text-align: left; vertical-align: top; }
+.summary thead th { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); font-weight: 600; }
+.summary tbody th { font-weight: 400; }
+.summary td.same { color: #2f5d3a; }
+.summary td.differs { color: var(--red); font-weight: 600; }
+
+/* One question */
+.question { margin-top: 2.6rem; scroll-margin-top: 1rem; }
+.question h2 {
+  margin: 0 0 0.3rem;
+  border: none;
+  padding: 0;
+  color: var(--ink);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.question .number { color: var(--red); }
+.why { margin: 0 0 0.4rem; color: var(--ink-soft); font-style: italic; max-width: 52rem; }
+.comparison { margin: 0 0 0.8rem; }
+
+.sides { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; }
+.side {
+  min-width: 0;
+  padding: 0.8rem 1rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+}
+.side.ccv { border-color: var(--red); }
+.side h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.side.ccv h3 { color: var(--red); }
+.side p { margin: 0 0 0.5rem; font-size: 0.95rem; }
+.count { color: var(--grey); font-size: 0.85rem !important; font-style: italic; }
+.empty { color: var(--grey); font-style: italic; }
+
+.results { max-height: 22rem; overflow: auto; border-top: 1px solid var(--rule); }
+.results table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.results th, .results td { padding: 0.2rem 0.5rem 0.2rem 0; border-bottom: 1px dotted var(--rule); text-align: left; vertical-align: top; }
+.results thead th {
+  position: sticky;
+  top: 0;
+  background: var(--paper-raised);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+  font-weight: 600;
+}
+.results tr.extra td { background: #fbf3df; }
+.results tr.missed td { background: #f8e4e1; }
+
+details { margin-top: 0.6rem; }
+summary {
+  cursor: pointer;
+  color: var(--red);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+details pre { margin: 0.4rem 0 0; }
+
+/* Free query console */
+.console { margin-top: 3rem; }
+.console textarea {
+  width: 100%;
+  padding: 0.6rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.console-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; margin: 0.5rem 0 1rem; }
+.console select, .console button {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.25em 0.6em;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+.console button {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-color: var(--red);
+  color: var(--red);
+}
+.error { color: var(--red); }
+
+@media (max-width: 860px) {
+  .sides { grid-template-columns: 1fr; }
+}

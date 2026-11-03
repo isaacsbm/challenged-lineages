@@ -1,0 +1,13 @@
+# CQ2, Dublin Core + ccv: the same versions, with what their challenges led to.
+SELECT ?instance ?instanceTitle ?workTitle (COUNT(DISTINCT ?challenge) AS ?challenges)
+       (GROUP_CONCAT(DISTINCT ?outcome; separator=", ") AS ?outcomes) WHERE {
+  ?instance dcterms:isVersionOf ?work ;
+            dcterms:title ?instanceTitle .
+  ?work dcterms:title ?workTitle .
+  ?challenge a dcmitype:Event ;
+             dcterms:relation ?instance .
+  OPTIONAL { ?challenge ccv:challengeOutcome/skos:prefLabel ?recorded }
+  BIND (COALESCE(STR(?recorded), "not recorded") AS ?outcome)
+}
+GROUP BY ?instance ?instanceTitle ?workTitle
+ORDER BY ?workTitle

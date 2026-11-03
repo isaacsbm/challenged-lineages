@@ -1,0 +1,10 @@
+# CQ2, Dublin Core only: versions (editions, adaptations) with challenge records of their own.
+SELECT ?instance ?instanceTitle ?workTitle (COUNT(DISTINCT ?challenge) AS ?challenges) WHERE {
+  ?instance dcterms:isVersionOf ?work ;
+            dcterms:title ?instanceTitle .
+  ?work dcterms:title ?workTitle .
+  ?challenge a dcmitype:Event ;
+             dcterms:relation ?instance .
+}
+GROUP BY ?instance ?instanceTitle ?workTitle
+ORDER BY ?workTitle

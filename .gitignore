@@ -1,0 +1,12 @@
+# Source documents: the OIF overviews are ALA publications, and the metadata analysis is a
+# working draft. The site doesn't use any of them.
+References/
+
+# Python
+__pycache__/
+*.pyc
+
+# Operating-system clutter
+.DS_Store
+Thumbs.db
+desktop.ini

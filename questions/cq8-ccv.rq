@@ -1,0 +1,11 @@
+# CQ8, Dublin Core + ccv: challenges whose reason is the starter value "LGBTQIA+ representation"
+# or anything filed under it (skos:broader*), whatever words the original list used.
+SELECT ?challenge ?title ?date ?reason WHERE {
+  ?challenge ccv:challengeReason ?value ;
+             dcterms:relation ?work .
+  ?value skos:broader* ccv:reason-lgbtqia-representation ;
+         skos:prefLabel ?reason .
+  ?work dcterms:title ?title .
+  OPTIONAL { ?challenge dcterms:date ?date }
+}
+ORDER BY ?date ?title

@@ -1,0 +1,11 @@
+# CQ1, Dublin Core only: pairs of linked works that both have challenge records.
+# (Prefixes are added by the questions page, from the data's own Turtle header.)
+SELECT DISTINCT ?later ?earlier ?laterTitle ?relation ?earlierTitle WHERE {
+  VALUES ?relation { dcterms:references dcterms:source dcterms:relation dcterms:isVersionOf }
+  ?later ?relation ?earlier ;
+         dcterms:title ?laterTitle .
+  ?earlier dcterms:title ?earlierTitle .
+  FILTER EXISTS { ?c1 a dcmitype:Event ; dcterms:relation ?later }
+  FILTER EXISTS { ?c2 a dcmitype:Event ; dcterms:relation ?earlier }
+}
+ORDER BY ?laterTitle ?earlierTitle

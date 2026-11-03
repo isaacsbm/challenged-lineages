@@ -1,0 +1,12 @@
+# CQ4, Dublin Core only: no term records a result, so search the description text for whole
+# words. (SPARQL's regex has no \b, so word edges are spelled out as non-letters.)
+SELECT ?challenge ?title ?date ?place ?description WHERE {
+  ?challenge a dcmitype:Event ;
+             dcterms:relation ?work ;
+             dcterms:description ?description .
+  ?work dcterms:title ?title .
+  OPTIONAL { ?challenge dcterms:date ?date }
+  OPTIONAL { ?challenge dcterms:spatial/rdfs:label ?place }
+  FILTER regex(?description, "(^|[^a-z])(ban|bans|banned|removed|suppressed|suppression)([^a-z]|$)", "i")
+}
+ORDER BY ?title ?date

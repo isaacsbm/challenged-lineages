@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Competency Questions</title>
+  <meta name="description" content="Eight questions about challenged books, answered live with SPARQL: once with Dublin Core alone, once with Dublin Core plus the ccv vocabulary.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="../css/doc.css">
+  <link rel="stylesheet" href="../css/questions.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fbf8f1'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='700' text-anchor='middle' fill='%23b0181e'%3ECL%3C/text%3E%3C/svg%3E">
+  <script type="module" src="../js/questions.js"></script>
+</head>
+<body>
+<div class="page wide">
+  <nav class="site-nav" aria-label="Project pages">
+    <a href="../">Map</a> <a href="../terms/">Vocabulary</a> <a href="../profile/">Profile</a> <a href="./" aria-current="page">Questions</a>
+  </nav>
+  <header>
+    <p class="eyebrow">Competency questions</p>
+    <h1>What the ccv terms make answerable</h1>
+    <p class="lede">Eight questions this collection should be able to answer, each asked twice in SPARQL: once of a copy of the data with every <code>ccv:</code> statement removed, leaving only Dublin Core, and once of the full data.</p>
+    <dl class="meta">
+      <dt>Full data</dt><dd id="size-full">loading…</dd>
+      <dt>Dublin Core only</dt><dd id="size-dc">loading…</dd>
+      <dt>Query engine</dt><dd><a href="https://github.com/oxigraph/oxigraph">Oxigraph</a> 0.5.9, running in this page</dd>
+      <dt>Queries</dt><dd>Each question’s two queries are files in this folder, such as <a href="cq4-dc.rq">cq4-dc.rq</a> and <a href="cq4-ccv.rq">cq4-ccv.rq</a>.</dd>
+    </dl>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>How to read the results</h2>
+      <p>The two answers are compared row by row. A row only Dublin Core returns is marked <span class="tag extra">extra</span>: Dublin Core counted something that doesn’t answer the question. A row only the ccv query returns is marked <span class="tag missed">missed by Dublin Core</span>. Where Dublin Core alone gives the right answer, the page says so, because Dublin Core is the base of every record and ccv is meant to add only what it can’t express.</p>
+      <div class="table-wrap">
+        <table class="summary" aria-describedby="summary-caption">
+          <caption id="summary-caption">Summary of the eight questions</caption>
+          <thead><tr><th scope="col">Question</th><th scope="col">Dublin Core alone</th><th scope="col">Dublin Core rows</th><th scope="col">Dublin Core + ccv rows</th><th scope="col">Agreement</th></tr></thead>
+          <tbody id="summary"><tr><td colspan="5">Running queries…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div id="questions"></div>
+
+    <section class="console" aria-labelledby="console-title">
+      <h2 id="console-title">Ask your own question</h2>
+      <p>Write any SPARQL SELECT query. Prefixes for <code>dcterms:</code>, <code>dcmitype:</code>, <code>ccv:</code>, <code>bf:</code>, <code>rdf:</code>, <code>rdfs:</code>, <code>skos:</code>, and the others in the data are added for you.</p>
+      <form id="console-form">
+        <label for="console-query" class="visually-hidden">SPARQL query</label>
+        <textarea id="console-query" rows="10" spellcheck="false"></textarea>
+        <div class="console-controls">
+          <label>Run against
+            <select id="console-graph">
+              <option value="full">full data (Dublin Core + ccv)</option>
+              <option value="dc">Dublin Core only</option>
+            </select>
+          </label>
+          <button type="submit">Run query</button>
+        </div>
+      </form>
+      <div id="console-result" aria-live="polite"></div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

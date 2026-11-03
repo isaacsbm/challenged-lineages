@@ -1,0 +1,12 @@
+# CQ6, Dublin Core only: follow every Dublin Core link back to a work whose challenge
+# description mentions a ban as a whole word (a guess; there is no outcome term).
+SELECT DISTINCT ?item ?ancestor ?title ?ancestorTitle WHERE {
+  ?ban a dcmitype:Event ;
+       dcterms:relation ?ancestor ;
+       dcterms:description ?description .
+  FILTER regex(?description, "(^|[^a-z])(ban|bans|banned|removed|suppressed|suppression)([^a-z]|$)", "i")
+  ?item (dcterms:references|dcterms:source|dcterms:relation|dcterms:isVersionOf)+ ?ancestor .
+  ?item dcterms:title ?title .
+  ?ancestor dcterms:title ?ancestorTitle .
+}
+ORDER BY ?ancestorTitle ?title

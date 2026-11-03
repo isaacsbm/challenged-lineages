@@ -1,0 +1,10 @@
+# CQ6, Dublin Core + ccv: follow ccv:challengeLineage, any number of steps, back to a work
+# with a challenge whose outcome is "banned".
+SELECT DISTINCT ?item ?ancestor ?title ?ancestorTitle WHERE {
+  ?ban ccv:challengeOutcome ccv:outcome-banned ;
+       dcterms:relation ?ancestor .
+  ?item ccv:challengeLineage+ ?ancestor .
+  ?item dcterms:title ?title .
+  ?ancestor dcterms:title ?ancestorTitle .
+}
+ORDER BY ?ancestorTitle ?title

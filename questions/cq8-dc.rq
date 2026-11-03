@@ -1,0 +1,12 @@
+# CQ8, Dublin Core only: no reason term, so search the copied ALA wording for whole words.
+# This only works because the text was copied into dcterms:description, and only if you know
+# every term ALA has used over the years.
+SELECT ?challenge ?title ?date ?description WHERE {
+  ?challenge a dcmitype:Event ;
+             dcterms:relation ?work ;
+             dcterms:description ?description .
+  ?work dcterms:title ?title .
+  OPTIONAL { ?challenge dcterms:date ?date }
+  FILTER regex(?description, "(^|[^a-z])(lgbtq[a-z+]*|homosexual|homosexuality)([^a-z+]|$)", "i")
+}
+ORDER BY ?date ?title

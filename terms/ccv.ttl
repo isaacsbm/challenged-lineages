@@ -1,0 +1,536 @@
+# Challenged Collections Vocabulary (ccv:). Generated from data/ccv-terms.csv and data/ccv-concepts.csv by scripts/build_data.py; edit those, not this file.
+@base <https://isaacsbm.github.io/challenged-lineages/terms#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix ccv: <https://isaacsbm.github.io/challenged-lineages/terms#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://isaacsbm.github.io/challenged-lineages/terms>
+    a owl:Ontology ;
+    dcterms:title "Challenged Collections Vocabulary"@en ;
+    dcterms:description "Terms describing formal challenges to, and other suppression of, library and educational materials, and the relationships between challenged works."@en ;
+    dcterms:creator "Brittany Isaacson" ;
+    dcterms:created "2026-10-28"^^xsd:date ;
+    rdfs:comment "Created for this assignment and published with the project site, so its URIs resolve."@en ;
+    vann:preferredNamespacePrefix "ccv" ;
+    vann:preferredNamespaceUri "https://isaacsbm.github.io/challenged-lineages/terms#" .
+
+ccv:challengeLineage
+    a rdf:Property ;
+    rdfs:label "Challenge Lineage"@en ;
+    skos:definition "Links a challenged work to an earlier work from which it derives or to which it responds, where the later work's challenge concerns content, themes, or form carried over from the earlier work."@en ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> ;
+    skos:scopeNote "Domain: A creative work that has been formally challenged or suppressed."@en, "Range: A creative work."@en ;
+    rdfs:comment "Differs from bf:derivativeOf and schema:isBasedOn by asserting a censorship relationship, not merely a creative one. The target need not itself be challenged (e.g., Beowulf for Grendel); when both are, the link records a shared history. Should be paired with ccv:influenceEvidence."@en ;
+    dcam:domainIncludes bf:Work, bf:Instance ;
+    dcam:rangeIncludes bf:Work .
+
+ccv:influenceEvidence
+    a rdf:Property ;
+    rdfs:label "Influence Evidence"@en ;
+    skos:definition "The basis on which a link between two works is established."@en ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> ;
+    skos:scopeNote "Range: One of: explicit reference; title or epigraph allusion; adaptation; retelling; parody; author-acknowledged; critical attribution; same author; genre lineage."@en ;
+    rdfs:comment "Records how strong the evidence for a ccv:challengeLineage link is, since influence claims vary widely in reliability. Values are listed roughly from most to least verifiable."@en ;
+    dcam:domainIncludes bf:Work, bf:Instance, rdf:Statement ;
+    dcam:rangeIncludes skos:Concept ;
+    rdfs:seeAlso ccv:EvidenceScheme .
+
+ccv:challengeReason
+    a rdf:Property ;
+    rdfs:label "Challenge Reason"@en ;
+    skos:definition "A stated reason given in a formal request to remove or restrict a work."@en ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> ;
+    skos:scopeNote "Range: A concept from a SKOS concept scheme. Starter values drawn from the rationales OIF reports most often: claimed obscenity for minors; LGBTQIA+ representation; race, racism, equity, and social justice; political or religious viewpoint; Palestinian representation; immigrant representation."@en ;
+    rdfs:comment "Records the reason as stated by the challenger, not as a finding. OIF notes that no school or public library book has ever been found by a court to meet the legal definition of obscenity for minors."@en ;
+    dcam:domainIncludes dcmitype:Event ;
+    dcam:rangeIncludes skos:Concept ;
+    rdfs:seeAlso ccv:ReasonScheme .
+
+ccv:challengeInitiator
+    a rdf:Property ;
+    rdfs:label "Challenge Initiator"@en ;
+    skos:definition "The category of person or body that filed a formal challenge."@en ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> ;
+    skos:scopeNote "Range: One of: government decision-maker; board member or administrator; pressure group; parent; library user; other."@en ;
+    rdfs:comment "Categories follow OIF's reporting, which shows government decision-makers and pressure groups behind nearly 92% of 2025 attempts. Use foaf:Agent to identify a specific person or organization where appropriate."@en ;
+    dcam:domainIncludes dcmitype:Event ;
+    dcam:rangeIncludes skos:Concept ;
+    rdfs:seeAlso ccv:InitiatorScheme .
+
+ccv:challengeVenue
+    a rdf:Property ;
+    rdfs:label "Challenge Venue"@en ;
+    skos:definition "The setting in which a challenge or other act of suppression took place."@en ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> ;
+    skos:scopeNote "Range: One of: school library; classroom curriculum; public library; academic library; government censor; court; customs or postal authority; publisher."@en ;
+    rdfs:comment "Lets one record compare library challenges with older and non-library forms of suppression found in this collection (We, Ulysses, The Wind Done Gone, the expurgated Fahrenheit 451)."@en ;
+    dcam:domainIncludes dcmitype:Event ;
+    dcam:rangeIncludes skos:Concept ;
+    rdfs:seeAlso ccv:VenueScheme .
+
+ccv:challengeOutcome
+    a rdf:Property ;
+    rdfs:label "Challenge Outcome"@en ;
+    skos:definition "The result of a formal request to remove or restrict a work."@en ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> ;
+    skos:scopeNote "Range: One of: retained; restricted; relocated; removed from curriculum; banned; expurgated; enjoined; pending; none recorded."@en ;
+    rdfs:comment "Distinguishes unsuccessful challenges from successful bans, mirroring OIF's distinction between books challenged, censored, and banned. \"None recorded\" lets a linked but unchallenged work (e.g., James) sit in the collection without implying a ban."@en ;
+    dcam:domainIncludes dcmitype:Event, bf:Work ;
+    dcam:rangeIncludes skos:Concept ;
+    rdfs:seeAlso ccv:OutcomeScheme .
+
+ccv:challengeSource
+    a rdf:Property ;
+    rdfs:label "Challenge Source"@en ;
+    skos:definition "A list, rating site, or other external source from which a challenged title was drawn."@en ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> ;
+    skos:scopeNote "Range: A web resource or named publication."@en ;
+    rdfs:comment "Captures the multi-title, list-driven challenges OIF identifies as 94% of 2025 attempts."@en ;
+    dcam:domainIncludes dcmitype:Event .
+
+ccv:EvidenceScheme
+    a skos:ConceptScheme ;
+    skos:prefLabel "Influence evidence types"@en ;
+    skos:definition "Values of ccv:influenceEvidence, listed roughly from most to least verifiable."@en ;
+    skos:hasTopConcept ccv:evidence-explicit-reference, ccv:evidence-title-or-epigraph-allusion, ccv:evidence-adaptation, ccv:evidence-retelling, ccv:evidence-parody, ccv:evidence-author-acknowledged, ccv:evidence-critical-attribution, ccv:evidence-same-author, ccv:evidence-genre-lineage ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> .
+
+ccv:EvidenceSchemeOrder
+    a skos:OrderedCollection ;
+    skos:prefLabel "Influence evidence types, most to least verifiable"@en ;
+    skos:memberList ( ccv:evidence-explicit-reference ccv:evidence-title-or-epigraph-allusion ccv:evidence-adaptation ccv:evidence-retelling ccv:evidence-parody ccv:evidence-author-acknowledged ccv:evidence-critical-attribution ccv:evidence-same-author ccv:evidence-genre-lineage ) ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> .
+
+ccv:evidence-explicit-reference
+    a skos:Concept ;
+    skos:prefLabel "explicit reference"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:evidence-title-or-epigraph-allusion
+    a skos:Concept ;
+    skos:prefLabel "title or epigraph allusion"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:evidence-adaptation
+    a skos:Concept ;
+    skos:prefLabel "adaptation"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:evidence-retelling
+    a skos:Concept ;
+    skos:prefLabel "retelling"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:evidence-parody
+    a skos:Concept ;
+    skos:prefLabel "parody"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:evidence-author-acknowledged
+    a skos:Concept ;
+    skos:prefLabel "author-acknowledged"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:evidence-critical-attribution
+    a skos:Concept ;
+    skos:prefLabel "critical attribution"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:evidence-same-author
+    a skos:Concept ;
+    skos:prefLabel "same author"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:evidence-genre-lineage
+    a skos:Concept ;
+    skos:prefLabel "genre lineage"@en ;
+    skos:inScheme ccv:EvidenceScheme ;
+    skos:topConceptOf ccv:EvidenceScheme .
+
+ccv:ReasonScheme
+    a skos:ConceptScheme ;
+    skos:prefLabel "Challenge reasons"@en ;
+    skos:definition "Values of ccv:challengeReason. Starter values drawn from the rationales OIF reports most often; the scheme may be extended. It now also holds the reasons given in ALA's Top 10 Most Challenged Books lists, 2001–2024: older ALA wording is kept as alternative labels, and narrower values are filed under the starter values."@en ;
+    skos:hasTopConcept ccv:reason-claimed-obscenity-for-minors, ccv:reason-lgbtqia-representation, ccv:reason-race-racism-equity-and-social-justice, ccv:reason-political-or-religious-viewpoint, ccv:reason-palestinian-representation, ccv:reason-immigrant-representation, ccv:reason-sexually-explicit, ccv:reason-sexual-content, ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-violence, ccv:reason-occult-satanic, ccv:reason-insensitivity, ccv:reason-nudity, ccv:reason-drugs, ccv:reason-anti-family, ccv:reason-anti-ethnic, ccv:reason-suicide, ccv:reason-gambling, ccv:reason-depiction-of-sexual-abuse, ccv:reason-depiction-of-rape, ccv:reason-incest, ccv:reason-graphic-images, ccv:reason-controversial-issues, ccv:reason-gender-bias ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> .
+
+ccv:reason-claimed-obscenity-for-minors
+    a skos:Concept ;
+    skos:prefLabel "claimed obscenity for minors"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme ;
+    skos:related ccv:reason-sexually-explicit .
+
+ccv:reason-lgbtqia-representation
+    a skos:Concept ;
+    skos:prefLabel "LGBTQIA+ representation"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme ;
+    skos:narrower ccv:reason-lgbtqia-content .
+
+ccv:reason-race-racism-equity-and-social-justice
+    a skos:Concept ;
+    skos:prefLabel "race, racism, equity, and social justice"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme ;
+    skos:narrower ccv:reason-racism, ccv:reason-racial-slurs, ccv:reason-racist-stereotypes, ccv:reason-edi-content .
+
+ccv:reason-political-or-religious-viewpoint
+    a skos:Concept ;
+    skos:prefLabel "political or religious viewpoint"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme ;
+    skos:narrower ccv:reason-religious-viewpoint, ccv:reason-political-viewpoint .
+
+ccv:reason-palestinian-representation
+    a skos:Concept ;
+    skos:prefLabel "Palestinian representation"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-immigrant-representation
+    a skos:Concept ;
+    skos:prefLabel "immigrant representation"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-sexually-explicit
+    a skos:Concept ;
+    skos:prefLabel "sexually explicit"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:altLabel "claimed to be sexually explicit"@en ;
+    skos:topConceptOf ccv:ReasonScheme ;
+    skos:related ccv:reason-claimed-obscenity-for-minors .
+
+ccv:reason-sexual-content
+    a skos:Concept ;
+    skos:prefLabel "sexual content"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-profanity
+    a skos:Concept ;
+    skos:prefLabel "profanity"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:altLabel "offensive language"@en ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-unsuited-to-age-group
+    a skos:Concept ;
+    skos:prefLabel "unsuited to age group"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:altLabel "unsuited for age group"@en ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-violence
+    a skos:Concept ;
+    skos:prefLabel "violence"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-lgbtqia-content
+    a skos:Concept ;
+    skos:prefLabel "LGBTQIA+ content"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:altLabel "homosexuality"@en ;
+    skos:broader ccv:reason-lgbtqia-representation .
+
+ccv:reason-occult-satanic
+    a skos:Concept ;
+    skos:prefLabel "occult/satanic"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:altLabel "occult/Satanism"@en ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-religious-viewpoint
+    a skos:Concept ;
+    skos:prefLabel "religious viewpoint"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:broader ccv:reason-political-or-religious-viewpoint .
+
+ccv:reason-political-viewpoint
+    a skos:Concept ;
+    skos:prefLabel "political viewpoint"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:broader ccv:reason-political-or-religious-viewpoint .
+
+ccv:reason-racism
+    a skos:Concept ;
+    skos:prefLabel "racism"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:broader ccv:reason-race-racism-equity-and-social-justice .
+
+ccv:reason-racial-slurs
+    a skos:Concept ;
+    skos:prefLabel "racial slurs"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:broader ccv:reason-race-racism-equity-and-social-justice .
+
+ccv:reason-racist-stereotypes
+    a skos:Concept ;
+    skos:prefLabel "racist stereotypes"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:broader ccv:reason-race-racism-equity-and-social-justice .
+
+ccv:reason-edi-content
+    a skos:Concept ;
+    skos:prefLabel "EDI content"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:broader ccv:reason-race-racism-equity-and-social-justice .
+
+ccv:reason-insensitivity
+    a skos:Concept ;
+    skos:prefLabel "insensitivity"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-nudity
+    a skos:Concept ;
+    skos:prefLabel "nudity"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-drugs
+    a skos:Concept ;
+    skos:prefLabel "drugs"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:altLabel "drugs/alcohol/smoking"@en, "drug use"@en ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-anti-family
+    a skos:Concept ;
+    skos:prefLabel "anti-family"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-anti-ethnic
+    a skos:Concept ;
+    skos:prefLabel "anti-ethnic"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-suicide
+    a skos:Concept ;
+    skos:prefLabel "suicide"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-gambling
+    a skos:Concept ;
+    skos:prefLabel "gambling"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-depiction-of-sexual-abuse
+    a skos:Concept ;
+    skos:prefLabel "depiction of sexual abuse"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-depiction-of-rape
+    a skos:Concept ;
+    skos:prefLabel "depiction of rape"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:altLabel "rape"@en ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-incest
+    a skos:Concept ;
+    skos:prefLabel "incest"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-graphic-images
+    a skos:Concept ;
+    skos:prefLabel "graphic images"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:altLabel "graphic depictions"@en ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-controversial-issues
+    a skos:Concept ;
+    skos:prefLabel "controversial issues"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:reason-gender-bias
+    a skos:Concept ;
+    skos:prefLabel "gender bias"@en ;
+    skos:inScheme ccv:ReasonScheme ;
+    skos:topConceptOf ccv:ReasonScheme .
+
+ccv:InitiatorScheme
+    a skos:ConceptScheme ;
+    skos:prefLabel "Challenge initiators"@en ;
+    skos:definition "Values of ccv:challengeInitiator, following OIF's reporting categories."@en ;
+    skos:hasTopConcept ccv:initiator-government-decision-maker, ccv:initiator-board-member-or-administrator, ccv:initiator-pressure-group, ccv:initiator-parent, ccv:initiator-library-user, ccv:initiator-other ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> .
+
+ccv:initiator-government-decision-maker
+    a skos:Concept ;
+    skos:prefLabel "government decision-maker"@en ;
+    skos:inScheme ccv:InitiatorScheme ;
+    skos:topConceptOf ccv:InitiatorScheme .
+
+ccv:initiator-board-member-or-administrator
+    a skos:Concept ;
+    skos:prefLabel "board member or administrator"@en ;
+    skos:inScheme ccv:InitiatorScheme ;
+    skos:topConceptOf ccv:InitiatorScheme .
+
+ccv:initiator-pressure-group
+    a skos:Concept ;
+    skos:prefLabel "pressure group"@en ;
+    skos:inScheme ccv:InitiatorScheme ;
+    skos:topConceptOf ccv:InitiatorScheme .
+
+ccv:initiator-parent
+    a skos:Concept ;
+    skos:prefLabel "parent"@en ;
+    skos:inScheme ccv:InitiatorScheme ;
+    skos:topConceptOf ccv:InitiatorScheme .
+
+ccv:initiator-library-user
+    a skos:Concept ;
+    skos:prefLabel "library user"@en ;
+    skos:inScheme ccv:InitiatorScheme ;
+    skos:topConceptOf ccv:InitiatorScheme .
+
+ccv:initiator-other
+    a skos:Concept ;
+    skos:prefLabel "other"@en ;
+    skos:inScheme ccv:InitiatorScheme ;
+    skos:topConceptOf ccv:InitiatorScheme .
+
+ccv:VenueScheme
+    a skos:ConceptScheme ;
+    skos:prefLabel "Challenge venues"@en ;
+    skos:definition "Values of ccv:challengeVenue."@en ;
+    skos:hasTopConcept ccv:venue-school-library, ccv:venue-classroom-curriculum, ccv:venue-public-library, ccv:venue-academic-library, ccv:venue-government-censor, ccv:venue-court, ccv:venue-customs-or-postal-authority, ccv:venue-publisher ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> .
+
+ccv:venue-school-library
+    a skos:Concept ;
+    skos:prefLabel "school library"@en ;
+    skos:inScheme ccv:VenueScheme ;
+    skos:topConceptOf ccv:VenueScheme .
+
+ccv:venue-classroom-curriculum
+    a skos:Concept ;
+    skos:prefLabel "classroom curriculum"@en ;
+    skos:inScheme ccv:VenueScheme ;
+    skos:topConceptOf ccv:VenueScheme .
+
+ccv:venue-public-library
+    a skos:Concept ;
+    skos:prefLabel "public library"@en ;
+    skos:inScheme ccv:VenueScheme ;
+    skos:topConceptOf ccv:VenueScheme .
+
+ccv:venue-academic-library
+    a skos:Concept ;
+    skos:prefLabel "academic library"@en ;
+    skos:inScheme ccv:VenueScheme ;
+    skos:topConceptOf ccv:VenueScheme .
+
+ccv:venue-government-censor
+    a skos:Concept ;
+    skos:prefLabel "government censor"@en ;
+    skos:inScheme ccv:VenueScheme ;
+    skos:topConceptOf ccv:VenueScheme .
+
+ccv:venue-court
+    a skos:Concept ;
+    skos:prefLabel "court"@en ;
+    skos:inScheme ccv:VenueScheme ;
+    skos:topConceptOf ccv:VenueScheme .
+
+ccv:venue-customs-or-postal-authority
+    a skos:Concept ;
+    skos:prefLabel "customs or postal authority"@en ;
+    skos:inScheme ccv:VenueScheme ;
+    skos:topConceptOf ccv:VenueScheme .
+
+ccv:venue-publisher
+    a skos:Concept ;
+    skos:prefLabel "publisher"@en ;
+    skos:inScheme ccv:VenueScheme ;
+    skos:topConceptOf ccv:VenueScheme .
+
+ccv:OutcomeScheme
+    a skos:ConceptScheme ;
+    skos:prefLabel "Challenge outcomes"@en ;
+    skos:definition "Values of ccv:challengeOutcome."@en ;
+    skos:hasTopConcept ccv:outcome-retained, ccv:outcome-restricted, ccv:outcome-relocated, ccv:outcome-removed-from-curriculum, ccv:outcome-banned, ccv:outcome-expurgated, ccv:outcome-enjoined, ccv:outcome-pending, ccv:outcome-none-recorded ;
+    rdfs:isDefinedBy <https://isaacsbm.github.io/challenged-lineages/terms> .
+
+ccv:outcome-retained
+    a skos:Concept ;
+    skos:prefLabel "retained"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .
+
+ccv:outcome-restricted
+    a skos:Concept ;
+    skos:prefLabel "restricted"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .
+
+ccv:outcome-relocated
+    a skos:Concept ;
+    skos:prefLabel "relocated"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .
+
+ccv:outcome-removed-from-curriculum
+    a skos:Concept ;
+    skos:prefLabel "removed from curriculum"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .
+
+ccv:outcome-banned
+    a skos:Concept ;
+    skos:prefLabel "banned"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .
+
+ccv:outcome-expurgated
+    a skos:Concept ;
+    skos:prefLabel "expurgated"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .
+
+ccv:outcome-enjoined
+    a skos:Concept ;
+    skos:prefLabel "enjoined"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .
+
+ccv:outcome-pending
+    a skos:Concept ;
+    skos:prefLabel "pending"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .
+
+ccv:outcome-none-recorded
+    a skos:Concept ;
+    skos:prefLabel "none recorded"@en ;
+    skos:inScheme ccv:OutcomeScheme ;
+    skos:topConceptOf ccv:OutcomeScheme .

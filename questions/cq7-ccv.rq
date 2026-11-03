@@ -1,0 +1,9 @@
+# CQ7, Dublin Core + ccv: 2025 challenges whose venue is a school library.
+SELECT ?challenge ?title ?source WHERE {
+  ?challenge ccv:challengeVenue ccv:venue-school-library ;
+             dcterms:date "2025" ;
+             dcterms:relation ?work .
+  ?work dcterms:title ?title .
+  OPTIONAL { ?challenge dcterms:source ?source }
+}
+ORDER BY ?title

@@ -1,0 +1,9 @@
+# CQ4, Dublin Core + ccv: challenges whose recorded outcome is "banned".
+SELECT ?challenge ?title ?date ?place WHERE {
+  ?challenge ccv:challengeOutcome ccv:outcome-banned ;
+             dcterms:relation ?work .
+  ?work dcterms:title ?title .
+  OPTIONAL { ?challenge dcterms:date ?date }
+  OPTIONAL { ?challenge dcterms:spatial/rdfs:label ?place }
+}
+ORDER BY ?title ?date

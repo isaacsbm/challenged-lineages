@@ -1,0 +1,11 @@
+# CQ3, Dublin Core + ccv: links whose evidence is one of the three weakest kinds.
+SELECT ?later ?earlier ?laterTitle ?evidence ?earlierTitle WHERE {
+  VALUES ?basis { ccv:evidence-critical-attribution ccv:evidence-same-author ccv:evidence-genre-lineage }
+  ?link rdf:subject ?later ;
+        rdf:object ?earlier ;
+        ccv:influenceEvidence ?basis .
+  ?basis skos:prefLabel ?evidence .
+  ?later dcterms:title ?laterTitle .
+  ?earlier dcterms:title ?earlierTitle .
+}
+ORDER BY ?laterTitle ?earlierTitle

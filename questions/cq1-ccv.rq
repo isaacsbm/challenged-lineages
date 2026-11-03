@@ -1,0 +1,12 @@
+# CQ1, Dublin Core + ccv: lineage links between two challenged works, with their evidence.
+SELECT DISTINCT ?later ?earlier ?laterTitle ?evidence ?earlierTitle WHERE {
+  ?link rdf:subject ?later ;
+        rdf:predicate ccv:challengeLineage ;
+        rdf:object ?earlier ;
+        ccv:influenceEvidence/skos:prefLabel ?evidence .
+  ?later dcterms:title ?laterTitle .
+  ?earlier dcterms:title ?earlierTitle .
+  FILTER EXISTS { ?c1 a dcmitype:Event ; dcterms:relation ?later }
+  FILTER EXISTS { ?c2 a dcmitype:Event ; dcterms:relation ?earlier }
+}
+ORDER BY ?laterTitle ?earlierTitle

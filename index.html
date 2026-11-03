@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenged Lineages</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fbf8f1'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='700' text-anchor='middle' fill='%23b0181e'%3ECL%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Banned and challenged books and the links between them, described in Dublin Core with the Challenged Collections Vocabulary (ccv:).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- D3 v7, pinned to an exact version. Loaded as a classic script, so it is the global `d3`. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#search">Skip to search</a>
+  <a class="skip-link" href="#toggle-list">Skip to the record list</a>
+
+  <div class="frame">
+    <header class="toolbar">
+      <form id="search-form" role="search">
+        <label for="search" class="visually-hidden">Find a title, creator, or identifier</label>
+        <input id="search" type="search" list="titles" placeholder="Find a title…" autocomplete="off">
+        <datalist id="titles"></datalist>
+      </form>
+      <button type="button" id="toggle-controls" class="menu-button" aria-expanded="false" aria-controls="toolbar-more">Menu</button>
+
+      <!-- On wide screens this wrapper is invisible to layout; on phones it folds away behind Menu. -->
+      <div id="toolbar-more" class="toolbar-more">
+      <button type="button" id="toggle-layers" aria-expanded="false" aria-controls="layers-panel">Layers</button>
+      <button type="button" id="toggle-legend" aria-expanded="false" aria-controls="legend-panel">Legend</button>
+      <button type="button" id="toggle-list" aria-expanded="false" aria-controls="list-panel">List</button>
+      <button type="button" id="toggle-redaction" aria-pressed="false" title="Cover every challenged book, like a redacted document. Choose the level under Layers.">Redact</button>
+
+      <fieldset class="label-mode">
+        <legend>Edge labels</legend>
+        <label><input type="radio" name="label-mode" value="ccv" checked> ccv evidence</label>
+        <label><input type="radio" name="label-mode" value="dc"> Dublin Core</label>
+      </fieldset>
+
+      <div class="view-controls" role="group" aria-label="View">
+        <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+        <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+        <button type="button" id="zoom-fit">Fit</button>
+        <button type="button" id="reset-layout" title="Unpin every node and redo the layout">Reset layout</button>
+      </div>
+
+      <button type="button" id="open-about">About</button>
+      </div>
+    </header>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <nav class="map-nav" aria-label="Project pages">
+      <a href="terms/">Vocabulary</a> <a href="profile/">Profile</a> <a href="questions/">Questions</a>
+    </nav>
+
+    <aside id="layers-panel" class="drawer drawer-left" aria-labelledby="layers-title" hidden>
+      <div class="drawer-header">
+        <h2 id="layers-title">Layers</h2>
+        <button type="button" class="close" aria-label="Close layers">×</button>
+      </div>
+      <div id="layers-body"></div>
+      <p class="hint">Era and venue filters hide a work when none of its challenge records match. Works with no challenge record are not affected.</p>
+    </aside>
+
+    <aside id="legend-panel" class="drawer drawer-left" aria-labelledby="legend-title" hidden>
+      <div class="drawer-header">
+        <h2 id="legend-title">Legend</h2>
+        <button type="button" class="close" aria-label="Close legend">×</button>
+      </div>
+
+      <h3>Reading a record</h3>
+      <div class="key">
+        <p class="key-id">W.A.3</p>
+        <p class="key-title">The Handmaid’s Tale</p>
+        <p class="key-creator">Margaret Atwood</p>
+        <p class="key-meta">1985 · 3 challenges</p>
+      </div>
+      <ul class="key-notes">
+        <li><span class="key-id">Red capitals</span>: <code>dcterms:identifier</code>. W = work, the letter is the cluster, I = instance, S = source work.</li>
+        <li><strong>Bold</strong>: a challenged work. <span class="key-source">Semi-bold, smaller</span>: a source work with no challenge record. <span class="key-instance">Regular</span>: an instance (edition or adaptation), placed beside its work.</li>
+        <li><em>Italic</em>: <code>dcterms:creator</code>. <span class="key-meta">Grey</span>: <code>dcterms:date</code> and the number of challenge records.</li>
+        <li>A red dot beside a record means you have pinned it. Double-click to unpin it.</li>
+        <li>Zoomed out, each record shows only its title, as large as space allows, so every book stays readable. Zoom in to see identifiers, creators, dates, and the labels on each link.</li>
+        <li>Hover over or select a record to grey out everything outside its lineage, including the clusters it doesn’t reach.</li>
+      </ul>
+
+      <h3>Redaction</h3>
+      <p class="key-redaction"><span class="key-bar" aria-hidden="true"></span> <span class="key-stamp">Banned</span></p>
+      <p><strong>Redact</strong> covers titles and creators the way a censored document is blacked out, and stamps each one with the reason. It covers every record with a challenge record. Records whose <code>ccv:challengeOutcome</code> is banned are stamped “Banned”, and the expurgated edition loses every other word of its title. Under Layers, “Banned or expurgated” narrows the redaction to those records alone. Hover over or select a record to lift its bars.</p>
+
+      <h3>Edges</h3>
+      <svg class="key-edge" viewBox="0 0 260 28" role="img" aria-label="Example edge: a dotted red line with an arrow, labelled author-acknowledged">
+        <line x1="6" y1="20" x2="248" y2="20" class="link-line" marker-end="url(#arrow)"/>
+        <text x="127" y="15" text-anchor="middle" class="link-label">author-acknowledged</text>
+      </svg>
+      <p>Each dotted line runs from a later work to the earlier work it draws on, with the arrow pointing to the earlier one. Its label gives the <code>ccv:influenceEvidence</code>, or the Dublin Core relation when <strong>Edge labels</strong> is set to Dublin Core.</p>
+
+      <h3>Evidence and its Dublin Core pair</h3>
+      <table class="legend-table">
+        <thead><tr><th scope="col">ccv:influenceEvidence</th><th scope="col">Dublin Core relation</th></tr></thead>
+        <tbody id="legend-evidence"></tbody>
+      </table>
+      <p class="hint">The values are listed from most to least verifiable, as in the vocabulary’s definition. “Strong evidence only” hides the three marked weaker.</p>
+    </aside>
+
+    <aside id="list-panel" class="drawer drawer-left" aria-labelledby="list-title" hidden>
+      <div class="drawer-header">
+        <h2 id="list-title">All records</h2>
+        <button type="button" class="close" aria-label="Close record list">×</button>
+      </div>
+      <p class="hint">Every work, instance, and source work in the collection as a list. Choose a title to open its record.</p>
+      <div id="list-body"></div>
+    </aside>
+
+    <main class="canvas">
+      <svg id="graph" role="group" aria-label="Lineage graph of challenged works. Each work is a focusable button; press Enter for its record."></svg>
+      <div id="load-error" class="load-error" role="alert" hidden>
+        <p><strong>The collection data could not be loaded.</strong></p>
+        <p class="detail"></p>
+        <p>If you opened this file directly, serve the folder instead: <code>python -m http.server</code>, then visit <code>http://localhost:8000</code>.</p>
+      </div>
+    </main>
+
+    <aside id="detail-panel" class="drawer drawer-right" aria-labelledby="detail-title" aria-live="off" hidden></aside>
+
+    <div class="title-block">
+      <p class="title-block-name">Challenged Lineages</p>
+      <p class="title-block-author">Brittany Isaacson :: <time datetime="2026-10-28">October 28, 2026</time></p>
+      <p class="title-block-credit">After Jamie Hazlitt, <cite>Alice Meets FRBR</cite> (2005)</p>
+    </div>
+  </div>
+
+  <dialog id="about" aria-labelledby="about-title">
+    <button type="button" class="close" aria-label="Close About">×</button>
+    <h2 id="about-title">About Challenged Lineages</h2>
+
+    <p>This collection gathers frequently challenged or banned classic works together with the works linked to them: later books that reference, retell, adapt, or answer a classic, and older classics whose titles, plots, or forms later challenged works borrow. The focus is the link between two books, and how censorship pressure follows a set of themes, characters, or ideas from one generation of literature to the next.</p>
+    <p>In 2025 the American Library Association’s Office for Intellectual Freedom (OIF) documented attempts to censor 4,235 unique titles, the second-highest total on record. That year also had the highest share of attempts ever recorded that ended in censorship (77%). Classics remain targets. <cite>A Clockwork Orange</cite> was among the eleven most challenged books of 2025, and <cite>The Handmaid’s Tale</cite> and <cite>The Bluest Eye</cite> tied for seventh in school libraries.</p>
+
+    <h3>Dublin Core first</h3>
+    <p>Every record is a Dublin Core (<code>dcterms:</code>) description first. Works carry identifier, title, creator, date, type (from the DCMI Type Vocabulary), and language, and each belongs to a lineage cluster through <code>dcterms:isPartOf</code>. Instances, meaning editions or adaptations challenged separately, add <code>dcterms:isVersionOf</code>. Each challenge record is a <code>dcmitype:Event</code> with its date, place (<code>dcterms:spatial</code>), and source.</p>
+    <p>Links between works use the Dublin Core relation that fits:</p>
+    <ul>
+      <li>An explicit reference, or a title or epigraph allusion, uses <code>dcterms:references</code>.</li>
+      <li>An adaptation, retelling, or parody uses <code>dcterms:source</code>. Instances use <code>dcterms:isVersionOf</code>.</li>
+      <li>Everything else uses <code>dcterms:relation</code>.</li>
+    </ul>
+    <p>Dublin Core can say that two works are related. It cannot say that the relation matters for censorship, how strong the evidence for it is, or anything about the challenge itself.</p>
+
+    <h3>The Challenged Collections Vocabulary</h3>
+    <p>The <code>ccv:</code> terms are coined for this assignment. They are published at <code>https://isaacsbm.github.io/challenged-lineages/terms#</code>, so each term’s URI opens its definition on the <a href="terms/">vocabulary page</a>. They are added only where Dublin Core falls short.</p>
+    <dl class="terms">
+      <dt>ccv:challengeLineage</dt><dd>Links a challenged work to an earlier work it derives from or responds to, where the later work’s challenge concerns content, themes, or form carried over from the earlier one.</dd>
+      <dt>ccv:influenceEvidence</dt><dd>The basis for a link, from explicit reference down to genre lineage.</dd>
+      <dt>ccv:challengeReason</dt><dd>The reason the challenger stated, recorded as stated, not as a finding.</dd>
+      <dt>ccv:challengeInitiator</dt><dd>The category of person or body that filed the challenge.</dd>
+      <dt>ccv:challengeVenue</dt><dd>Where the challenge or suppression happened: a library, a classroom, or a censor, court, customs office, or publisher.</dd>
+      <dt>ccv:challengeOutcome</dt><dd>The result, from retained to banned. “None recorded” lets an unchallenged work such as <cite>James</cite> sit in the collection without implying a ban.</dd>
+      <dt>ccv:challengeSource</dt><dd>The list or rating site a challenged title was drawn from.</dd>
+    </dl>
+    <p>Switch <strong>Edge labels</strong> between “ccv evidence” and “Dublin Core” to see what the coined terms add. Every edge has a Dublin Core relation, but only the ccv label says why the link exists and how far to trust it.</p>
+
+    <h3>Vocabulary, profile, and questions</h3>
+    <ul>
+      <li>The <a href="terms/">vocabulary page</a> publishes the seven ccv terms and their value lists as RDF. Each value is a SKOS concept with its own URI, such as <code>ccv:outcome-banned</code>.</li>
+      <li>The <a href="profile/">application profile</a> states how Dublin Core and ccv combine in each kind of record. It is written as a DCMI Tabular Application Profile and compiled to SHACL shapes, so the data can be checked with standard tools.</li>
+      <li>The <a href="questions/">competency questions</a> page asks eight questions of the data with SPARQL, once with Dublin Core alone and once with ccv. It shows where Dublin Core is enough and where the coined terms are needed.</li>
+    </ul>
+
+    <h3>The gap</h3>
+    <p>Existing namespaces describe each book in detail, and some state that one work derives from another. None can express that both works in a relationship have been challenged, that the later work was challenged for content it inherited, or the details of a challenge: who initiated it, why, where, and with what result. OIF and PEN America document individual titles, but not as a reusable metadata vocabulary, and they do not link challenged titles to one another.</p>
+
+    <h3>About the data</h3>
+    <p>The collection has 57 works in six lineage clusters, 3 instances, 34 linked source works, and 151 challenge records. Of those, 96 come from the project’s collection inventory. Ranked-list entries, such as ALA’s decade lists, are challenge records that carry only their source and the list’s period.</p>
+    <p>The inventory states no challenge reasons, so reasons come from ALA’s yearly <cite>Top 10 Most Challenged Books</cite> lists for 2001–2024. That adds 55 challenge records and gives reasons to the two existing Twilight records. Each record keeps ALA’s exact wording in its description, and its <code>ccv:challengeReason</code> values point to concepts in the reason scheme. Where ALA’s wording changed over the years, such as “homosexuality” and later “LGBTQIA+ content”, one value keeps the older term as an alternative label. Narrower values are filed under the doc’s starter reasons. ALA’s lists don’t say who challenged a book or where, so <code>ccv:challengeInitiator</code> and <code>ccv:challengeSource</code> remain mostly empty and show as “not recorded”.</p>
+    <p>Creators, works, and places are linked to Library of Congress authority records, and through them to VIAF and Wikidata. Every link was reviewed before it was added. All 74 creators are linked, as are 67 of the 94 works and editions and 12 of the 14 places. LC has no record for the rest, often because it records a recent novel only through its translations. The collection’s subjects are the LCSH headings <a href="http://id.loc.gov/authorities/subjects/sh85107326">Prohibited books</a> and <a href="http://id.loc.gov/authorities/subjects/sh85021828">Censorship</a>.</p>
+
+    <h3>Sources</h3>
+    <ul class="references">
+      <li>American Library Association. (n.d.). <cite>Banned &amp; challenged classics</cite>. <a href="https://www.ala.org/advocacy/bbooks/frequentlychallengedbooks/classics">ala.org</a></li>
+      <li>American Library Association. (n.d.). <cite>Top 100 banned/challenged books: 2000-2009</cite>. <a href="https://www.ala.org/advocacy/bbooks/frequentlychallengedbooks/decade2009">ala.org</a></li>
+      <li>American Library Association. (n.d.). <cite>Top 100 most banned and challenged books: 2010-2019</cite>. <a href="https://www.ala.org/advocacy/bbooks/frequentlychallengedbooks/decade2019">ala.org</a></li>
+      <li>American Library Association. (n.d.). <cite>Censorship search portal</cite>. <a href="https://www.ala.org/searchportal">ala.org</a></li>
+      <li>American Library Association. (n.d.). <cite>Top 10 most challenged books lists</cite> [2001–2024]. <a href="https://www.ala.org/bbooks/frequentlychallengedbooks/top10/archive">ala.org</a></li>
+      <li>American Library Association Office for Intellectual Freedom. (2026). <cite>Public library censorship overview 2025</cite>. American Library Association.</li>
+      <li>American Library Association Office for Intellectual Freedom. (2026). <cite>School library censorship overview 2025</cite>. American Library Association.</li>
+      <li>Comic Book Legal Defense Fund. (2014, October). <cite>The Fault in Our Stars banned from California middle school</cite>. <a href="https://cbldf.org/2014/10/the-fault-in-our-stars-banned-from-california-middle-school/">cbldf.org</a></li>
+    </ul>
+
+    <h3>Design</h3>
+    <p>The typographic layout follows Jamie Hazlitt’s <cite>Alice Meets FRBR</cite> (2005). That poster maps the works, expressions, and editions of <cite>Alice’s Adventures in Wonderland</cite> as type joined by labelled red dotted lines. Here the same visual grammar shows challenge lineages instead of bibliographic families.</p>
+    <p>The <strong>Redact</strong> layer borrows from a second kind of document: the declassified government file, where what readers may not see is blacked out. It covers every challenged record, and the stamps keep the distinction OIF draws between books challenged, censored, and banned: a challenge is not the same as a ban. Under Layers, the redaction can be narrowed to the records this collection documents as banned or expurgated.</p>
+    <p class="data-links">Data: <a href="data/collection.jsonld">collection.jsonld</a> · <a href="data/collection.ttl">collection.ttl</a> · <a href="data/collection.csv">collection.csv</a></p>
+  </dialog>
+</body>
+</html>

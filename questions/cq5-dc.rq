@@ -1,0 +1,11 @@
+# CQ5, Dublin Core only: no venue term, so search descriptions and citations for whole words
+# that suggest a court, censor, customs office, or publisher.
+SELECT DISTINCT ?challenge ?title ?date ?text WHERE {
+  ?challenge a dcmitype:Event ;
+             dcterms:relation ?work ;
+             (dcterms:description|dcterms:source) ?text .
+  ?work dcterms:title ?title .
+  OPTIONAL { ?challenge dcterms:date ?date }
+  FILTER regex(?text, "(^|[^a-z])(court|courts|trial|suit|lawsuit|censor|censors|customs|publisher)([^a-z]|$)", "i")
+}
+ORDER BY ?title

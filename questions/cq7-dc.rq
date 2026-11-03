@@ -1,0 +1,10 @@
+# CQ7, Dublin Core only: 2025 challenges whose citation happens to mention schools.
+SELECT ?challenge ?title ?source WHERE {
+  ?challenge a dcmitype:Event ;
+             dcterms:date "2025" ;
+             dcterms:relation ?work ;
+             dcterms:source ?source .
+  ?work dcterms:title ?title .
+  FILTER regex(?source, "school", "i")
+}
+ORDER BY ?title

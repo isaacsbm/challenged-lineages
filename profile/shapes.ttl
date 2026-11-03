@@ -1,0 +1,515 @@
+# Challenged Lineages application profile as SHACL. Generated from profile/tap.csv by scripts/build_data.py; edit the CSV, not this file.
+@base <https://isaacsbm.github.io/challenged-lineages/profile#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix ccv: <https://isaacsbm.github.io/challenged-lineages/terms#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ccvp: <https://isaacsbm.github.io/challenged-lineages/profile#> .
+
+ccvp:DatasetShape
+    a sh:NodeShape ;
+    rdfs:label "Dataset"@en ;
+    sh:targetClass dcmitype:Dataset ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:name "Identifier"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:title ;
+        sh:name "Title"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:description ;
+        sh:name "Description"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:creator ;
+        sh:name "Creator"@en ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:date ;
+        sh:name "Date"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "^\\d{4}-\\d{2}-\\d{2}$"
+    ], [
+        sh:path dcterms:subject ;
+        sh:name "Subject"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://id\\.loc\\.gov/authorities/subjects/" ;
+        sh:description "LCSH headings that describe what the collection is about."@en
+    ] .
+
+ccvp:ClusterShape
+    a sh:NodeShape ;
+    rdfs:label "Lineage cluster"@en ;
+    sh:targetClass dcmitype:Collection ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:name "Identifier"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[A-F]$"
+    ], [
+        sh:path dcterms:title ;
+        sh:name "Title"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:description ;
+        sh:name "Description"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:isPartOf ;
+        sh:name "Is Part Of"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class dcmitype:Dataset
+    ] .
+
+ccvp:WorkShape
+    a sh:NodeShape ;
+    rdfs:label "Work"@en ;
+    sh:targetClass bf:Work ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:name "Identifier"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "^W\\.[A-FS]\\.\\d+$" ;
+        sh:description "W.A.3 is work 3 in cluster A; W.S.12 is source work 12."@en
+    ], [
+        sh:path dcterms:title ;
+        sh:name "Title"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:creator ;
+        sh:name "Creator"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:class foaf:Person ;
+        sh:description "Empty for anonymous works such as Beowulf."@en
+    ], [
+        sh:path dcterms:date ;
+        sh:name "Date"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "^\\d{4}(/\\d{4})?$" ;
+        sh:description "First publication: a year or a range of years."@en
+    ], [
+        sh:path dcterms:type ;
+        sh:name "Type"@en ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:in ( dcmitype:Text dcmitype:StillImage ) ;
+        sh:description "DCMI Type Vocabulary."@en
+    ], [
+        sh:path dcterms:language ;
+        sh:name "Language"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:in ( "eng" ) ;
+        sh:description "ISO 639-2."@en
+    ], [
+        sh:path dcterms:description ;
+        sh:name "Description"@en ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:description "Edition details and link notes."@en
+    ], [
+        sh:path dcterms:isPartOf ;
+        sh:name "Is Part Of"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class dcmitype:Collection ;
+        sh:description "Empty for a linked source work."@en
+    ], [
+        sh:path dcterms:references ;
+        sh:name "References"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:class bf:Work ;
+        sh:description "Paired with ccv:influenceEvidence explicit reference or title or epigraph allusion."@en
+    ], [
+        sh:path dcterms:source ;
+        sh:name "Source"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:class bf:Work ;
+        sh:description "Paired with adaptation, retelling, or parody."@en
+    ], [
+        sh:path dcterms:relation ;
+        sh:name "Relation"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:class bf:Work ;
+        sh:description "Paired with author-acknowledged, critical attribution, same author, or genre lineage."@en
+    ], [
+        sh:path ccv:challengeLineage ;
+        sh:name "Challenge Lineage"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:class bf:Work ;
+        sh:description "Each target also appears in the paired Dublin Core relation."@en
+    ], [
+        sh:path ccv:influenceEvidence ;
+        sh:name "Influence Evidence"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://isaacsbm\\.github\\.io/challenged\\-lineages/terms\\#evidence\\-" ;
+        sh:description "Per-link evidence is on the LineageLink statements."@en
+    ], [
+        sh:path ccv:challengeOutcome ;
+        sh:name "Challenge Outcome"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:in ( ccv:outcome-none-recorded ) ;
+        sh:description "Only for a work with no challenge record, such as James."@en
+    ], [
+        sh:path madsrdf:isIdentifiedByAuthority ;
+        sh:name "Identified By Authority"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://id\\.loc\\.gov/authorities/names/" ;
+        sh:description "The Library of Congress name-title authority record for the work."@en
+    ], [
+        sh:path owl:sameAs ;
+        sh:name "Same As"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://www\\.wikidata\\.org/entity/" ;
+        sh:description "Wikidata, as linked from the LC record."@en
+    ], [
+        sh:path rdfs:seeAlso ;
+        sh:name "See Also"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://viaf\\.org/viaf/" ;
+        sh:description "VIAF, as linked from the LC record."@en
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Lineage link to {?target} lacks its paired Dublin Core relation {?pairedProperty}"@en ;
+        sh:select "SELECT $this ?target ?pairedProperty WHERE {\n  ?link <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> $this ; <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://isaacsbm.github.io/challenged-lineages/terms#challengeLineage> ;\n        <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> ?target ; <https://isaacsbm.github.io/challenged-lineages/terms#influenceEvidence> ?evidence .\n  { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-explicit-reference> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/references> AS ?pairedProperty) }\n  UNION { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-title-or-epigraph-allusion> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/references> AS ?pairedProperty) }\n  UNION { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-adaptation> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/source> AS ?pairedProperty) }\n  UNION { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-retelling> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/source> AS ?pairedProperty) }\n  UNION { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-parody> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/source> AS ?pairedProperty) }\n  UNION { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-author-acknowledged> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/relation> AS ?pairedProperty) }\n  UNION { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-critical-attribution> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/relation> AS ?pairedProperty) }\n  UNION { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-same-author> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/relation> AS ?pairedProperty) }\n  UNION { BIND(<https://isaacsbm.github.io/challenged-lineages/terms#evidence-genre-lineage> AS ?pairedEvidence) BIND(<http://purl.org/dc/terms/relation> AS ?pairedProperty) }\n  FILTER (?pairedEvidence = ?evidence)\n  FILTER NOT EXISTS { $this ?pairedProperty ?target }\n}"
+    ] .
+
+ccvp:InstanceShape
+    a sh:NodeShape ;
+    rdfs:label "Instance"@en ;
+    sh:targetClass bf:Instance ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:name "Identifier"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "^W\\.[A-F]\\.\\d+ I\\d+$" ;
+        sh:description "W.A.3 I1 is the first instance of W.A.3."@en
+    ], [
+        sh:path dcterms:title ;
+        sh:name "Title"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:creator ;
+        sh:name "Creator"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:class foaf:Person
+    ], [
+        sh:path dcterms:date ;
+        sh:name "Date"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "^\\d{4}(/\\d{4})?$"
+    ], [
+        sh:path dcterms:type ;
+        sh:name "Type"@en ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:in ( dcmitype:Text dcmitype:StillImage )
+    ], [
+        sh:path dcterms:language ;
+        sh:name "Language"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:in ( "eng" )
+    ], [
+        sh:path dcterms:description ;
+        sh:name "Description"@en ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string
+    ], [
+        sh:path dcterms:isVersionOf ;
+        sh:name "Is Version Of"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class bf:Work ;
+        sh:description "The work this is an edition or adaptation of."@en
+    ], [
+        sh:path ccv:challengeLineage ;
+        sh:name "Challenge Lineage"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:class bf:Work ;
+        sh:description "Always the same work as dcterms:isVersionOf."@en
+    ], [
+        sh:path ccv:influenceEvidence ;
+        sh:name "Influence Evidence"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://isaacsbm\\.github\\.io/challenged\\-lineages/terms\\#evidence\\-"
+    ], [
+        sh:path madsrdf:isIdentifiedByAuthority ;
+        sh:name "Identified By Authority"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://id\\.loc\\.gov/authorities/names/"
+    ], [
+        sh:path owl:sameAs ;
+        sh:name "Same As"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://www\\.wikidata\\.org/entity/"
+    ], [
+        sh:path rdfs:seeAlso ;
+        sh:name "See Also"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://viaf\\.org/viaf/"
+    ] .
+
+ccvp:ChallengeShape
+    a sh:NodeShape ;
+    rdfs:label "Challenge record"@en ;
+    sh:targetClass dcmitype:Event ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:name "Identifier"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "^W\\.[A-FS]\\.\\d+( I\\d+)? C\\d+$" ;
+        sh:description "W.A.3 C2 is the second challenge to W.A.3."@en
+    ], [
+        sh:path dcterms:type ;
+        sh:name "Type"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:in ( dcmitype:Event )
+    ], [
+        sh:path dcterms:relation ;
+        sh:name "Relation"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:or ( [
+            sh:class bf:Work
+        ] [
+            sh:class bf:Instance
+        ] ) ;
+        sh:description "The work or instance challenged."@en
+    ], [
+        sh:path dcterms:date ;
+        sh:name "Date"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "^\\d{4}(/\\d{4})?$" ;
+        sh:description "A year, or the period of a ranked list (2010/2019)."@en
+    ], [
+        sh:path dcterms:spatial ;
+        sh:name "Spatial Coverage"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class dcterms:Location ;
+        sh:description "Where the challenge happened."@en
+    ], [
+        sh:path dcterms:source ;
+        sh:name "Source"@en ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:description "The list or publication that documents the challenge."@en
+    ], [
+        sh:path dcterms:description ;
+        sh:name "Description"@en ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:description "The inventory's own wording."@en
+    ], [
+        sh:path ccv:challengeVenue ;
+        sh:name "Challenge Venue"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://isaacsbm\\.github\\.io/challenged\\-lineages/terms\\#venue\\-"
+    ], [
+        sh:path ccv:challengeOutcome ;
+        sh:name "Challenge Outcome"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://isaacsbm\\.github\\.io/challenged\\-lineages/terms\\#outcome\\-"
+    ], [
+        sh:path ccv:challengeReason ;
+        sh:name "Challenge Reason"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://isaacsbm\\.github\\.io/challenged\\-lineages/terms\\#reason\\-" ;
+        sh:description "As stated by the challenger."@en
+    ], [
+        sh:path ccv:challengeInitiator ;
+        sh:name "Challenge Initiator"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://isaacsbm\\.github\\.io/challenged\\-lineages/terms\\#initiator\\-"
+    ], [
+        sh:path ccv:challengeSource ;
+        sh:name "Challenge Source"@en ;
+        sh:description "A list or rating site the title was drawn from."@en
+    ] .
+
+ccvp:LineageLinkShape
+    a sh:NodeShape ;
+    rdfs:label "Lineage link"@en ;
+    sh:targetClass rdf:Statement ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path rdf:subject ;
+        sh:name "Subject"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:or ( [
+            sh:class bf:Work
+        ] [
+            sh:class bf:Instance
+        ] ) ;
+        sh:description "The later work."@en
+    ], [
+        sh:path rdf:predicate ;
+        sh:name "Predicate"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:in ( ccv:challengeLineage )
+    ], [
+        sh:path rdf:object ;
+        sh:name "Object"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class bf:Work ;
+        sh:description "The earlier work."@en
+    ], [
+        sh:path ccv:influenceEvidence ;
+        sh:name "Influence Evidence"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://isaacsbm\\.github\\.io/challenged\\-lineages/terms\\#evidence\\-"
+    ] .
+
+ccvp:AgentShape
+    a sh:NodeShape ;
+    rdfs:label "Agent"@en ;
+    sh:targetClass foaf:Person ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path foaf:name ;
+        sh:name "Name"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:description "The name as the collection records it."@en
+    ], [
+        sh:path madsrdf:isIdentifiedByAuthority ;
+        sh:name "Identified By Authority"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://id\\.loc\\.gov/authorities/names/" ;
+        sh:description "The Library of Congress Name Authority record."@en
+    ], [
+        sh:path owl:sameAs ;
+        sh:name "Same As"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://www\\.wikidata\\.org/entity/" ;
+        sh:description "Wikidata, as linked from the LC record."@en
+    ], [
+        sh:path rdfs:seeAlso ;
+        sh:name "See Also"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://viaf\\.org/viaf/" ;
+        sh:description "VIAF, as linked from the LC record."@en
+    ] .
+
+ccvp:LocationShape
+    a sh:NodeShape ;
+    rdfs:label "Location"@en ;
+    sh:targetClass dcterms:Location ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:name "Label"@en ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:description "The place as the collection records it."@en
+    ], [
+        sh:path madsrdf:isIdentifiedByAuthority ;
+        sh:name "Identified By Authority"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://id\\.loc\\.gov/authorities/names/" ;
+        sh:description "The LC geographic or corporate name record."@en
+    ], [
+        sh:path owl:sameAs ;
+        sh:name "Same As"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://www\\.wikidata\\.org/entity/"
+    ], [
+        sh:path rdfs:seeAlso ;
+        sh:name "See Also"@en ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^http://viaf\\.org/viaf/"
+    ] .

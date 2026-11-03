@@ -1,0 +1,73 @@
+shapeID,shapeLabel,propertyID,propertyLabel,mandatory,repeatable,valueNodeType,valueDataType,valueConstraint,valueConstraintType,valueShape,note
+Dataset,Dataset,rdf:type,Type,TRUE,FALSE,IRI,,dcmitype:Dataset,picklist,,The collection as a whole.
+Dataset,,dcterms:identifier,Identifier,TRUE,FALSE,literal,xsd:string,,,,
+Dataset,,dcterms:title,Title,TRUE,FALSE,literal,xsd:string,,,,
+Dataset,,dcterms:description,Description,FALSE,FALSE,literal,xsd:string,,,,
+Dataset,,dcterms:creator,Creator,TRUE,TRUE,literal,xsd:string,,,,
+Dataset,,dcterms:date,Date,TRUE,FALSE,literal,xsd:string,^\d{4}-\d{2}-\d{2}$,pattern,,
+Dataset,,dcterms:subject,Subject,FALSE,TRUE,IRI,,http://id.loc.gov/authorities/subjects/,IRIstem,,LCSH headings that describe what the collection is about.
+Cluster,Lineage cluster,rdf:type,Type,TRUE,FALSE,IRI,,dcmitype:Collection,picklist,,"One of the six lineage clusters, A-F."
+Cluster,,dcterms:identifier,Identifier,TRUE,FALSE,literal,xsd:string,^[A-F]$,pattern,,
+Cluster,,dcterms:title,Title,TRUE,FALSE,literal,xsd:string,,,,
+Cluster,,dcterms:description,Description,TRUE,FALSE,literal,xsd:string,,,,
+Cluster,,dcterms:isPartOf,Is Part Of,TRUE,FALSE,IRI,,,,Dataset,
+Work,Work,rdf:type,Type,TRUE,FALSE,IRI,,bf:Work,picklist,,A challenged work (in a cluster) or a linked source work (no cluster).
+Work,,dcterms:identifier,Identifier,TRUE,FALSE,literal,xsd:string,^W\.[A-FS]\.\d+$,pattern,,"W.A.3 is work 3 in cluster A; W.S.12 is source work 12."
+Work,,dcterms:title,Title,TRUE,FALSE,literal,xsd:string,,,,
+Work,,dcterms:creator,Creator,FALSE,TRUE,IRI,,,,Agent,Empty for anonymous works such as Beowulf.
+Work,,dcterms:date,Date,FALSE,FALSE,literal,xsd:string,^\d{4}(/\d{4})?$,pattern,,First publication: a year or a range of years.
+Work,,dcterms:type,Type,TRUE,TRUE,IRI,,dcmitype:Text dcmitype:StillImage,picklist,,DCMI Type Vocabulary.
+Work,,dcterms:language,Language,TRUE,FALSE,literal,xsd:string,eng,picklist,,ISO 639-2.
+Work,,dcterms:description,Description,FALSE,TRUE,literal,xsd:string,,,,Edition details and link notes.
+Work,,dcterms:isPartOf,Is Part Of,FALSE,FALSE,IRI,,,,Cluster,Empty for a linked source work.
+Work,,dcterms:references,References,FALSE,TRUE,IRI,,,,Work,Paired with ccv:influenceEvidence explicit reference or title or epigraph allusion.
+Work,,dcterms:source,Source,FALSE,TRUE,IRI,,,,Work,"Paired with adaptation, retelling, or parody."
+Work,,dcterms:relation,Relation,FALSE,TRUE,IRI,,,,Work,"Paired with author-acknowledged, critical attribution, same author, or genre lineage."
+Work,,ccv:challengeLineage,Challenge Lineage,FALSE,TRUE,IRI,,,,Work,Each target also appears in the paired Dublin Core relation.
+Work,,ccv:influenceEvidence,Influence Evidence,FALSE,TRUE,IRI,,ccv:evidence-,IRIstem,,Per-link evidence is on the LineageLink statements.
+Work,,ccv:challengeOutcome,Challenge Outcome,FALSE,FALSE,IRI,,ccv:outcome-none-recorded,picklist,,"Only for a work with no challenge record, such as James."
+Work,,madsrdf:isIdentifiedByAuthority,Identified By Authority,FALSE,FALSE,IRI,,http://id.loc.gov/authorities/names/,IRIstem,,The Library of Congress name-title authority record for the work.
+Work,,owl:sameAs,Same As,FALSE,TRUE,IRI,,http://www.wikidata.org/entity/,IRIstem,,"Wikidata, as linked from the LC record."
+Work,,rdfs:seeAlso,See Also,FALSE,TRUE,IRI,,http://viaf.org/viaf/,IRIstem,,"VIAF, as linked from the LC record."
+Instance,Instance,rdf:type,Type,TRUE,FALSE,IRI,,bf:Instance,picklist,,An edition or adaptation challenged separately from its work.
+Instance,,dcterms:identifier,Identifier,TRUE,FALSE,literal,xsd:string,^W\.[A-F]\.\d+ I\d+$,pattern,,W.A.3 I1 is the first instance of W.A.3.
+Instance,,dcterms:title,Title,TRUE,FALSE,literal,xsd:string,,,,
+Instance,,dcterms:creator,Creator,FALSE,TRUE,IRI,,,,Agent,
+Instance,,dcterms:date,Date,FALSE,FALSE,literal,xsd:string,^\d{4}(/\d{4})?$,pattern,,
+Instance,,dcterms:type,Type,TRUE,TRUE,IRI,,dcmitype:Text dcmitype:StillImage,picklist,,
+Instance,,dcterms:language,Language,TRUE,FALSE,literal,xsd:string,eng,picklist,,
+Instance,,dcterms:description,Description,FALSE,TRUE,literal,xsd:string,,,,
+Instance,,dcterms:isVersionOf,Is Version Of,TRUE,FALSE,IRI,,,,Work,The work this is an edition or adaptation of.
+Instance,,ccv:challengeLineage,Challenge Lineage,FALSE,TRUE,IRI,,,,Work,Always the same work as dcterms:isVersionOf.
+Instance,,ccv:influenceEvidence,Influence Evidence,FALSE,TRUE,IRI,,ccv:evidence-,IRIstem,,
+Instance,,madsrdf:isIdentifiedByAuthority,Identified By Authority,FALSE,FALSE,IRI,,http://id.loc.gov/authorities/names/,IRIstem,,
+Instance,,owl:sameAs,Same As,FALSE,TRUE,IRI,,http://www.wikidata.org/entity/,IRIstem,,
+Instance,,rdfs:seeAlso,See Also,FALSE,TRUE,IRI,,http://viaf.org/viaf/,IRIstem,,
+Challenge,Challenge record,rdf:type,Type,TRUE,FALSE,IRI,,dcmitype:Event,picklist,,"One challenge, act of suppression, or ranked-list entry."
+Challenge,,dcterms:identifier,Identifier,TRUE,FALSE,literal,xsd:string,^W\.[A-FS]\.\d+( I\d+)? C\d+$,pattern,,W.A.3 C2 is the second challenge to W.A.3.
+Challenge,,dcterms:type,Type,TRUE,FALSE,IRI,,dcmitype:Event,picklist,,
+Challenge,,dcterms:relation,Relation,TRUE,FALSE,IRI,,,,Work Instance,The work or instance challenged.
+Challenge,,dcterms:date,Date,FALSE,FALSE,literal,xsd:string,^\d{4}(/\d{4})?$,pattern,,"A year, or the period of a ranked list (2010/2019)."
+Challenge,,dcterms:spatial,Spatial Coverage,FALSE,FALSE,IRI,,,,Location,Where the challenge happened.
+Challenge,,dcterms:source,Source,FALSE,TRUE,literal,xsd:string,,,,The list or publication that documents the challenge.
+Challenge,,dcterms:description,Description,FALSE,TRUE,literal,xsd:string,,,,The inventory's own wording.
+Challenge,,ccv:challengeVenue,Challenge Venue,FALSE,TRUE,IRI,,ccv:venue-,IRIstem,,
+Challenge,,ccv:challengeOutcome,Challenge Outcome,FALSE,TRUE,IRI,,ccv:outcome-,IRIstem,,
+Challenge,,ccv:challengeReason,Challenge Reason,FALSE,TRUE,IRI,,ccv:reason-,IRIstem,,As stated by the challenger.
+Challenge,,ccv:challengeInitiator,Challenge Initiator,FALSE,TRUE,IRI,,ccv:initiator-,IRIstem,,
+Challenge,,ccv:challengeSource,Challenge Source,FALSE,TRUE,,,,,,A list or rating site the title was drawn from.
+LineageLink,Lineage link,rdf:type,Type,TRUE,FALSE,IRI,,rdf:Statement,picklist,,"One ccv:challengeLineage link, so its evidence can be stated."
+LineageLink,,rdf:subject,Subject,TRUE,FALSE,IRI,,,,Work Instance,The later work.
+LineageLink,,rdf:predicate,Predicate,TRUE,FALSE,IRI,,ccv:challengeLineage,picklist,,
+LineageLink,,rdf:object,Object,TRUE,FALSE,IRI,,,,Work,The earlier work.
+LineageLink,,ccv:influenceEvidence,Influence Evidence,TRUE,FALSE,IRI,,ccv:evidence-,IRIstem,,
+Agent,Agent,rdf:type,Type,TRUE,FALSE,IRI,,foaf:Person,picklist,,"A creator. dcterms:creator points here, since its range is dcterms:Agent."
+Agent,,foaf:name,Name,TRUE,FALSE,literal,xsd:string,,,,The name as the collection records it.
+Agent,,madsrdf:isIdentifiedByAuthority,Identified By Authority,FALSE,FALSE,IRI,,http://id.loc.gov/authorities/names/,IRIstem,,The Library of Congress Name Authority record.
+Agent,,owl:sameAs,Same As,FALSE,TRUE,IRI,,http://www.wikidata.org/entity/,IRIstem,,"Wikidata, as linked from the LC record."
+Agent,,rdfs:seeAlso,See Also,FALSE,TRUE,IRI,,http://viaf.org/viaf/,IRIstem,,"VIAF, as linked from the LC record."
+Location,Location,rdf:type,Type,TRUE,FALSE,IRI,,dcterms:Location,picklist,,A place where a challenge happened. dcterms:spatial points here.
+Location,,rdfs:label,Label,TRUE,FALSE,literal,xsd:string,,,,The place as the collection records it.
+Location,,madsrdf:isIdentifiedByAuthority,Identified By Authority,FALSE,FALSE,IRI,,http://id.loc.gov/authorities/names/,IRIstem,,"The LC geographic or corporate name record."
+Location,,owl:sameAs,Same As,FALSE,TRUE,IRI,,http://www.wikidata.org/entity/,IRIstem,,
+Location,,rdfs:seeAlso,See Also,FALSE,TRUE,IRI,,http://viaf.org/viaf/,IRIstem,,

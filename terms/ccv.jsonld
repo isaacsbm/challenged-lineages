@@ -1,0 +1,1610 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcmitype": "http://purl.org/dc/dcmitype/",
+    "dcam": "http://purl.org/dc/dcam/",
+    "ccv": "https://isaacsbm.github.io/challenged-lineages/terms#",
+    "bf": "http://id.loc.gov/ontologies/bibframe/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "vann": "http://purl.org/vocab/vann/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "@base": "https://isaacsbm.github.io/challenged-lineages/terms#"
+  },
+  "@graph": [
+    {
+      "@id": "https://isaacsbm.github.io/challenged-lineages/terms",
+      "@type": "owl:Ontology",
+      "dcterms:title": {
+        "@value": "Challenged Collections Vocabulary",
+        "@language": "en"
+      },
+      "dcterms:description": {
+        "@value": "Terms describing formal challenges to, and other suppression of, library and educational materials, and the relationships between challenged works.",
+        "@language": "en"
+      },
+      "dcterms:creator": "Brittany Isaacson",
+      "dcterms:created": {
+        "@value": "2026-10-28",
+        "@type": "xsd:date"
+      },
+      "rdfs:comment": {
+        "@value": "Created for this assignment and published with the project site, so its URIs resolve.",
+        "@language": "en"
+      },
+      "vann:preferredNamespacePrefix": "ccv",
+      "vann:preferredNamespaceUri": "https://isaacsbm.github.io/challenged-lineages/terms#"
+    },
+    {
+      "@id": "ccv:challengeLineage",
+      "@type": "rdf:Property",
+      "rdfs:label": {
+        "@value": "Challenge Lineage",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Links a challenged work to an earlier work from which it derives or to which it responds, where the later work's challenge concerns content, themes, or form carried over from the earlier work.",
+        "@language": "en"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      },
+      "skos:scopeNote": [
+        {
+          "@value": "Domain: A creative work that has been formally challenged or suppressed.",
+          "@language": "en"
+        },
+        {
+          "@value": "Range: A creative work.",
+          "@language": "en"
+        }
+      ],
+      "rdfs:comment": {
+        "@value": "Differs from bf:derivativeOf and schema:isBasedOn by asserting a censorship relationship, not merely a creative one. The target need not itself be challenged (e.g., Beowulf for Grendel); when both are, the link records a shared history. Should be paired with ccv:influenceEvidence.",
+        "@language": "en"
+      },
+      "dcam:domainIncludes": [
+        {
+          "@id": "bf:Work"
+        },
+        {
+          "@id": "bf:Instance"
+        }
+      ],
+      "dcam:rangeIncludes": [
+        {
+          "@id": "bf:Work"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:influenceEvidence",
+      "@type": "rdf:Property",
+      "rdfs:label": {
+        "@value": "Influence Evidence",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "The basis on which a link between two works is established.",
+        "@language": "en"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      },
+      "skos:scopeNote": [
+        {
+          "@value": "Range: One of: explicit reference; title or epigraph allusion; adaptation; retelling; parody; author-acknowledged; critical attribution; same author; genre lineage.",
+          "@language": "en"
+        }
+      ],
+      "rdfs:comment": {
+        "@value": "Records how strong the evidence for a ccv:challengeLineage link is, since influence claims vary widely in reliability. Values are listed roughly from most to least verifiable.",
+        "@language": "en"
+      },
+      "dcam:domainIncludes": [
+        {
+          "@id": "bf:Work"
+        },
+        {
+          "@id": "bf:Instance"
+        },
+        {
+          "@id": "rdf:Statement"
+        }
+      ],
+      "dcam:rangeIncludes": [
+        {
+          "@id": "skos:Concept"
+        }
+      ],
+      "rdfs:seeAlso": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:challengeReason",
+      "@type": "rdf:Property",
+      "rdfs:label": {
+        "@value": "Challenge Reason",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A stated reason given in a formal request to remove or restrict a work.",
+        "@language": "en"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      },
+      "skos:scopeNote": [
+        {
+          "@value": "Range: A concept from a SKOS concept scheme. Starter values drawn from the rationales OIF reports most often: claimed obscenity for minors; LGBTQIA+ representation; race, racism, equity, and social justice; political or religious viewpoint; Palestinian representation; immigrant representation.",
+          "@language": "en"
+        }
+      ],
+      "rdfs:comment": {
+        "@value": "Records the reason as stated by the challenger, not as a finding. OIF notes that no school or public library book has ever been found by a court to meet the legal definition of obscenity for minors.",
+        "@language": "en"
+      },
+      "dcam:domainIncludes": [
+        {
+          "@id": "dcmitype:Event"
+        }
+      ],
+      "dcam:rangeIncludes": [
+        {
+          "@id": "skos:Concept"
+        }
+      ],
+      "rdfs:seeAlso": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:challengeInitiator",
+      "@type": "rdf:Property",
+      "rdfs:label": {
+        "@value": "Challenge Initiator",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "The category of person or body that filed a formal challenge.",
+        "@language": "en"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      },
+      "skos:scopeNote": [
+        {
+          "@value": "Range: One of: government decision-maker; board member or administrator; pressure group; parent; library user; other.",
+          "@language": "en"
+        }
+      ],
+      "rdfs:comment": {
+        "@value": "Categories follow OIF's reporting, which shows government decision-makers and pressure groups behind nearly 92% of 2025 attempts. Use foaf:Agent to identify a specific person or organization where appropriate.",
+        "@language": "en"
+      },
+      "dcam:domainIncludes": [
+        {
+          "@id": "dcmitype:Event"
+        }
+      ],
+      "dcam:rangeIncludes": [
+        {
+          "@id": "skos:Concept"
+        }
+      ],
+      "rdfs:seeAlso": {
+        "@id": "ccv:InitiatorScheme"
+      }
+    },
+    {
+      "@id": "ccv:challengeVenue",
+      "@type": "rdf:Property",
+      "rdfs:label": {
+        "@value": "Challenge Venue",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "The setting in which a challenge or other act of suppression took place.",
+        "@language": "en"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      },
+      "skos:scopeNote": [
+        {
+          "@value": "Range: One of: school library; classroom curriculum; public library; academic library; government censor; court; customs or postal authority; publisher.",
+          "@language": "en"
+        }
+      ],
+      "rdfs:comment": {
+        "@value": "Lets one record compare library challenges with older and non-library forms of suppression found in this collection (We, Ulysses, The Wind Done Gone, the expurgated Fahrenheit 451).",
+        "@language": "en"
+      },
+      "dcam:domainIncludes": [
+        {
+          "@id": "dcmitype:Event"
+        }
+      ],
+      "dcam:rangeIncludes": [
+        {
+          "@id": "skos:Concept"
+        }
+      ],
+      "rdfs:seeAlso": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:challengeOutcome",
+      "@type": "rdf:Property",
+      "rdfs:label": {
+        "@value": "Challenge Outcome",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "The result of a formal request to remove or restrict a work.",
+        "@language": "en"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      },
+      "skos:scopeNote": [
+        {
+          "@value": "Range: One of: retained; restricted; relocated; removed from curriculum; banned; expurgated; enjoined; pending; none recorded.",
+          "@language": "en"
+        }
+      ],
+      "rdfs:comment": {
+        "@value": "Distinguishes unsuccessful challenges from successful bans, mirroring OIF's distinction between books challenged, censored, and banned. \"None recorded\" lets a linked but unchallenged work (e.g., James) sit in the collection without implying a ban.",
+        "@language": "en"
+      },
+      "dcam:domainIncludes": [
+        {
+          "@id": "dcmitype:Event"
+        },
+        {
+          "@id": "bf:Work"
+        }
+      ],
+      "dcam:rangeIncludes": [
+        {
+          "@id": "skos:Concept"
+        }
+      ],
+      "rdfs:seeAlso": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:challengeSource",
+      "@type": "rdf:Property",
+      "rdfs:label": {
+        "@value": "Challenge Source",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A list, rating site, or other external source from which a challenged title was drawn.",
+        "@language": "en"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      },
+      "skos:scopeNote": [
+        {
+          "@value": "Range: A web resource or named publication.",
+          "@language": "en"
+        }
+      ],
+      "rdfs:comment": {
+        "@value": "Captures the multi-title, list-driven challenges OIF identifies as 94% of 2025 attempts.",
+        "@language": "en"
+      },
+      "dcam:domainIncludes": [
+        {
+          "@id": "dcmitype:Event"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:EvidenceScheme",
+      "@type": "skos:ConceptScheme",
+      "skos:prefLabel": {
+        "@value": "Influence evidence types",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Values of ccv:influenceEvidence, listed roughly from most to least verifiable.",
+        "@language": "en"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "ccv:evidence-explicit-reference"
+        },
+        {
+          "@id": "ccv:evidence-title-or-epigraph-allusion"
+        },
+        {
+          "@id": "ccv:evidence-adaptation"
+        },
+        {
+          "@id": "ccv:evidence-retelling"
+        },
+        {
+          "@id": "ccv:evidence-parody"
+        },
+        {
+          "@id": "ccv:evidence-author-acknowledged"
+        },
+        {
+          "@id": "ccv:evidence-critical-attribution"
+        },
+        {
+          "@id": "ccv:evidence-same-author"
+        },
+        {
+          "@id": "ccv:evidence-genre-lineage"
+        }
+      ],
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      }
+    },
+    {
+      "@id": "ccv:EvidenceSchemeOrder",
+      "@type": "skos:OrderedCollection",
+      "skos:prefLabel": {
+        "@value": "Influence evidence types, most to least verifiable",
+        "@language": "en"
+      },
+      "skos:memberList": {
+        "@list": [
+          {
+            "@id": "ccv:evidence-explicit-reference"
+          },
+          {
+            "@id": "ccv:evidence-title-or-epigraph-allusion"
+          },
+          {
+            "@id": "ccv:evidence-adaptation"
+          },
+          {
+            "@id": "ccv:evidence-retelling"
+          },
+          {
+            "@id": "ccv:evidence-parody"
+          },
+          {
+            "@id": "ccv:evidence-author-acknowledged"
+          },
+          {
+            "@id": "ccv:evidence-critical-attribution"
+          },
+          {
+            "@id": "ccv:evidence-same-author"
+          },
+          {
+            "@id": "ccv:evidence-genre-lineage"
+          }
+        ]
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      }
+    },
+    {
+      "@id": "ccv:evidence-explicit-reference",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "explicit reference",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:evidence-title-or-epigraph-allusion",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "title or epigraph allusion",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:evidence-adaptation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "adaptation",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:evidence-retelling",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "retelling",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:evidence-parody",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "parody",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:evidence-author-acknowledged",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "author-acknowledged",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:evidence-critical-attribution",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "critical attribution",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:evidence-same-author",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "same author",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:evidence-genre-lineage",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "genre lineage",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:EvidenceScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:EvidenceScheme"
+      }
+    },
+    {
+      "@id": "ccv:ReasonScheme",
+      "@type": "skos:ConceptScheme",
+      "skos:prefLabel": {
+        "@value": "Challenge reasons",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Values of ccv:challengeReason. Starter values drawn from the rationales OIF reports most often; the scheme may be extended. It now also holds the reasons given in ALA's Top 10 Most Challenged Books lists, 2001–2024: older ALA wording is kept as alternative labels, and narrower values are filed under the starter values.",
+        "@language": "en"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "ccv:reason-claimed-obscenity-for-minors"
+        },
+        {
+          "@id": "ccv:reason-lgbtqia-representation"
+        },
+        {
+          "@id": "ccv:reason-race-racism-equity-and-social-justice"
+        },
+        {
+          "@id": "ccv:reason-political-or-religious-viewpoint"
+        },
+        {
+          "@id": "ccv:reason-palestinian-representation"
+        },
+        {
+          "@id": "ccv:reason-immigrant-representation"
+        },
+        {
+          "@id": "ccv:reason-sexually-explicit"
+        },
+        {
+          "@id": "ccv:reason-sexual-content"
+        },
+        {
+          "@id": "ccv:reason-profanity"
+        },
+        {
+          "@id": "ccv:reason-unsuited-to-age-group"
+        },
+        {
+          "@id": "ccv:reason-violence"
+        },
+        {
+          "@id": "ccv:reason-occult-satanic"
+        },
+        {
+          "@id": "ccv:reason-insensitivity"
+        },
+        {
+          "@id": "ccv:reason-nudity"
+        },
+        {
+          "@id": "ccv:reason-drugs"
+        },
+        {
+          "@id": "ccv:reason-anti-family"
+        },
+        {
+          "@id": "ccv:reason-anti-ethnic"
+        },
+        {
+          "@id": "ccv:reason-suicide"
+        },
+        {
+          "@id": "ccv:reason-gambling"
+        },
+        {
+          "@id": "ccv:reason-depiction-of-sexual-abuse"
+        },
+        {
+          "@id": "ccv:reason-depiction-of-rape"
+        },
+        {
+          "@id": "ccv:reason-incest"
+        },
+        {
+          "@id": "ccv:reason-graphic-images"
+        },
+        {
+          "@id": "ccv:reason-controversial-issues"
+        },
+        {
+          "@id": "ccv:reason-gender-bias"
+        }
+      ],
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      }
+    },
+    {
+      "@id": "ccv:reason-claimed-obscenity-for-minors",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "claimed obscenity for minors",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:related": [
+        {
+          "@id": "ccv:reason-sexually-explicit"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-lgbtqia-representation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "LGBTQIA+ representation",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:narrower": [
+        {
+          "@id": "ccv:reason-lgbtqia-content"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-race-racism-equity-and-social-justice",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "race, racism, equity, and social justice",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:narrower": [
+        {
+          "@id": "ccv:reason-racism"
+        },
+        {
+          "@id": "ccv:reason-racial-slurs"
+        },
+        {
+          "@id": "ccv:reason-racist-stereotypes"
+        },
+        {
+          "@id": "ccv:reason-edi-content"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-political-or-religious-viewpoint",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "political or religious viewpoint",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:narrower": [
+        {
+          "@id": "ccv:reason-religious-viewpoint"
+        },
+        {
+          "@id": "ccv:reason-political-viewpoint"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-palestinian-representation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "Palestinian representation",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-immigrant-representation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "immigrant representation",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-sexually-explicit",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "sexually explicit",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "claimed to be sexually explicit",
+          "@language": "en"
+        }
+      ],
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:related": [
+        {
+          "@id": "ccv:reason-claimed-obscenity-for-minors"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-sexual-content",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "sexual content",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-profanity",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "profanity",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "offensive language",
+          "@language": "en"
+        }
+      ],
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-unsuited-to-age-group",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "unsuited to age group",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "unsuited for age group",
+          "@language": "en"
+        }
+      ],
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-violence",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "violence",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-lgbtqia-content",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "LGBTQIA+ content",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "homosexuality",
+          "@language": "en"
+        }
+      ],
+      "skos:broader": [
+        {
+          "@id": "ccv:reason-lgbtqia-representation"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-occult-satanic",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "occult/satanic",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "occult/Satanism",
+          "@language": "en"
+        }
+      ],
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-religious-viewpoint",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "religious viewpoint",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:broader": [
+        {
+          "@id": "ccv:reason-political-or-religious-viewpoint"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-political-viewpoint",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "political viewpoint",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:broader": [
+        {
+          "@id": "ccv:reason-political-or-religious-viewpoint"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-racism",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "racism",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:broader": [
+        {
+          "@id": "ccv:reason-race-racism-equity-and-social-justice"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-racial-slurs",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "racial slurs",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:broader": [
+        {
+          "@id": "ccv:reason-race-racism-equity-and-social-justice"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-racist-stereotypes",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "racist stereotypes",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:broader": [
+        {
+          "@id": "ccv:reason-race-racism-equity-and-social-justice"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-edi-content",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "EDI content",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:broader": [
+        {
+          "@id": "ccv:reason-race-racism-equity-and-social-justice"
+        }
+      ]
+    },
+    {
+      "@id": "ccv:reason-insensitivity",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "insensitivity",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-nudity",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "nudity",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-drugs",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "drugs",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "drugs/alcohol/smoking",
+          "@language": "en"
+        },
+        {
+          "@value": "drug use",
+          "@language": "en"
+        }
+      ],
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-anti-family",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "anti-family",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-anti-ethnic",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "anti-ethnic",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-suicide",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "suicide",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-gambling",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "gambling",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-depiction-of-sexual-abuse",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "depiction of sexual abuse",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-depiction-of-rape",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "depiction of rape",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "rape",
+          "@language": "en"
+        }
+      ],
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-incest",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "incest",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-graphic-images",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "graphic images",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "graphic depictions",
+          "@language": "en"
+        }
+      ],
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-controversial-issues",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "controversial issues",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:reason-gender-bias",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "gender bias",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:ReasonScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:ReasonScheme"
+      }
+    },
+    {
+      "@id": "ccv:InitiatorScheme",
+      "@type": "skos:ConceptScheme",
+      "skos:prefLabel": {
+        "@value": "Challenge initiators",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Values of ccv:challengeInitiator, following OIF's reporting categories.",
+        "@language": "en"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "ccv:initiator-government-decision-maker"
+        },
+        {
+          "@id": "ccv:initiator-board-member-or-administrator"
+        },
+        {
+          "@id": "ccv:initiator-pressure-group"
+        },
+        {
+          "@id": "ccv:initiator-parent"
+        },
+        {
+          "@id": "ccv:initiator-library-user"
+        },
+        {
+          "@id": "ccv:initiator-other"
+        }
+      ],
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      }
+    },
+    {
+      "@id": "ccv:initiator-government-decision-maker",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "government decision-maker",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:InitiatorScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:InitiatorScheme"
+      }
+    },
+    {
+      "@id": "ccv:initiator-board-member-or-administrator",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "board member or administrator",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:InitiatorScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:InitiatorScheme"
+      }
+    },
+    {
+      "@id": "ccv:initiator-pressure-group",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "pressure group",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:InitiatorScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:InitiatorScheme"
+      }
+    },
+    {
+      "@id": "ccv:initiator-parent",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "parent",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:InitiatorScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:InitiatorScheme"
+      }
+    },
+    {
+      "@id": "ccv:initiator-library-user",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "library user",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:InitiatorScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:InitiatorScheme"
+      }
+    },
+    {
+      "@id": "ccv:initiator-other",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "other",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:InitiatorScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:InitiatorScheme"
+      }
+    },
+    {
+      "@id": "ccv:VenueScheme",
+      "@type": "skos:ConceptScheme",
+      "skos:prefLabel": {
+        "@value": "Challenge venues",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Values of ccv:challengeVenue.",
+        "@language": "en"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "ccv:venue-school-library"
+        },
+        {
+          "@id": "ccv:venue-classroom-curriculum"
+        },
+        {
+          "@id": "ccv:venue-public-library"
+        },
+        {
+          "@id": "ccv:venue-academic-library"
+        },
+        {
+          "@id": "ccv:venue-government-censor"
+        },
+        {
+          "@id": "ccv:venue-court"
+        },
+        {
+          "@id": "ccv:venue-customs-or-postal-authority"
+        },
+        {
+          "@id": "ccv:venue-publisher"
+        }
+      ],
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      }
+    },
+    {
+      "@id": "ccv:venue-school-library",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "school library",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:VenueScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:venue-classroom-curriculum",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "classroom curriculum",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:VenueScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:venue-public-library",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "public library",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:VenueScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:venue-academic-library",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "academic library",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:VenueScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:venue-government-censor",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "government censor",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:VenueScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:venue-court",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "court",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:VenueScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:venue-customs-or-postal-authority",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "customs or postal authority",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:VenueScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:venue-publisher",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "publisher",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:VenueScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:VenueScheme"
+      }
+    },
+    {
+      "@id": "ccv:OutcomeScheme",
+      "@type": "skos:ConceptScheme",
+      "skos:prefLabel": {
+        "@value": "Challenge outcomes",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "Values of ccv:challengeOutcome.",
+        "@language": "en"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "ccv:outcome-retained"
+        },
+        {
+          "@id": "ccv:outcome-restricted"
+        },
+        {
+          "@id": "ccv:outcome-relocated"
+        },
+        {
+          "@id": "ccv:outcome-removed-from-curriculum"
+        },
+        {
+          "@id": "ccv:outcome-banned"
+        },
+        {
+          "@id": "ccv:outcome-expurgated"
+        },
+        {
+          "@id": "ccv:outcome-enjoined"
+        },
+        {
+          "@id": "ccv:outcome-pending"
+        },
+        {
+          "@id": "ccv:outcome-none-recorded"
+        }
+      ],
+      "rdfs:isDefinedBy": {
+        "@id": "https://isaacsbm.github.io/challenged-lineages/terms"
+      }
+    },
+    {
+      "@id": "ccv:outcome-retained",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "retained",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:outcome-restricted",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "restricted",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:outcome-relocated",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "relocated",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:outcome-removed-from-curriculum",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "removed from curriculum",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:outcome-banned",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "banned",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:outcome-expurgated",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "expurgated",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:outcome-enjoined",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "enjoined",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:outcome-pending",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "pending",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    },
+    {
+      "@id": "ccv:outcome-none-recorded",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "none recorded",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "ccv:OutcomeScheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "ccv:OutcomeScheme"
+      }
+    }
+  ]
+}

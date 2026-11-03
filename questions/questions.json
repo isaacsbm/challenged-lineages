@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cq1",
+    "question": "Which challenged works link to an earlier work that was itself challenged?",
+    "why": "The project’s first finding is that challenges travel along links. To show that, each link must connect two works that both have challenge records.",
+    "keys": ["later", "earlier"],
+    "dc": { "verdict": "answers", "label": "Answers", "note": "Dublin Core links the works and records the challenges, so it finds the pairs. It can only say that two works are related, not why the link matters or how strong the evidence is. It also counts the expurgated Fahrenheit 451 edition’s version link, which the collection doesn’t claim as a challenge lineage." },
+    "ccv": { "note": "Finds the same lineage links and adds the kind of evidence behind each one." }
+  },
+  {
+    "id": "cq2",
+    "question": "Which editions or adaptations were challenged separately from the work they come from?",
+    "why": "The Anne Frank and Handmaid’s Tale graphic adaptations were removed in places where the original text stayed on the shelf, so the edition, not just the work, has to be described.",
+    "keys": ["instance"],
+    "dc": { "verdict": "answers", "label": "Answers", "note": "This is Dublin Core’s home ground: dcterms:isVersionOf separates the version from the work, and each challenge is an event related to the version." },
+    "ccv": { "note": "Finds the same versions and adds what each challenge led to." }
+  },
+  {
+    "id": "cq3",
+    "question": "Which links rest only on weaker evidence: critical attribution, same author, or genre lineage?",
+    "why": "Influence claims vary in strength, from a narrator reading a named book to a loose genre resemblance. A reader needs to know which links to trust least.",
+    "keys": ["later", "earlier"],
+    "dc": { "verdict": "cannot", "label": "Cannot tell", "note": "Weaker links sit in dcterms:relation, Dublin Core’s catch-all, alongside links the authors themselves acknowledged. The best Dublin Core can return is every catch-all link." },
+    "ccv": { "note": "ccv:influenceEvidence records the basis of each link, so the weaker ones can be picked out exactly." }
+  },
+  {
+    "id": "cq4",
+    "question": "Which challenges ended in a ban?",
+    "why": "A challenge is not the same as a ban. OIF counts books challenged, censored, and banned separately.",
+    "keys": ["challenge"],
+    "dc": { "verdict": "guesses", "label": "Guesses from text", "note": "No Dublin Core term records the result of a challenge, so the only option is to search description text for whole words like “banned” or “removed”. That misses records worded differently, such as the burning of Slaughterhouse-Five, and it catches records that aren’t bans: a curriculum removal, and ALA’s list entries, which describe every title as “banned and challenged for …” whatever happened to it in any one place. A text search can’t tell that stock phrase from a recorded outcome." },
+    "ccv": { "note": "ccv:challengeOutcome records the result as a controlled value." }
+  },
+  {
+    "id": "cq5",
+    "question": "Which acts of suppression happened outside libraries, by a censor, a court, customs, or a publisher?",
+    "why": "The collection includes government censorship, obscenity law, a copyright injunction, and publisher expurgation, as well as library challenges.",
+    "keys": ["challenge"],
+    "dc": { "verdict": "guesses", "label": "Guesses from text", "note": "Dublin Core has a place (dcterms:spatial) but no venue, so this searches free text for whole words like “court”, “suit”, or “censor”. Records that name a case without those words, such as United States v. One Book Called Ulysses, are missed." },
+    "ccv": { "note": "ccv:challengeVenue records the setting as a controlled value." }
+  },
+  {
+    "id": "cq6",
+    "question": "Which works descend, through any number of links, from a work that was banned?",
+    "why": "Following a lineage back to a ban shows how suppression of one book relates to challenges against the works it inspired.",
+    "keys": ["item", "ancestor"],
+    "dc": { "verdict": "guesses", "label": "Guesses from text", "note": "Dublin Core can follow the links, but it has to guess which works were banned from description text. That includes ALA’s stock phrase “banned and challenged for …”, which ALA uses for every listed title, so works descending from merely challenged books are counted too. Every one of its links counts, whatever its basis." },
+    "ccv": { "note": "Follows ccv:challengeLineage back to works whose challenge outcome is banned." }
+  },
+  {
+    "id": "cq7",
+    "question": "Which 2025 challenges were in school libraries?",
+    "why": "OIF reports school and public library challenges separately, and most 2025 challenges were in school settings.",
+    "keys": ["challenge"],
+    "dc": { "verdict": "parses", "label": "Parses a citation", "note": "This works only because the citation in dcterms:source happens to name school libraries. A citation worded differently would be missed." },
+    "ccv": { "note": "ccv:challengeVenue states the venue directly, whatever the citation says." }
+  },
+  {
+    "id": "cq8",
+    "question": "Which challenges cited LGBTQIA+ representation, under any wording?",
+    "why": "The words challengers and ALA use change over time: ALA’s lists said “homosexuality” until 2014 and “LGBTQIA+ content” from 2022. A question about one idea shouldn’t depend on knowing every word ever used for it.",
+    "keys": ["challenge"],
+    "dc": { "verdict": "parses", "label": "Parses free text", "note": "Dublin Core has no reason term. This works only because ALA’s wording was copied into each description, and only because the query names both terms ALA has used. A third wording would be missed." },
+    "ccv": { "note": "Asks for the starter value and everything filed under it with skos:broader, without naming any wording. “homosexuality” is an alternative label of “LGBTQIA+ content”, so older lists are included." }
+  }
+]

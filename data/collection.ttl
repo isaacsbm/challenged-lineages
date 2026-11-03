@@ -1,0 +1,3586 @@
+# Challenged Lineages collection. Generated from data/collection.csv by scripts/build_data.py; edit the CSV, not this file.
+@base <https://isaacsbm.github.io/challenged-lineages/collection/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix ccv: <https://isaacsbm.github.io/challenged-lineages/terms#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<>
+    a dcmitype:Dataset ;
+    dcterms:identifier "challenged-lineages" ;
+    dcterms:title "Challenged Lineages" ;
+    dcterms:description "Metadata analysis of banned classics and the challenged works they inspired." ;
+    dcterms:creator "Brittany Isaacson" ;
+    dcterms:date "2026-10-28" ;
+    dcterms:subject <http://id.loc.gov/authorities/subjects/sh85107326>, <http://id.loc.gov/authorities/subjects/sh85021828> .
+
+<http://id.loc.gov/authorities/subjects/sh85107326>
+    skos:prefLabel "Prohibited books"@en .
+
+<http://id.loc.gov/authorities/subjects/sh85021828>
+    skos:prefLabel "Censorship"@en .
+
+<cluster/A>
+    a dcmitype:Collection ;
+    dcterms:identifier "A" ;
+    dcterms:title "The Dystopian Line" ;
+    dcterms:description "A chain of government-surveillance novels, each written partly in conversation with the last. The earliest, We, was suppressed by a government; the latest, a graphic adaptation, by school districts." ;
+    dcterms:isPartOf <> .
+
+<cluster/B>
+    a dcmitype:Collection ;
+    dcterms:identifier "B" ;
+    dcterms:title "Coming of Age and the Perks Reading List" ;
+    dcterms:description "Young-adult novels that place classic books inside their stories. The Perks of Being a Wallflower is a hub: its narrator's reading list links one of the most challenged books of 2025 to five challenged classics." ;
+    dcterms:isPartOf <> .
+
+<cluster/C>
+    a dcmitype:Collection ;
+    dcterms:identifier "C" ;
+    dcterms:title "African American Literary Lineage" ;
+    dcterms:description "Works that answer, extend, or revise one another across a century, several of them among the most consistently challenged books in ALA's records." ;
+    dcterms:isPartOf <> .
+
+<cluster/D>
+    a dcmitype:Collection ;
+    dcterms:identifier "D" ;
+    dcterms:title "Testimony and Graphic Narrative" ;
+    dcterms:description "Memoir and testimony, much of it in comics form. The format itself is often the stated reason for challenge, which is why the graphic adaptation of Anne Frank's diary is targeted separately from the diary." ;
+    dcterms:isPartOf <> .
+
+<cluster/E>
+    a dcmitype:Collection ;
+    dcterms:identifier "E" ;
+    dcterms:title "Myth, Epic, and Retelling" ;
+    dcterms:description "Works that retell or rework older stories. Some sources (the Odyssey, Beowulf, fairy tales) are rarely challenged themselves; the retellings are." ;
+    dcterms:isPartOf <> .
+
+<cluster/F>
+    a dcmitype:Collection ;
+    dcterms:identifier "F" ;
+    dcterms:title "Obscenity-Era Classics and Title Allusions" ;
+    dcterms:description "Twentieth-century classics challenged for language, sexuality, or politics. Many take their titles from older texts, which places those older texts in the network as well." ;
+    dcterms:isPartOf <> .
+
+<W.A.1>
+    a bf:Work ;
+    dcterms:identifier "W.A.1" ;
+    dcterms:title "We" ;
+    dcterms:creator <agent/yevgeny-zamyatin> ;
+    dcterms:date "1924" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Date given is for the English translation (Eng.)" ;
+    dcterms:isPartOf <cluster/A> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n85206351> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q83799> ;
+    rdfs:seeAlso <http://viaf.org/viaf/54149842015402841375> .
+
+<W.A.1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.1 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Suppressed by Soviet censors; not published in the USSR until 1988" ;
+    dcterms:spatial <place/ussr> ;
+    dcterms:relation <W.A.1> ;
+    ccv:challengeVenue ccv:venue-government-censor ;
+    ccv:challengeOutcome ccv:outcome-banned ;
+    ccv:challengeInitiator ccv:initiator-government-decision-maker .
+
+<W.A.2>
+    a bf:Work ;
+    dcterms:identifier "W.A.2" ;
+    dcterms:title "Nineteen Eighty-Four" ;
+    dcterms:creator <agent/george-orwell> ;
+    dcterms:date "1949" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: Orwell reviewed We in 1946" ;
+    dcterms:relation <W.A.1> ;
+    dcterms:isPartOf <cluster/A> ;
+    ccv:challengeLineage <W.A.1> ;
+    ccv:influenceEvidence ccv:evidence-critical-attribution ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n82094035> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q208460> ;
+    rdfs:seeAlso <http://viaf.org/viaf/311544287> .
+
+<W.A.2-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.2 C1" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #79" ;
+    dcterms:relation <W.A.2> .
+
+<W.A.3>
+    a bf:Work ;
+    dcterms:identifier "W.A.3" ;
+    dcterms:title "The Handmaid's Tale" ;
+    dcterms:creator <agent/margaret-atwood> ;
+    dcterms:date "1985" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.A.2> ;
+    dcterms:isPartOf <cluster/A> ;
+    ccv:challengeLineage <W.A.2> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2005058665> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1541914> ;
+    rdfs:seeAlso <http://viaf.org/viaf/186154411> .
+
+<W.A.3-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.3 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #88" ;
+    dcterms:relation <W.A.3> .
+
+<W.A.3-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.3 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #29" ;
+    dcterms:relation <W.A.3> .
+
+<W.A.3-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.3 C3" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, school libraries, #7 (tie)" ;
+    dcterms:relation <W.A.3> ;
+    ccv:challengeVenue ccv:venue-school-library .
+
+<W.A.3-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.3 C4" ;
+    dcterms:date "2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: banned and challenged for profanity and for “vulgarity and sexual overtones”" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2019, #7" ;
+    dcterms:relation <W.A.3> ;
+    ccv:challengeReason ccv:reason-sexual-content, ccv:reason-profanity .
+
+<W.A.3-I1>
+    a bf:Instance ;
+    dcterms:identifier "W.A.3 I1" ;
+    dcterms:title "The Handmaid's Tale: The Graphic Novel" ;
+    dcterms:creator <agent/margaret-atwood>, <agent/renee-nault> ;
+    dcterms:date "2019" ;
+    dcterms:type dcmitype:Text, dcmitype:StillImage ;
+    dcterms:language "eng" ;
+    dcterms:isVersionOf <W.A.3> ;
+    ccv:challengeLineage <W.A.3> ;
+    ccv:influenceEvidence ccv:evidence-adaptation .
+
+<W.A.3-I1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.3 I1 C1" ;
+    dcterms:date "2022" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Removed from school libraries: Medford, OR (2022)" ;
+    dcterms:spatial <place/medford-or> ;
+    dcterms:relation <W.A.3-I1> ;
+    ccv:challengeVenue ccv:venue-school-library ;
+    ccv:challengeOutcome ccv:outcome-banned .
+
+<W.A.3-I1-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.3 I1 C2" ;
+    dcterms:date "2024" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Removed from school libraries: West Ada SD, ID (2024)" ;
+    dcterms:spatial <place/west-ada-sd-id> ;
+    dcterms:relation <W.A.3-I1> ;
+    ccv:challengeVenue ccv:venue-school-library ;
+    ccv:challengeOutcome ccv:outcome-banned .
+
+<W.A.4>
+    a bf:Work ;
+    dcterms:identifier "W.A.4" ;
+    dcterms:title "Brave New World" ;
+    dcterms:creator <agent/aldous-huxley> ;
+    dcterms:date "1932" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.8> ;
+    dcterms:isPartOf <cluster/A> ;
+    ccv:challengeLineage <W.S.8> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2016078950> ;
+    rdfs:seeAlso <http://viaf.org/viaf/175832013> .
+
+<W.A.4-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.4 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #36" ;
+    dcterms:relation <W.A.4> .
+
+<W.A.4-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.4 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #26" ;
+    dcterms:relation <W.A.4> .
+
+<W.A.4-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.4 C3" ;
+    dcterms:date "2010" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: insensitivity, offensive language, racism, sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2010, #3" ;
+    dcterms:relation <W.A.4> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-racism, ccv:reason-insensitivity .
+
+<W.A.4-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.4 C4" ;
+    dcterms:date "2011" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: insensitivity, nudity, racism, religious viewpoint, sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2011, #7" ;
+    dcterms:relation <W.A.4> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-religious-viewpoint, ccv:reason-racism, ccv:reason-insensitivity, ccv:reason-nudity .
+
+<W.A.5>
+    a bf:Work ;
+    dcterms:identifier "W.A.5" ;
+    dcterms:title "Fahrenheit 451" ;
+    dcterms:creator <agent/ray-bradbury> ;
+    dcterms:date "1953" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/A> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n00075711> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q202009> ;
+    rdfs:seeAlso <http://viaf.org/viaf/185473935> .
+
+<W.A.5-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.5 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #69" ;
+    dcterms:relation <W.A.5> .
+
+<W.A.5-I1>
+    a bf:Instance ;
+    dcterms:identifier "W.A.5 I1" ;
+    dcterms:title "Fahrenheit 451 [expurgated school edition]" ;
+    dcterms:creator <agent/ray-bradbury> ;
+    dcterms:date "1967" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Devised title: publisher's expurgated school edition" ;
+    dcterms:isVersionOf <W.A.5> .
+
+<W.A.5-I1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.5 I1 C1" ;
+    dcterms:date "1967" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Publisher's expurgated school edition (1967) circulated for years" ;
+    dcterms:relation <W.A.5-I1> ;
+    ccv:challengeVenue ccv:venue-publisher ;
+    ccv:challengeOutcome ccv:outcome-expurgated .
+
+<W.A.6>
+    a bf:Work ;
+    dcterms:identifier "W.A.6" ;
+    dcterms:title "The Giver" ;
+    dcterms:creator <agent/lois-lowry> ;
+    dcterms:date "1993" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.A.2>, <W.A.4> ;
+    dcterms:isPartOf <cluster/A> ;
+    ccv:challengeLineage <W.A.2>, <W.A.4> ;
+    ccv:influenceEvidence ccv:evidence-genre-lineage .
+
+<W.A.6-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.6 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #23" ;
+    dcterms:relation <W.A.6> .
+
+<W.A.6-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.6 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #61" ;
+    dcterms:relation <W.A.6> .
+
+<W.A.7>
+    a bf:Work ;
+    dcterms:identifier "W.A.7" ;
+    dcterms:title "The Hunger Games" ;
+    dcterms:creator <agent/suzanne-collins> ;
+    dcterms:date "2008" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.S.3> ;
+    dcterms:isPartOf <cluster/A> ;
+    ccv:challengeLineage <W.S.3> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.A.7-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.7 C1" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #12" ;
+    dcterms:relation <W.A.7> .
+
+<W.A.7-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.7 C2" ;
+    dcterms:date "2010" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: sexually explicit, unsuited to age group, violence" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2010, #5" ;
+    dcterms:relation <W.A.7> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-unsuited-to-age-group, ccv:reason-violence .
+
+<W.A.7-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.7 C3" ;
+    dcterms:date "2011" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: anti-ethnic, anti-family, insensitivity, offensive language, occult/satanic, violence", "ALA lists The Hunger Games trilogy, of which this novel is the first book." ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2011, #3" ;
+    dcterms:relation <W.A.7> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-violence, ccv:reason-occult-satanic, ccv:reason-insensitivity, ccv:reason-anti-family, ccv:reason-anti-ethnic .
+
+<W.A.7-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.7 C4" ;
+    dcterms:date "2013" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: religious viewpoint, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2013, #5" ;
+    dcterms:relation <W.A.7> ;
+    ccv:challengeReason ccv:reason-unsuited-to-age-group, ccv:reason-religious-viewpoint .
+
+<W.A.8>
+    a bf:Work ;
+    dcterms:identifier "W.A.8" ;
+    dcterms:title "A Clockwork Orange" ;
+    dcterms:creator <agent/anthony-burgess> ;
+    dcterms:date "1962" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/A> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2017115653> ;
+    rdfs:seeAlso <http://viaf.org/viaf/185456521> .
+
+<W.A.8-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.8 C1" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #80" ;
+    dcterms:relation <W.A.8> .
+
+<W.A.8-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.A.8 C2" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, Top 11 most challenged" ;
+    dcterms:relation <W.A.8> .
+
+<W.B.1>
+    a bf:Work ;
+    dcterms:identifier "W.B.1" ;
+    dcterms:title "The Catcher in the Rye" ;
+    dcterms:creator <agent/j-d-salinger> ;
+    dcterms:date "1951" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/B> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2013086582> ;
+    rdfs:seeAlso <http://viaf.org/viaf/198915525> .
+
+<W.B.1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.1 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.B.1> .
+
+<W.B.1-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.1 C2" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #19" ;
+    dcterms:relation <W.B.1> .
+
+<W.B.1-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.1 C3" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #49" ;
+    dcterms:relation <W.B.1> .
+
+<W.B.1-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.1 C4" ;
+    dcterms:date "2001" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2001, #6" ;
+    dcterms:relation <W.B.1> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-unsuited-to-age-group .
+
+<W.B.1-C5>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.1 C5" ;
+    dcterms:date "2005" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: sexual content, offensive language, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2005, #3" ;
+    dcterms:relation <W.B.1> ;
+    ccv:challengeReason ccv:reason-sexual-content, ccv:reason-profanity, ccv:reason-unsuited-to-age-group .
+
+<W.B.1-C6>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.1 C6" ;
+    dcterms:date "2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2009, #6" ;
+    dcterms:relation <W.B.1> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group .
+
+<W.B.2>
+    a bf:Work ;
+    dcterms:identifier "W.B.2" ;
+    dcterms:title "The Perks of Being a Wallflower" ;
+    dcterms:creator <agent/stephen-chbosky> ;
+    dcterms:date "1999" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: books the narrator reads" ;
+    dcterms:references <W.B.1>, <W.B.3>, <W.B.4>, <W.B.5>, <W.B.6>, <W.S.33>, <W.S.6> ;
+    dcterms:isPartOf <cluster/B> ;
+    ccv:challengeLineage <W.B.1>, <W.B.3>, <W.B.4>, <W.B.5>, <W.B.6>, <W.S.33>, <W.S.6> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.2-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #10" ;
+    dcterms:relation <W.B.2> .
+
+<W.B.2-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #14" ;
+    dcterms:relation <W.B.2> .
+
+<W.B.2-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C3" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, school libraries, #2" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeVenue ccv:venue-school-library .
+
+<W.B.2-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C4" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, public libraries, #5 (tie)" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeVenue ccv:venue-public-library .
+
+<W.B.2-C5>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C5" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, Top 11 most challenged" ;
+    dcterms:relation <W.B.2> .
+
+<W.B.2-C6>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C6" ;
+    dcterms:date "2004" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: homosexuality, offensive language, sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2004, #5" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-lgbtqia-content .
+
+<W.B.2-C7>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C7" ;
+    dcterms:date "2006" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: homosexuality, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2006, #8" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-unsuited-to-age-group, ccv:reason-lgbtqia-content .
+
+<W.B.2-C8>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C8" ;
+    dcterms:date "2007" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: homosexuality, offensive language, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2007, #10" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-lgbtqia-content .
+
+<W.B.2-C9>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C9" ;
+    dcterms:date "2008" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: drugs, homosexuality, nudity, offensive language, sexually explicit, suicide, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2008, #6" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-lgbtqia-content, ccv:reason-nudity, ccv:reason-drugs, ccv:reason-suicide .
+
+<W.B.2-C10>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C10" ;
+    dcterms:date "2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: anti-family, drugs, homosexuality, offensive language, religious viewpoint, sexually explicit, suicide, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2009, #3" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-lgbtqia-content, ccv:reason-religious-viewpoint, ccv:reason-drugs, ccv:reason-anti-family, ccv:reason-suicide .
+
+<W.B.2-C11>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C11" ;
+    dcterms:date "2013" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: drugs/alcohol/smoking, homosexuality, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2013, #8" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-unsuited-to-age-group, ccv:reason-lgbtqia-content, ccv:reason-drugs .
+
+<W.B.2-C12>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C12" ;
+    dcterms:date "2014" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: drugs/alcohol/smoking, homosexuality, offensive language, sexually explicit, unsuited for age group. Additional reasons: “date rape and masturbation”" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2014, #8" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-lgbtqia-content, ccv:reason-drugs, ccv:reason-depiction-of-rape .
+
+<W.B.2-C13>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C13" ;
+    dcterms:date "2022" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Banned and challenged for depiction of sexual abuse, LGBTQIA+ content, drug use, profanity, and because it was claimed to be sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2022, #6 (tie)" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-lgbtqia-content, ccv:reason-drugs, ccv:reason-depiction-of-sexual-abuse .
+
+<W.B.2-C14>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C14" ;
+    dcterms:date "2023" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Claimed to be sexually explicit, LGBTQIA+ content, rape, drugs, profanity", "ALA's page heads this list 2023 but introduces it with 2024 figures." ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2023, #4" ;
+    dcterms:relation <W.B.2> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-lgbtqia-content, ccv:reason-drugs, ccv:reason-depiction-of-rape .
+
+<W.B.2-C15>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.2 C15" ;
+    dcterms:date "2024" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2024, #4 (tie)" ;
+    dcterms:relation <W.B.2> .
+
+<W.B.3>
+    a bf:Work ;
+    dcterms:identifier "W.B.3" ;
+    dcterms:title "To Kill a Mockingbird" ;
+    dcterms:creator <agent/harper-lee> ;
+    dcterms:date "1960" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/B> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n89106565> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q212340> ;
+    rdfs:seeAlso <http://viaf.org/viaf/175855105> .
+
+<W.B.3-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.3 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #21" ;
+    dcterms:relation <W.B.3> .
+
+<W.B.3-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.3 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #15" ;
+    dcterms:relation <W.B.3> .
+
+<W.B.3-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.3 C3" ;
+    dcterms:date "2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, racism, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2009, #4" ;
+    dcterms:relation <W.B.3> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-racism .
+
+<W.B.3-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.3 C4" ;
+    dcterms:date "2011" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, racism" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2011, #10" ;
+    dcterms:relation <W.B.3> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-racism .
+
+<W.B.3-C5>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.3 C5" ;
+    dcterms:date "2020" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Banned and challenged for racial slurs and their negative effect on students, featuring a “white savior” character, and its perception of the Black experience" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2020, #7" ;
+    dcterms:relation <W.B.3> ;
+    ccv:challengeReason ccv:reason-unsuited-to-age-group, ccv:reason-racial-slurs, ccv:reason-race-racism-equity-and-social-justice .
+
+<W.B.4>
+    a bf:Work ;
+    dcterms:identifier "W.B.4" ;
+    dcterms:title "The Great Gatsby" ;
+    dcterms:creator <agent/f-scott-fitzgerald> ;
+    dcterms:date "1925" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/B> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n88284747> ;
+    rdfs:seeAlso <http://viaf.org/viaf/306079936> .
+
+<W.B.4-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.4 C1" ;
+    dcterms:date "1987" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:spatial <place/baptist-college-charleston-sc> ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.B.4> .
+
+<W.B.5>
+    a bf:Work ;
+    dcterms:identifier "W.B.5" ;
+    dcterms:title "A Separate Peace" ;
+    dcterms:creator <agent/john-knowles> ;
+    dcterms:date "1959" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/B> .
+
+<W.B.5-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.5 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.B.5> .
+
+<W.B.6>
+    a bf:Work ;
+    dcterms:identifier "W.B.6" ;
+    dcterms:title "Naked Lunch" ;
+    dcterms:creator <agent/william-s-burroughs> ;
+    dcterms:date "1959" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/B> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no98032047> .
+
+<W.B.6-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.6 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.B.6> .
+
+<W.B.6-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.6 C2" ;
+    dcterms:date "1965/1966" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Massachusetts obscenity case, 1965-66" ;
+    dcterms:spatial <place/massachusetts> ;
+    dcterms:relation <W.B.6> ;
+    ccv:challengeVenue ccv:venue-court .
+
+<W.B.7>
+    a bf:Work ;
+    dcterms:identifier "W.B.7" ;
+    dcterms:title "Looking for Alaska" ;
+    dcterms:creator <agent/john-green> ;
+    dcterms:date "2005" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.13>, <W.S.34> ;
+    dcterms:isPartOf <cluster/B> ;
+    ccv:challengeLineage <W.S.13>, <W.S.34> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.7-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.7 C1" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #4" ;
+    dcterms:relation <W.B.7> .
+
+<W.B.7-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.7 C2" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, Top 11 most challenged" ;
+    dcterms:relation <W.B.7> .
+
+<W.B.7-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.7 C3" ;
+    dcterms:date "2012" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit, unsuited for age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2012, #7" ;
+    dcterms:relation <W.B.7> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group .
+
+<W.B.7-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.7 C4" ;
+    dcterms:date "2013" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: drugs/alcohol/smoking, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2013, #7" ;
+    dcterms:relation <W.B.7> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-unsuited-to-age-group, ccv:reason-drugs .
+
+<W.B.7-C5>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.7 C5" ;
+    dcterms:date "2015" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit, and unsuited for age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2015, #1" ;
+    dcterms:relation <W.B.7> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group .
+
+<W.B.7-C6>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.7 C6" ;
+    dcterms:date "2022" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Banned and challenged for LGBTQIA+ content and because it was claimed to be sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2022, #5 (tie)" ;
+    dcterms:relation <W.B.7> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-lgbtqia-content .
+
+<W.B.7-C7>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.7 C7" ;
+    dcterms:date "2024" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2024, #6 (tie)" ;
+    dcterms:relation <W.B.7> .
+
+<W.B.8>
+    a bf:Work ;
+    dcterms:identifier "W.B.8" ;
+    dcterms:title "The Fault in Our Stars" ;
+    dcterms:creator <agent/john-green> ;
+    dcterms:date "2012" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.7> ;
+    dcterms:isPartOf <cluster/B> ;
+    ccv:challengeLineage <W.S.7> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.B.8-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.8 C1" ;
+    dcterms:date "2014" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Removed from Riverside Unified (CA) middle schools, 2014" ;
+    dcterms:spatial <place/riverside-unified-ca> ;
+    dcterms:source "Comic Book Legal Defense Fund (2014, October). The Fault in Our Stars banned from California middle school" ;
+    dcterms:relation <W.B.8> ;
+    ccv:challengeVenue ccv:venue-school-library, ccv:venue-classroom-curriculum ;
+    ccv:challengeOutcome ccv:outcome-banned .
+
+<W.B.9>
+    a bf:Work ;
+    dcterms:identifier "W.B.9" ;
+    dcterms:title "Speak" ;
+    dcterms:creator <agent/laurie-halse-anderson> ;
+    dcterms:date "1999" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: class reading" ;
+    dcterms:references <W.S.20> ;
+    dcterms:isPartOf <cluster/B> ;
+    ccv:challengeLineage <W.S.20> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.9-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.9 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #60" ;
+    dcterms:relation <W.B.9> .
+
+<W.B.9-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.9 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #25" ;
+    dcterms:relation <W.B.9> .
+
+<W.B.9-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.9 C3" ;
+    dcterms:date "2020" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Banned, challenged, and restricted because it was thought to contain a political viewpoint and it was claimed to be biased against male students, and for the novel’s inclusion of rape and profanity" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2020, #4" ;
+    dcterms:relation <W.B.9> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-political-viewpoint, ccv:reason-depiction-of-rape, ccv:reason-gender-bias .
+
+<W.B.10>
+    a bf:Work ;
+    dcterms:identifier "W.B.10" ;
+    dcterms:title "The Outsiders" ;
+    dcterms:creator <agent/s-e-hinton> ;
+    dcterms:date "1967" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.B.11>, <W.S.29> ;
+    dcterms:isPartOf <cluster/B> ;
+    ccv:challengeLineage <W.B.11>, <W.S.29> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2022009328> .
+
+<W.B.10-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.10 C1" ;
+    dcterms:date "1990/1999" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 1990-99, #38" ;
+    dcterms:relation <W.B.10> .
+
+<W.B.10-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.10 C2" ;
+    dcterms:date "1992" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Boone, IA, 1992" ;
+    dcterms:spatial <place/boone-ia> ;
+    dcterms:relation <W.B.10> .
+
+<W.B.11>
+    a bf:Work ;
+    dcterms:identifier "W.B.11" ;
+    dcterms:title "Gone with the Wind" ;
+    dcterms:creator <agent/margaret-mitchell> ;
+    dcterms:date "1936" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/B> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2010147125> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2870> ;
+    rdfs:seeAlso <http://viaf.org/viaf/183781200> .
+
+<W.B.11-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.11 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.B.11> .
+
+<W.B.12>
+    a bf:Work ;
+    dcterms:identifier "W.B.12" ;
+    dcterms:title "Lord of the Flies" ;
+    dcterms:creator <agent/william-golding> ;
+    dcterms:date "1954" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.S.22> ;
+    dcterms:isPartOf <cluster/B> ;
+    ccv:challengeLineage <W.S.22> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2006021893> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q271764> ;
+    rdfs:seeAlso <http://viaf.org/viaf/119144648592107423604> .
+
+<W.B.12-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.B.12 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.B.12> .
+
+<W.C.1>
+    a bf:Work ;
+    dcterms:identifier "W.C.1" ;
+    dcterms:title "An American Tragedy" ;
+    dcterms:creator <agent/theodore-dreiser> ;
+    dcterms:date "1925" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/C> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2006104804> ;
+    rdfs:seeAlso <http://viaf.org/viaf/175657310> .
+
+<W.C.1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.1 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.C.1> .
+
+<W.C.1-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.1 C2" ;
+    dcterms:date "1927" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Banned in Boston, 1927" ;
+    dcterms:spatial <place/boston> ;
+    dcterms:relation <W.C.1> ;
+    ccv:challengeOutcome ccv:outcome-banned .
+
+<W.C.2>
+    a bf:Work ;
+    dcterms:identifier "W.C.2" ;
+    dcterms:title "Native Son" ;
+    dcterms:creator <agent/richard-wright> ;
+    dcterms:date "1940" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.C.1> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.C.1> ;
+    ccv:influenceEvidence ccv:evidence-critical-attribution ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2016054093> ;
+    rdfs:seeAlso <http://viaf.org/viaf/217506668> .
+
+<W.C.2-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.2 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.C.2> .
+
+<W.C.3>
+    a bf:Work ;
+    dcterms:identifier "W.C.3" ;
+    dcterms:title "Black Boy" ;
+    dcterms:creator <agent/richard-wright> ;
+    dcterms:date "1945" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.C.2> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.C.2> ;
+    ccv:influenceEvidence ccv:evidence-same-author ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2019087120> ;
+    rdfs:seeAlso <http://viaf.org/viaf/8105147270528035700003> .
+
+<W.C.3-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.3 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #81" ;
+    dcterms:relation <W.C.3> .
+
+<W.C.4>
+    a bf:Work ;
+    dcterms:identifier "W.C.4" ;
+    dcterms:title "Invisible Man" ;
+    dcterms:creator <agent/ralph-ellison> ;
+    dcterms:date "1952" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.C.2>, <W.S.24> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.C.2>, <W.S.24> ;
+    ccv:influenceEvidence ccv:evidence-critical-attribution ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2006009070> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1784288> ;
+    rdfs:seeAlso <http://viaf.org/viaf/176059326> .
+
+<W.C.4-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.4 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.C.4> .
+
+<W.C.5>
+    a bf:Work ;
+    dcterms:identifier "W.C.5" ;
+    dcterms:title "Go Tell It on the Mountain" ;
+    dcterms:creator <agent/james-baldwin> ;
+    dcterms:date "1953" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/C> .
+
+<W.C.5-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.5 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.C.5> .
+
+<W.C.6>
+    a bf:Work ;
+    dcterms:identifier "W.C.6" ;
+    dcterms:title "Between the World and Me" ;
+    dcterms:creator <agent/ta-nehisi-coates> ;
+    dcterms:date "2015" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: letter form" ;
+    dcterms:relation <W.S.32> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.S.32> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2018167300> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q20669329> ;
+    rdfs:seeAlso <http://viaf.org/viaf/188154590176843081710> .
+
+<W.C.6-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.6 C1" ;
+    dcterms:date "2023" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Teaching halted, Lexington-Richland 5 (SC), 2023" ;
+    dcterms:spatial <place/lexington-richland-5-sc> ;
+    dcterms:relation <W.C.6> ;
+    ccv:challengeVenue ccv:venue-classroom-curriculum ;
+    ccv:challengeOutcome ccv:outcome-removed-from-curriculum .
+
+<W.C.7>
+    a bf:Work ;
+    dcterms:identifier "W.C.7" ;
+    dcterms:title "Their Eyes Were Watching God" ;
+    dcterms:creator <agent/zora-neale-hurston> ;
+    dcterms:date "1937" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/C> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2009056334> ;
+    rdfs:seeAlso <http://viaf.org/viaf/196299737> .
+
+<W.C.7-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.7 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.C.7> .
+
+<W.C.8>
+    a bf:Work ;
+    dcterms:identifier "W.C.8" ;
+    dcterms:title "The Color Purple" ;
+    dcterms:creator <agent/alice-walker> ;
+    dcterms:date "1982" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: Walker's essays on Hurston" ;
+    dcterms:relation <W.C.7> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.C.7> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no98009495> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1897870> .
+
+<W.C.8-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.8 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #17" ;
+    dcterms:relation <W.C.8> .
+
+<W.C.8-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.8 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #50" ;
+    dcterms:relation <W.C.8> .
+
+<W.C.8-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.8 C3" ;
+    dcterms:date "2007" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: homosexuality, offensive language, sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2007, #6" ;
+    dcterms:relation <W.C.8> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-lgbtqia-content .
+
+<W.C.8-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.8 C4" ;
+    dcterms:date "2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2009, #9" ;
+    dcterms:relation <W.C.8> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group .
+
+<W.C.9>
+    a bf:Work ;
+    dcterms:identifier "W.C.9" ;
+    dcterms:title "I Know Why the Caged Bird Sings" ;
+    dcterms:creator <agent/maya-angelou> ;
+    dcterms:date "1969" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.26> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.S.26> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2019166377> ;
+    rdfs:seeAlso <http://viaf.org/viaf/273296948> .
+
+<W.C.9-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.9 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #6" ;
+    dcterms:relation <W.C.9> .
+
+<W.C.9-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.9 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #88" ;
+    dcterms:relation <W.C.9> .
+
+<W.C.9-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.9 C3" ;
+    dcterms:date "2001" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2001, #4" ;
+    dcterms:relation <W.C.9> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity .
+
+<W.C.9-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.9 C4" ;
+    dcterms:date "2002" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit, unsuited to age group, violence" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2002, #4" ;
+    dcterms:relation <W.C.9> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-violence .
+
+<W.C.9-C5>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.9 C5" ;
+    dcterms:date "2004" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: homosexuality, offensive language, racism, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2004, #9" ;
+    dcterms:relation <W.C.9> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-lgbtqia-content, ccv:reason-racism .
+
+<W.C.9-C6>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.9 C6" ;
+    dcterms:date "2007" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2007, #8" ;
+    dcterms:relation <W.C.9> ;
+    ccv:challengeReason ccv:reason-sexually-explicit .
+
+<W.C.10>
+    a bf:Work ;
+    dcterms:identifier "W.C.10" ;
+    dcterms:title "The Bluest Eye" ;
+    dcterms:creator <agent/toni-morrison> ;
+    dcterms:date "1970" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/C> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2019172236> ;
+    rdfs:seeAlso <http://viaf.org/viaf/199028164> .
+
+<W.C.10-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #15" ;
+    dcterms:relation <W.C.10> .
+
+<W.C.10-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #10" ;
+    dcterms:relation <W.C.10> .
+
+<W.C.10-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C3" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, school libraries, #7 (tie)" ;
+    dcterms:relation <W.C.10> ;
+    ccv:challengeVenue ccv:venue-school-library .
+
+<W.C.10-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C4" ;
+    dcterms:date "2006" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2006, #5" ;
+    dcterms:relation <W.C.10> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group .
+
+<W.C.10-C5>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C5" ;
+    dcterms:date "2013" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit, unsuited to age group, violence" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2013, #2" ;
+    dcterms:relation <W.C.10> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-violence .
+
+<W.C.10-C6>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C6" ;
+    dcterms:date "2014" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: sexually explicit, unsuited for age group. Additional reasons: “contains controversial issues”" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2014, #4" ;
+    dcterms:relation <W.C.10> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-unsuited-to-age-group, ccv:reason-controversial-issues .
+
+<W.C.10-C7>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C7" ;
+    dcterms:date "2020" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Banned and challenged because it was considered sexually explicit and depicts child sexual abuse" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2020, #9" ;
+    dcterms:relation <W.C.10> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-depiction-of-sexual-abuse .
+
+<W.C.10-C8>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C8" ;
+    dcterms:date "2021" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Banned and challenged because it depicts child sexual abuse and was considered sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2021, #8" ;
+    dcterms:relation <W.C.10> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-depiction-of-sexual-abuse .
+
+<W.C.10-C9>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C9" ;
+    dcterms:date "2022" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Banned and challenged for depiction of sexual abuse, EDI content, and because it was claimed to be sexually explicit" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2022, #3" ;
+    dcterms:relation <W.C.10> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-edi-content, ccv:reason-depiction-of-sexual-abuse .
+
+<W.C.10-C10>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C10" ;
+    dcterms:date "2023" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Depiction of rape, incest, claimed to be sexually explicit, EDI content", "ALA's page heads this list 2023 but introduces it with 2024 figures." ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2023, #6" ;
+    dcterms:relation <W.C.10> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-edi-content, ccv:reason-depiction-of-rape, ccv:reason-incest .
+
+<W.C.10-C11>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.10 C11" ;
+    dcterms:date "2024" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2024, #3 (tie)" ;
+    dcterms:relation <W.C.10> .
+
+<W.C.11>
+    a bf:Work ;
+    dcterms:identifier "W.C.11" ;
+    dcterms:title "Song of Solomon" ;
+    dcterms:creator <agent/toni-morrison> ;
+    dcterms:date "1977" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.5> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.S.5> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2019172179> ;
+    rdfs:seeAlso <http://viaf.org/viaf/270898792> .
+
+<W.C.11-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.11 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.C.11> .
+
+<W.C.11-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.11 C2" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #72" ;
+    dcterms:relation <W.C.11> .
+
+<W.C.12>
+    a bf:Work ;
+    dcterms:identifier "W.C.12" ;
+    dcterms:title "Beloved" ;
+    dcterms:creator <agent/toni-morrison> ;
+    dcterms:date "1987" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.C.10> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.C.10> ;
+    ccv:influenceEvidence ccv:evidence-same-author ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2008161670> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q971767> ;
+    rdfs:seeAlso <http://viaf.org/viaf/179309327> .
+
+<W.C.12-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.12 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #26" ;
+    dcterms:relation <W.C.12> .
+
+<W.C.12-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.12 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #45" ;
+    dcterms:relation <W.C.12> .
+
+<W.C.12-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.12 C3" ;
+    dcterms:date "2006" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2006, #9" ;
+    dcterms:relation <W.C.12> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-profanity, ccv:reason-unsuited-to-age-group .
+
+<W.C.12-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.12 C4" ;
+    dcterms:date "2012" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: sexually explicit, religious viewpoint, violence" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2012, #10" ;
+    dcterms:relation <W.C.12> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-violence, ccv:reason-religious-viewpoint .
+
+<W.C.13>
+    a bf:Work ;
+    dcterms:identifier "W.C.13" ;
+    dcterms:title "Adventures of Huckleberry Finn" ;
+    dcterms:creator <agent/mark-twain> ;
+    dcterms:date "1884" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/C> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79132705> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q215410> ;
+    rdfs:seeAlso <http://viaf.org/viaf/178806136> .
+
+<W.C.13-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.13 C1" ;
+    dcterms:date "1885" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Concord (MA) Public Library, 1885" ;
+    dcterms:spatial <place/concord-ma> ;
+    dcterms:relation <W.C.13> ;
+    ccv:challengeVenue ccv:venue-public-library .
+
+<W.C.13-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.13 C2" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #14" ;
+    dcterms:relation <W.C.13> .
+
+<W.C.13-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.13 C3" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #33" ;
+    dcterms:relation <W.C.13> .
+
+<W.C.13-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.13 C4" ;
+    dcterms:date "2002" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2002, #7" ;
+    dcterms:relation <W.C.13> ;
+    ccv:challengeReason ccv:reason-profanity .
+
+<W.C.13-C5>
+    a dcmitype:Event ;
+    dcterms:identifier "W.C.13 C5" ;
+    dcterms:date "2007" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: racism" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2007, #5" ;
+    dcterms:relation <W.C.13> ;
+    ccv:challengeReason ccv:reason-racism .
+
+<W.C.14>
+    a bf:Work ;
+    dcterms:identifier "W.C.14" ;
+    dcterms:title "James" ;
+    dcterms:creator <agent/percival-everett> ;
+    dcterms:date "2024" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "No formal challenge found as of Oct. 2026; a work to watch" ;
+    dcterms:source <W.C.13> ;
+    dcterms:isPartOf <cluster/C> ;
+    ccv:challengeLineage <W.C.13> ;
+    ccv:influenceEvidence ccv:evidence-retelling ;
+    ccv:challengeOutcome ccv:outcome-none-recorded .
+
+<W.D.1>
+    a bf:Work ;
+    dcterms:identifier "W.D.1" ;
+    dcterms:title "The Diary of a Young Girl" ;
+    dcterms:creator <agent/anne-frank> ;
+    dcterms:date "1947" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/D> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80048914> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6911> ;
+    rdfs:seeAlso <http://viaf.org/viaf/214026744> .
+
+<W.D.1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.1 C1" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #62" ;
+    dcterms:relation <W.D.1> .
+
+<W.D.1-I1>
+    a bf:Instance ;
+    dcterms:identifier "W.D.1 I1" ;
+    dcterms:title "Anne Frank's Diary: The Graphic Adaptation" ;
+    dcterms:creator <agent/ari-folman>, <agent/david-polonsky> ;
+    dcterms:date "2017" ;
+    dcterms:type dcmitype:Text, dcmitype:StillImage ;
+    dcterms:language "eng" ;
+    dcterms:isVersionOf <W.D.1> ;
+    ccv:challengeLineage <W.D.1> ;
+    ccv:influenceEvidence ccv:evidence-adaptation .
+
+<W.D.1-I1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.1 I1 C1" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, children's titles, #8 (tie)" ;
+    dcterms:relation <W.D.1-I1> .
+
+<W.D.1-I1-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.1 I1 C2" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, children's graphic novels, #4" ;
+    dcterms:relation <W.D.1-I1> .
+
+<W.D.2>
+    a bf:Work ;
+    dcterms:identifier "W.D.2" ;
+    dcterms:title "Maus" ;
+    dcterms:creator <agent/art-spiegelman> ;
+    dcterms:date "1986/1991" ;
+    dcterms:type dcmitype:Text, dcmitype:StillImage ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/D> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2025038235> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q59696> .
+
+<W.D.2-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.2 C1" ;
+    dcterms:date "2022" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Removed from 8th-grade curriculum, McMinn County (TN), 2022" ;
+    dcterms:spatial <place/mcminn-county-tn> ;
+    dcterms:relation <W.D.2> ;
+    ccv:challengeVenue ccv:venue-classroom-curriculum ;
+    ccv:challengeOutcome ccv:outcome-removed-from-curriculum .
+
+<W.D.3>
+    a bf:Work ;
+    dcterms:identifier "W.D.3" ;
+    dcterms:title "Persepolis" ;
+    dcterms:creator <agent/marjane-satrapi> ;
+    dcterms:date "2000" ;
+    dcterms:type dcmitype:Text, dcmitype:StillImage ;
+    dcterms:language "eng" ;
+    dcterms:description "English translation 2003" ;
+    dcterms:relation <W.D.2> ;
+    dcterms:isPartOf <cluster/D> ;
+    ccv:challengeLineage <W.D.2> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.D.3-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.3 C1" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #40" ;
+    dcterms:relation <W.D.3> .
+
+<W.D.3-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.3 C2" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, YA graphic novels, #7 (tie)" ;
+    dcterms:relation <W.D.3> .
+
+<W.D.3-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.3 C3" ;
+    dcterms:date "2014" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: gambling, offensive language, political viewpoint. Additional reasons: “politically, racially, and socially offensive,” “graphic depictions”" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2014, #2" ;
+    dcterms:relation <W.D.3> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-political-viewpoint, ccv:reason-racism, ccv:reason-insensitivity, ccv:reason-gambling, ccv:reason-graphic-images .
+
+<W.D.4>
+    a bf:Work ;
+    dcterms:identifier "W.D.4" ;
+    dcterms:title "Fun Home" ;
+    dcterms:creator <agent/alison-bechdel> ;
+    dcterms:date "2006" ;
+    dcterms:type dcmitype:Text, dcmitype:StillImage ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: the doc lists \"Fitzgerald\"; linked to The Great Gatsby" ;
+    dcterms:references <W.E.1>, <W.S.28>, <W.S.27>, <W.S.30>, <W.S.25>, <W.B.4> ;
+    dcterms:isPartOf <cluster/D> ;
+    ccv:challengeLineage <W.E.1>, <W.S.28>, <W.S.27>, <W.S.30>, <W.S.25>, <W.B.4> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2015170707> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q428680> ;
+    rdfs:seeAlso <http://viaf.org/viaf/306911266> .
+
+<W.D.4-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.4 C1" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #31" ;
+    dcterms:relation <W.D.4> .
+
+<W.D.4-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.D.4 C2" ;
+    dcterms:date "2015" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: violence and other (“graphic images”)" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2015, #7" ;
+    dcterms:relation <W.D.4> ;
+    ccv:challengeReason ccv:reason-violence, ccv:reason-graphic-images .
+
+<W.E.1>
+    a bf:Work ;
+    dcterms:identifier "W.E.1" ;
+    dcterms:title "Ulysses" ;
+    dcterms:creator <agent/james-joyce> ;
+    dcterms:date "1922" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: structural retelling" ;
+    dcterms:source <W.S.1> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.S.1> ;
+    ccv:influenceEvidence ccv:evidence-retelling ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n92029109> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6511> ;
+    rdfs:seeAlso <http://viaf.org/viaf/174999739> .
+
+<W.E.1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.1 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.E.1> .
+
+<W.E.1-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.1 C2" ;
+    dcterms:date "1933" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "U.S. ban lifted by United States v. One Book Called Ulysses, 1933" ;
+    dcterms:spatial <place/united-states> ;
+    dcterms:relation <W.E.1> ;
+    ccv:challengeVenue ccv:venue-court ;
+    ccv:challengeOutcome ccv:outcome-banned, ccv:outcome-retained .
+
+<W.E.2>
+    a bf:Work ;
+    dcterms:identifier "W.E.2" ;
+    dcterms:title "As I Lay Dying" ;
+    dcterms:creator <agent/william-faulkner> ;
+    dcterms:date "1930" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.1> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.S.1> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2006015877> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1544119> ;
+    rdfs:seeAlso <http://viaf.org/viaf/178482013> .
+
+<W.E.2-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.2 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.E.2> .
+
+<W.E.3>
+    a bf:Work ;
+    dcterms:identifier "W.E.3" ;
+    dcterms:title "Grendel" ;
+    dcterms:creator <agent/john-gardner> ;
+    dcterms:date "1971" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:source <W.S.2> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.S.2> ;
+    ccv:influenceEvidence ccv:evidence-retelling ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no97083046> .
+
+<W.E.3-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.3 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #96" ;
+    dcterms:relation <W.E.3> .
+
+<W.E.4>
+    a bf:Work ;
+    dcterms:identifier "W.E.4" ;
+    dcterms:title "His Dark Materials" ;
+    dcterms:creator <agent/philip-pullman> ;
+    dcterms:date "1995/2000" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.12> ;
+    dcterms:relation <W.S.31> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.S.12>, <W.S.31> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion, ccv:evidence-author-acknowledged ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n98047895> ;
+    rdfs:seeAlso <http://viaf.org/viaf/185877295> .
+
+<W.E.4-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.4 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #8" ;
+    dcterms:relation <W.E.4> .
+
+<W.E.4-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.4 C2" ;
+    dcterms:date "2008" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: political viewpoint, religious viewpoint, violence" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2008, #2" ;
+    dcterms:relation <W.E.4> ;
+    ccv:challengeReason ccv:reason-violence, ccv:reason-religious-viewpoint, ccv:reason-political-viewpoint .
+
+<W.E.5>
+    a bf:Work ;
+    dcterms:identifier "W.E.5" ;
+    dcterms:title "Bridge to Terabithia" ;
+    dcterms:creator <agent/katherine-paterson> ;
+    dcterms:date "1977" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.S.31> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.S.31> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.5-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.5 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #28" ;
+    dcterms:relation <W.E.5> .
+
+<W.E.5-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.5 C2" ;
+    dcterms:date "2002" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: occult/Satanism, offensive language, violence" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2002, #8" ;
+    dcterms:relation <W.E.5> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-violence, ccv:reason-occult-satanic .
+
+<W.E.5-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.5 C3" ;
+    dcterms:date "2003" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: occult/Satanism, offensive language" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2003, #10" ;
+    dcterms:relation <W.E.5> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-occult-satanic .
+
+<W.E.6>
+    a bf:Work ;
+    dcterms:identifier "W.E.6" ;
+    dcterms:title "The Lord of the Rings" ;
+    dcterms:creator <agent/j-r-r-tolkien> ;
+    dcterms:date "1954/1955" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/E> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no97079452> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q15228> .
+
+<W.E.6-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.6 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.E.6> .
+
+<W.E.7>
+    a bf:Work ;
+    dcterms:identifier "W.E.7" ;
+    dcterms:title "Twilight saga" ;
+    dcterms:creator <agent/stephenie-meyer> ;
+    dcterms:date "2005/2008" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.S.18>, <W.S.9>, <W.S.19>, <W.S.10> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.S.18>, <W.S.9>, <W.S.19>, <W.S.10> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2011016220> ;
+    rdfs:seeAlso <http://viaf.org/viaf/180942897> .
+
+<W.E.7-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.7 C1" ;
+    dcterms:date "2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: religious viewpoint, sexually explicit, unsuited to age group" ;
+    dcterms:source "ALA Top Ten Most Challenged Books, 2009" ;
+    dcterms:relation <W.E.7> ;
+    ccv:challengeReason ccv:reason-sexually-explicit, ccv:reason-unsuited-to-age-group, ccv:reason-religious-viewpoint .
+
+<W.E.7-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.7 C2" ;
+    dcterms:date "2010" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: religious viewpoint, violence" ;
+    dcterms:source "ALA Top Ten Most Challenged Books, 2010" ;
+    dcterms:relation <W.E.7> ;
+    ccv:challengeReason ccv:reason-violence, ccv:reason-religious-viewpoint .
+
+<W.E.8>
+    a bf:Work ;
+    dcterms:identifier "W.E.8" ;
+    dcterms:title "A Court of Thorns and Roses" ;
+    dcterms:creator <agent/sarah-j-maas> ;
+    dcterms:date "2015" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:relation <W.S.14>, <W.S.16> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.S.14>, <W.S.16> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2016163964> ;
+    rdfs:seeAlso <http://viaf.org/viaf/3224148209330200460004> .
+
+<W.E.8-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.8 C1" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, Top 11 most challenged" ;
+    dcterms:relation <W.E.8> .
+
+<W.E.9>
+    a bf:Work ;
+    dcterms:identifier "W.E.9" ;
+    dcterms:title "Empire of Storms" ;
+    dcterms:creator <agent/sarah-j-maas> ;
+    dcterms:date "2016" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: the Throne of Glass series began as a retelling" ;
+    dcterms:relation <W.S.15> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.S.15> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2026071852> .
+
+<W.E.9-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.9 C1" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, Top 11 most challenged" ;
+    dcterms:relation <W.E.9> .
+
+<W.E.9-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.9 C2" ;
+    dcterms:date "2025" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "OIF 2025, YA titles, #4" ;
+    dcterms:relation <W.E.9> .
+
+<W.E.10>
+    a bf:Work ;
+    dcterms:identifier "W.E.10" ;
+    dcterms:title "The Wind Done Gone" ;
+    dcterms:creator <agent/alice-randall> ;
+    dcterms:date "2001" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:source <W.B.11> ;
+    dcterms:isPartOf <cluster/E> ;
+    ccv:challengeLineage <W.B.11> ;
+    ccv:influenceEvidence ccv:evidence-parody .
+
+<W.E.10-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.E.10 C1" ;
+    dcterms:date "2001" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Publication enjoined in copyright suit, 2001; reversed on appeal (Suntrust Bank v. Houghton Mifflin)" ;
+    dcterms:relation <W.E.10> ;
+    ccv:challengeVenue ccv:venue-court ;
+    ccv:challengeOutcome ccv:outcome-enjoined .
+
+<W.F.1>
+    a bf:Work ;
+    dcterms:identifier "W.F.1" ;
+    dcterms:title "Lady Chatterley's Lover" ;
+    dcterms:creator <agent/d-h-lawrence> ;
+    dcterms:date "1928" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/F> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no95043107> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q750670> .
+
+<W.F.1-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.1 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.F.1> .
+
+<W.F.1-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.1 C2" ;
+    dcterms:date "1960" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "UK obscenity trial, R v Penguin Books, 1960" ;
+    dcterms:spatial <place/united-kingdom> ;
+    dcterms:relation <W.F.1> ;
+    ccv:challengeVenue ccv:venue-court .
+
+<W.F.2>
+    a bf:Work ;
+    dcterms:identifier "W.F.2" ;
+    dcterms:title "Lolita" ;
+    dcterms:creator <agent/vladimir-nabokov> ;
+    dcterms:date "1955" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.21> ;
+    dcterms:isPartOf <cluster/F> ;
+    ccv:challengeLineage <W.S.21> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n90655032> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q127149> ;
+    rdfs:seeAlso <http://viaf.org/viaf/176671347> .
+
+<W.F.2-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.2 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.F.2> .
+
+<W.F.2-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.2 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #73" ;
+    dcterms:relation <W.F.2> .
+
+<W.F.3>
+    a bf:Work ;
+    dcterms:identifier "W.F.3" ;
+    dcterms:title "The Sun Also Rises" ;
+    dcterms:creator <agent/ernest-hemingway> ;
+    dcterms:date "1926" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Link note: epigraph allusion" ;
+    dcterms:references <W.S.4> ;
+    dcterms:isPartOf <cluster/F> ;
+    ccv:challengeLineage <W.S.4> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79107249> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q501351> ;
+    rdfs:seeAlso <http://viaf.org/viaf/177420720> .
+
+<W.F.3-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.3 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.F.3> .
+
+<W.F.4>
+    a bf:Work ;
+    dcterms:identifier "W.F.4" ;
+    dcterms:title "For Whom the Bell Tolls" ;
+    dcterms:creator <agent/ernest-hemingway> ;
+    dcterms:date "1940" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.11> ;
+    dcterms:isPartOf <cluster/F> ;
+    ccv:challengeLineage <W.S.11> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2017056575> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q200920> ;
+    rdfs:seeAlso <http://viaf.org/viaf/184296064> .
+
+<W.F.4-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.4 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.F.4> .
+
+<W.F.5>
+    a bf:Work ;
+    dcterms:identifier "W.F.5" ;
+    dcterms:title "Of Mice and Men" ;
+    dcterms:creator <agent/john-steinbeck> ;
+    dcterms:date "1937" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.17> ;
+    dcterms:isPartOf <cluster/F> ;
+    ccv:challengeLineage <W.S.17> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2018043932> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q457977> ;
+    rdfs:seeAlso <http://viaf.org/viaf/180993990> .
+
+<W.F.5-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.5 C1" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #5" ;
+    dcterms:relation <W.F.5> .
+
+<W.F.5-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.5 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #28" ;
+    dcterms:relation <W.F.5> .
+
+<W.F.5-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.5 C3" ;
+    dcterms:date "2001" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, racism, unsuited to age group, violence" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2001, #2" ;
+    dcterms:relation <W.F.5> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-unsuited-to-age-group, ccv:reason-violence, ccv:reason-racism .
+
+<W.F.5-C4>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.5 C4" ;
+    dcterms:date "2003" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2003, #3" ;
+    dcterms:relation <W.F.5> ;
+    ccv:challengeReason ccv:reason-profanity .
+
+<W.F.5-C5>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.5 C5" ;
+    dcterms:date "2004" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: offensive language, racism, violence" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2004, #10" ;
+    dcterms:relation <W.F.5> ;
+    ccv:challengeReason ccv:reason-profanity, ccv:reason-violence, ccv:reason-racism .
+
+<W.F.5-C6>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.5 C6" ;
+    dcterms:date "2020" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Reasons as listed by ALA: Banned and challenged for racial slurs and racist stereotypes, and their negative effect on students" ;
+    dcterms:source "ALA Top 10 Most Challenged Books of 2020, #8" ;
+    dcterms:relation <W.F.5> ;
+    ccv:challengeReason ccv:reason-unsuited-to-age-group, ccv:reason-racial-slurs, ccv:reason-racist-stereotypes .
+
+<W.F.6>
+    a bf:Work ;
+    dcterms:identifier "W.F.6" ;
+    dcterms:title "The Grapes of Wrath" ;
+    dcterms:creator <agent/john-steinbeck> ;
+    dcterms:date "1939" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:references <W.S.23> ;
+    dcterms:isPartOf <cluster/F> ;
+    ccv:challengeLineage <W.S.23> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2008156136> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q215983> ;
+    rdfs:seeAlso <http://viaf.org/viaf/178502508> .
+
+<W.F.6-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.6 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.F.6> .
+
+<W.F.7>
+    a bf:Work ;
+    dcterms:identifier "W.F.7" ;
+    dcterms:title "The Awakening" ;
+    dcterms:creator <agent/kate-chopin> ;
+    dcterms:date "1899" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/F> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2012015669> ;
+    rdfs:seeAlso <http://viaf.org/viaf/198604264> .
+
+<W.F.7-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.7 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.F.7> .
+
+<W.F.7-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.7 C2" ;
+    dcterms:date "2010/2019" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2010-19, #82" ;
+    dcterms:relation <W.F.7> .
+
+<W.F.8>
+    a bf:Work ;
+    dcterms:identifier "W.F.8" ;
+    dcterms:title "Slaughterhouse-Five" ;
+    dcterms:creator <agent/kurt-vonnegut> ;
+    dcterms:date "1969" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/F> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n97111472> ;
+    rdfs:seeAlso <http://viaf.org/viaf/181467118> .
+
+<W.F.8-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.8 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.F.8> .
+
+<W.F.8-C2>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.8 C2" ;
+    dcterms:date "2000/2009" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Top 100 2000-09, #46" ;
+    dcterms:relation <W.F.8> .
+
+<W.F.8-C3>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.8 C3" ;
+    dcterms:date "1973" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:description "Copies burned, Drake, ND, 1973" ;
+    dcterms:spatial <place/drake-nd> ;
+    dcterms:relation <W.F.8> ;
+    ccv:challengeOutcome ccv:outcome-banned .
+
+<W.F.9>
+    a bf:Work ;
+    dcterms:identifier "W.F.9" ;
+    dcterms:title "Catch-22" ;
+    dcterms:creator <agent/joseph-heller> ;
+    dcterms:date "1961" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:isPartOf <cluster/F> ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2018085338> ;
+    rdfs:seeAlso <http://viaf.org/viaf/176599686> .
+
+<W.F.9-C1>
+    a dcmitype:Event ;
+    dcterms:identifier "W.F.9 C1" ;
+    dcterms:type dcmitype:Event ;
+    dcterms:source "ALA Banned & Challenged Classics" ;
+    dcterms:relation <W.F.9> .
+
+<W.S.1>
+    a bf:Work ;
+    dcterms:identifier "W.S.1" ;
+    dcterms:title "The Odyssey" ;
+    dcterms:creator <agent/homer> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80008528> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q35160> ;
+    rdfs:seeAlso <http://viaf.org/viaf/214278437> .
+
+<W.S.2>
+    a bf:Work ;
+    dcterms:identifier "W.S.2" ;
+    dcterms:title "Beowulf" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79018834> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q48328> ;
+    rdfs:seeAlso <http://viaf.org/viaf/316753795> .
+
+<W.S.3>
+    a bf:Work ;
+    dcterms:identifier "W.S.3" ;
+    dcterms:title "Theseus and the Minotaur" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Greek myth" .
+
+<W.S.4>
+    a bf:Work ;
+    dcterms:identifier "W.S.4" ;
+    dcterms:title "Ecclesiastes" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Bible" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80008490> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q131072> ;
+    rdfs:seeAlso <http://viaf.org/viaf/316620548> .
+
+<W.S.5>
+    a bf:Work ;
+    dcterms:identifier "W.S.5" ;
+    dcterms:title "Song of Songs" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Bible" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80106714> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q51670> ;
+    rdfs:seeAlso <http://viaf.org/viaf/1205148523891420970000> .
+
+<W.S.6>
+    a bf:Work ;
+    dcterms:identifier "W.S.6" ;
+    dcterms:title "Hamlet" ;
+    dcterms:creator <agent/william-shakespeare> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80008522> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q41567> ;
+    rdfs:seeAlso <http://viaf.org/viaf/176993890> .
+
+<W.S.7>
+    a bf:Work ;
+    dcterms:identifier "W.S.7" ;
+    dcterms:title "Julius Caesar" ;
+    dcterms:creator <agent/william-shakespeare> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n82021338> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q215750> ;
+    rdfs:seeAlso <http://viaf.org/viaf/183882219> .
+
+<W.S.8>
+    a bf:Work ;
+    dcterms:identifier "W.S.8" ;
+    dcterms:title "The Tempest" ;
+    dcterms:creator <agent/william-shakespeare> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80052873> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q86440> ;
+    rdfs:seeAlso <http://viaf.org/viaf/310216967> .
+
+<W.S.9>
+    a bf:Work ;
+    dcterms:identifier "W.S.9" ;
+    dcterms:title "Romeo and Juliet" ;
+    dcterms:creator <agent/william-shakespeare> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n82116107> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q83186> ;
+    rdfs:seeAlso <http://viaf.org/viaf/313670221> .
+
+<W.S.10>
+    a bf:Work ;
+    dcterms:identifier "W.S.10" ;
+    dcterms:title "A Midsummer Night's Dream" ;
+    dcterms:creator <agent/william-shakespeare> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79151243> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q104871> ;
+    rdfs:seeAlso <http://viaf.org/viaf/182253235> .
+
+<W.S.11>
+    a bf:Work ;
+    dcterms:identifier "W.S.11" ;
+    dcterms:title "Meditation XVII" ;
+    dcterms:creator <agent/john-donne> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" .
+
+<W.S.12>
+    a bf:Work ;
+    dcterms:identifier "W.S.12" ;
+    dcterms:title "Paradise Lost" ;
+    dcterms:creator <agent/john-milton> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n85227530> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28754> ;
+    rdfs:seeAlso <http://viaf.org/viaf/314808661> .
+
+<W.S.13>
+    a bf:Work ;
+    dcterms:identifier "W.S.13" ;
+    dcterms:title "Reputed last words (“the Great Perhaps”)" ;
+    dcterms:creator <agent/francois-rabelais> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Devised title: Rabelais's reputed last words, not a published work" .
+
+<W.S.14>
+    a bf:Work ;
+    dcterms:identifier "W.S.14" ;
+    dcterms:title "Beauty and the Beast" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Fairy tale" .
+
+<W.S.15>
+    a bf:Work ;
+    dcterms:identifier "W.S.15" ;
+    dcterms:title "Cinderella" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Fairy tale" .
+
+<W.S.16>
+    a bf:Work ;
+    dcterms:identifier "W.S.16" ;
+    dcterms:title "Tam Lin" ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Ballad" .
+
+<W.S.17>
+    a bf:Work ;
+    dcterms:identifier "W.S.17" ;
+    dcterms:title "To a Mouse" ;
+    dcterms:creator <agent/robert-burns> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Poem" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2013056873> ;
+    rdfs:seeAlso <http://viaf.org/viaf/302663684> .
+
+<W.S.18>
+    a bf:Work ;
+    dcterms:identifier "W.S.18" ;
+    dcterms:title "Pride and Prejudice" ;
+    dcterms:creator <agent/jane-austen> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2002041181> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q170583> ;
+    rdfs:seeAlso <http://viaf.org/viaf/386144783111321996488> .
+
+<W.S.19>
+    a bf:Work ;
+    dcterms:identifier "W.S.19" ;
+    dcterms:title "Wuthering Heights" ;
+    dcterms:creator <agent/emily-bronte> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no00002947> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q202975> ;
+    rdfs:seeAlso <http://viaf.org/viaf/179440625> .
+
+<W.S.20>
+    a bf:Work ;
+    dcterms:identifier "W.S.20" ;
+    dcterms:title "The Scarlet Letter" ;
+    dcterms:creator <agent/nathaniel-hawthorne> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79147786> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q907568> ;
+    rdfs:seeAlso <http://viaf.org/viaf/182657402> .
+
+<W.S.21>
+    a bf:Work ;
+    dcterms:identifier "W.S.21" ;
+    dcterms:title "Annabel Lee" ;
+    dcterms:creator <agent/edgar-allan-poe> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Poem" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2023125017> .
+
+<W.S.22>
+    a bf:Work ;
+    dcterms:identifier "W.S.22" ;
+    dcterms:title "The Coral Island" ;
+    dcterms:creator <agent/r-m-ballantyne> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" .
+
+<W.S.23>
+    a bf:Work ;
+    dcterms:identifier "W.S.23" ;
+    dcterms:title "Battle Hymn of the Republic" ;
+    dcterms:creator <agent/julia-ward-howe> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2018150568> ;
+    rdfs:seeAlso <http://viaf.org/viaf/190284906> .
+
+<W.S.24>
+    a bf:Work ;
+    dcterms:identifier "W.S.24" ;
+    dcterms:title "Notes from Underground" ;
+    dcterms:creator <agent/fyodor-dostoevsky> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2016008338> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q695116> ;
+    rdfs:seeAlso <http://viaf.org/viaf/211035474> .
+
+<W.S.25>
+    a bf:Work ;
+    dcterms:identifier "W.S.25" ;
+    dcterms:title "The Importance of Being Earnest" ;
+    dcterms:creator <agent/oscar-wilde> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n87862864> ;
+    rdfs:seeAlso <http://viaf.org/viaf/181494980> .
+
+<W.S.26>
+    a bf:Work ;
+    dcterms:identifier "W.S.26" ;
+    dcterms:title "Sympathy" ;
+    dcterms:creator <agent/paul-laurence-dunbar> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Poem" .
+
+<W.S.27>
+    a bf:Work ;
+    dcterms:identifier "W.S.27" ;
+    dcterms:title "In Search of Lost Time" ;
+    dcterms:creator <agent/marcel-proust> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n00020665> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q464928> ;
+    rdfs:seeAlso <http://viaf.org/viaf/184661790> .
+
+<W.S.28>
+    a bf:Work ;
+    dcterms:identifier "W.S.28" ;
+    dcterms:title "A Portrait of the Artist as a Young Man" ;
+    dcterms:creator <agent/james-joyce> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80161103> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q465360> ;
+    rdfs:seeAlso <http://viaf.org/viaf/182255878> .
+
+<W.S.29>
+    a bf:Work ;
+    dcterms:identifier "W.S.29" ;
+    dcterms:title "Nothing Gold Can Stay" ;
+    dcterms:creator <agent/robert-frost> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    dcterms:description "Poem" .
+
+<W.S.30>
+    a bf:Work ;
+    dcterms:identifier "W.S.30" ;
+    dcterms:title "A Happy Death" ;
+    dcterms:creator <agent/albert-camus> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" .
+
+<W.S.31>
+    a bf:Work ;
+    dcterms:identifier "W.S.31" ;
+    dcterms:title "The Chronicles of Narnia" ;
+    dcterms:creator <agent/c-s-lewis> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2021140893> .
+
+<W.S.32>
+    a bf:Work ;
+    dcterms:identifier "W.S.32" ;
+    dcterms:title "The Fire Next Time" ;
+    dcterms:creator <agent/james-baldwin> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" .
+
+<W.S.33>
+    a bf:Work ;
+    dcterms:identifier "W.S.33" ;
+    dcterms:title "On the Road" ;
+    dcterms:creator <agent/jack-kerouac> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2011021276> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q743180> ;
+    rdfs:seeAlso <http://viaf.org/viaf/177185208> .
+
+<W.S.34>
+    a bf:Work ;
+    dcterms:identifier "W.S.34" ;
+    dcterms:title "The General in His Labyrinth" ;
+    dcterms:creator <agent/gabriel-garcia-marquez> ;
+    dcterms:type dcmitype:Text ;
+    dcterms:language "eng" .
+
+<agent/albert-camus>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Albert Camus" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79061368> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q34670> ;
+    rdfs:seeAlso <http://viaf.org/viaf/97000332> .
+
+<agent/aldous-huxley>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Aldous Huxley" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80057246> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q81447> ;
+    rdfs:seeAlso <http://viaf.org/viaf/71392434> .
+
+<agent/alice-randall>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Alice Randall" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n00041897> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4726063> ;
+    rdfs:seeAlso <http://viaf.org/viaf/56826697> .
+
+<agent/alice-walker>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Alice Walker" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79109131> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q215868> ;
+    rdfs:seeAlso <http://viaf.org/viaf/108495772> .
+
+<agent/alison-bechdel>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Alison Bechdel" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n86107504> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q435032> ;
+    rdfs:seeAlso <http://viaf.org/viaf/114843374> .
+
+<agent/anne-frank>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Anne Frank" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79125789> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4583> ;
+    rdfs:seeAlso <http://viaf.org/viaf/27064673> .
+
+<agent/anthony-burgess>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Anthony Burgess" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n78095525> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q217619> ;
+    rdfs:seeAlso <http://viaf.org/viaf/71388189> .
+
+<agent/ari-folman>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Ari Folman" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2007075629> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q653645> ;
+    rdfs:seeAlso <http://viaf.org/viaf/39157086> .
+
+<agent/art-spiegelman>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Art Spiegelman" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n85210380> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q325945> ;
+    rdfs:seeAlso <http://viaf.org/viaf/96596029> .
+
+<agent/c-s-lewis>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "C. S. Lewis" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79003974> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q9204> ;
+    rdfs:seeAlso <http://viaf.org/viaf/22144877> .
+
+<agent/d-h-lawrence>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "D. H. Lawrence" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79018450> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q34970> ;
+    rdfs:seeAlso <http://viaf.org/viaf/95150359> .
+
+<agent/david-polonsky>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "David Polonsky" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2008036191> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q18352456> ;
+    rdfs:seeAlso <http://viaf.org/viaf/86126164> .
+
+<agent/edgar-allan-poe>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Edgar Allan Poe" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79029745> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q16867> ;
+    rdfs:seeAlso <http://viaf.org/viaf/60351476> .
+
+<agent/emily-bronte>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Emily Brontë" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79018755> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q80137> ;
+    rdfs:seeAlso <http://viaf.org/viaf/97097302> .
+
+<agent/ernest-hemingway>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Ernest Hemingway" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n78078534> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q23434> ;
+    rdfs:seeAlso <http://viaf.org/viaf/97006051> .
+
+<agent/f-scott-fitzgerald>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "F. Scott Fitzgerald" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79006871> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q93354> ;
+    rdfs:seeAlso <http://viaf.org/viaf/100254195> .
+
+<agent/francois-rabelais>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "François Rabelais" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79088892> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q131018> ;
+    rdfs:seeAlso <http://viaf.org/viaf/172635016> .
+
+<agent/fyodor-dostoevsky>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Fyodor Dostoevsky" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79029930> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q991> ;
+    rdfs:seeAlso <http://viaf.org/viaf/104023256> .
+
+<agent/gabriel-garcia-marquez>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Gabriel García Márquez" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79063441> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5878> ;
+    rdfs:seeAlso <http://viaf.org/viaf/54147956> .
+
+<agent/george-orwell>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "George Orwell" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79058639> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3335>, <http://www.wikidata.org/entity/Q3335> ;
+    rdfs:seeAlso <http://viaf.org/viaf/95155403>, <http://viaf.org/viaf/95155403> .
+
+<agent/harper-lee>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Harper Lee" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n50038872> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q182658> ;
+    rdfs:seeAlso <http://viaf.org/viaf/12431460> .
+
+<agent/homer>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Homer" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n78095639> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6691> ;
+    rdfs:seeAlso <http://viaf.org/viaf/224924963> .
+
+<agent/j-d-salinger>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "J. D. Salinger" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n50016589> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q79904> ;
+    rdfs:seeAlso <http://viaf.org/viaf/17092> .
+
+<agent/j-r-r-tolkien>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "J. R. R. Tolkien" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79005673> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q892> ;
+    rdfs:seeAlso <http://viaf.org/viaf/95218067> .
+
+<agent/jack-kerouac>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Jack Kerouac" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80036674> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q160534> ;
+    rdfs:seeAlso <http://viaf.org/viaf/27066713> .
+
+<agent/james-baldwin>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "James Baldwin" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79076619> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q273210> ;
+    rdfs:seeAlso <http://viaf.org/viaf/97644708> .
+
+<agent/james-joyce>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "James Joyce" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79056824> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6882> ;
+    rdfs:seeAlso <http://viaf.org/viaf/44300643> .
+
+<agent/jane-austen>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Jane Austen" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79032879> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q36322> ;
+    rdfs:seeAlso <http://viaf.org/viaf/102333412> .
+
+<agent/john-donne>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "John Donne" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79069876> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q140412> ;
+    rdfs:seeAlso <http://viaf.org/viaf/73852666> .
+
+<agent/john-gardner>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "John Gardner" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79056152> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1381985> ;
+    rdfs:seeAlso <http://viaf.org/viaf/2470610> .
+
+<agent/john-green>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "John Green" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2004028710> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q630446> ;
+    rdfs:seeAlso <http://viaf.org/viaf/41229323> .
+
+<agent/john-knowles>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "John Knowles" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n50042387> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q983113> ;
+    rdfs:seeAlso <http://viaf.org/viaf/109382098> .
+
+<agent/john-milton>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "John Milton" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n78095532> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q79759> ;
+    rdfs:seeAlso <http://viaf.org/viaf/17226855> .
+
+<agent/john-steinbeck>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "John Steinbeck" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79081460> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q39212> ;
+    rdfs:seeAlso <http://viaf.org/viaf/96992551> .
+
+<agent/joseph-heller>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Joseph Heller" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79100545> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q208101> ;
+    rdfs:seeAlso <http://viaf.org/viaf/36926967> .
+
+<agent/julia-ward-howe>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Julia Ward Howe" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n50029084> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q241299> ;
+    rdfs:seeAlso <http://viaf.org/viaf/76485657> .
+
+<agent/kate-chopin>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Kate Chopin" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80008080> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q230476> ;
+    rdfs:seeAlso <http://viaf.org/viaf/46758932> .
+
+<agent/katherine-paterson>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Katherine Paterson" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79074318> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q236321> ;
+    rdfs:seeAlso <http://viaf.org/viaf/98108465> .
+
+<agent/kurt-vonnegut>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Kurt Vonnegut" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79062641> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q49074> ;
+    rdfs:seeAlso <http://viaf.org/viaf/71398958> .
+
+<agent/laurie-halse-anderson>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Laurie Halse Anderson" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n94118754> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2756210> ;
+    rdfs:seeAlso <http://viaf.org/viaf/102205697> .
+
+<agent/lois-lowry>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Lois Lowry" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79073589> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q238124> ;
+    rdfs:seeAlso <http://viaf.org/viaf/66470410> .
+
+<agent/marcel-proust>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Marcel Proust" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79021736> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7199> ;
+    rdfs:seeAlso <http://viaf.org/viaf/32001793> .
+
+<agent/margaret-atwood>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Margaret Atwood" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79102766> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q183492> ;
+    rdfs:seeAlso <http://viaf.org/viaf/109322990> .
+
+<agent/margaret-mitchell>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Margaret Mitchell" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n50039200> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q173540> ;
+    rdfs:seeAlso <http://viaf.org/viaf/27068921> .
+
+<agent/marjane-satrapi>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Marjane Satrapi" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2002053238> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q126633> ;
+    rdfs:seeAlso <http://viaf.org/viaf/14941302> .
+
+<agent/mark-twain>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Mark Twain" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79021164> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7245> ;
+    rdfs:seeAlso <http://viaf.org/viaf/50566653> .
+
+<agent/maya-angelou>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Maya Angelou" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n50024879> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q19526> ;
+    rdfs:seeAlso <http://viaf.org/viaf/7386077> .
+
+<agent/nathaniel-hawthorne>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Nathaniel Hawthorne" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79007728> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q69339> ;
+    rdfs:seeAlso <http://viaf.org/viaf/44435463> .
+
+<agent/oscar-wilde>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Oscar Wilde" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79042038> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q30875> ;
+    rdfs:seeAlso <http://viaf.org/viaf/34464414> .
+
+<agent/paul-laurence-dunbar>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Paul Laurence Dunbar" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79004027> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q974678> ;
+    rdfs:seeAlso <http://viaf.org/viaf/76335432> .
+
+<agent/percival-everett>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Percival Everett" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n83043473> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3375158> ;
+    rdfs:seeAlso <http://viaf.org/viaf/120212810> .
+
+<agent/philip-pullman>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Philip Pullman" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79026451> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q190220> ;
+    rdfs:seeAlso <http://viaf.org/viaf/115199438> .
+
+<agent/r-m-ballantyne>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "R. M. Ballantyne" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79118067> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2579425> ;
+    rdfs:seeAlso <http://viaf.org/viaf/64050447> .
+
+<agent/ralph-ellison>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Ralph Ellison" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n50010027> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q299965> ;
+    rdfs:seeAlso <http://viaf.org/viaf/2481446> .
+
+<agent/ray-bradbury>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Ray Bradbury" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79139258> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q40640> ;
+    rdfs:seeAlso <http://viaf.org/viaf/12305881> .
+
+<agent/renee-nault>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Renée Nault" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2018045930> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q108290996> ;
+    rdfs:seeAlso <http://viaf.org/viaf/317011506> .
+
+<agent/richard-wright>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Richard Wright" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80036620> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q319820> ;
+    rdfs:seeAlso <http://viaf.org/viaf/34464524> .
+
+<agent/robert-burns>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Robert Burns" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n78088009> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q81960> ;
+    rdfs:seeAlso <http://viaf.org/viaf/32012434> .
+
+<agent/robert-frost>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Robert Frost" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79005644> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q168728> ;
+    rdfs:seeAlso <http://viaf.org/viaf/32010055> .
+
+<agent/s-e-hinton>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "S. E. Hinton" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79063871> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q117425> ;
+    rdfs:seeAlso <http://viaf.org/viaf/39583594> .
+
+<agent/sarah-j-maas>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Sarah J. Maas" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2012025986> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q20640708> ;
+    rdfs:seeAlso <http://viaf.org/viaf/238172260> .
+
+<agent/stephen-chbosky>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Stephen Chbosky" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no99015967> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2070360> .
+
+<agent/stephenie-meyer>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Stephenie Meyer" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2004030792> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q160219> ;
+    rdfs:seeAlso <http://viaf.org/viaf/102313919> .
+
+<agent/suzanne-collins>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Suzanne Collins" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2010078950> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q228624> ;
+    rdfs:seeAlso <http://viaf.org/viaf/150638554> .
+
+<agent/ta-nehisi-coates>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Ta-Nehisi Coates" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n2008001084> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q15452495> ;
+    rdfs:seeAlso <http://viaf.org/viaf/63473922> .
+
+<agent/theodore-dreiser>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Theodore Dreiser" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79046644> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q486096> ;
+    rdfs:seeAlso <http://viaf.org/viaf/4944366> .
+
+<agent/toni-morrison>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Toni Morrison" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80131379> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q72334> ;
+    rdfs:seeAlso <http://viaf.org/viaf/109406177> .
+
+<agent/vladimir-nabokov>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Vladimir Nabokov" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n81015312> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q36591> ;
+    rdfs:seeAlso <http://viaf.org/viaf/27069388> .
+
+<agent/william-faulkner>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "William Faulkner" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79003304> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q38392> ;
+    rdfs:seeAlso <http://viaf.org/viaf/39376770> .
+
+<agent/william-golding>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "William Golding" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79075193> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q44183> ;
+    rdfs:seeAlso <http://viaf.org/viaf/89500102> .
+
+<agent/william-s-burroughs>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "William S. Burroughs" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79026862> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q188176> ;
+    rdfs:seeAlso <http://viaf.org/viaf/108916275> .
+
+<agent/william-shakespeare>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "William Shakespeare" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n78095332> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q692> ;
+    rdfs:seeAlso <http://viaf.org/viaf/96994048> .
+
+<agent/yevgeny-zamyatin>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Yevgeny Zamyatin" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n50014714> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q204868> ;
+    rdfs:seeAlso <http://viaf.org/viaf/7398660> .
+
+<agent/zora-neale-hurston>
+    a dcterms:Agent, foaf:Person ;
+    foaf:name "Zora Neale Hurston" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79086453> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q220480> ;
+    rdfs:seeAlso <http://viaf.org/viaf/62824341> .
+
+<place/baptist-college-charleston-sc>
+    a dcterms:Location ;
+    rdfs:label "Baptist College, Charleston, SC" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n84124544> ;
+    rdfs:seeAlso <http://viaf.org/viaf/146631814> .
+
+<place/boone-ia>
+    a dcterms:Location ;
+    rdfs:label "Boone, IA" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n82028980> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1898112> ;
+    rdfs:seeAlso <http://viaf.org/viaf/125507278> .
+
+<place/boston>
+    a dcterms:Location ;
+    rdfs:label "Boston" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79045553> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q100> ;
+    rdfs:seeAlso <http://viaf.org/viaf/319145857930123021471> .
+
+<place/concord-ma>
+    a dcterms:Location ;
+    rdfs:label "Concord, MA" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79043933> ;
+    rdfs:seeAlso <http://viaf.org/viaf/124320858> .
+
+<place/drake-nd>
+    a dcterms:Location ;
+    rdfs:label "Drake, ND" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n90686318> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1146851> ;
+    rdfs:seeAlso <http://viaf.org/viaf/123285226> .
+
+<place/lexington-richland-5-sc>
+    a dcterms:Location ;
+    rdfs:label "Lexington-Richland 5, SC" .
+
+<place/massachusetts>
+    a dcterms:Location ;
+    rdfs:label "Massachusetts" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79007084> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q771> ;
+    rdfs:seeAlso <http://viaf.org/viaf/130169058> .
+
+<place/mcminn-county-tn>
+    a dcterms:Location ;
+    rdfs:label "McMinn County, TN" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n81112582> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q494636> ;
+    rdfs:seeAlso <http://viaf.org/viaf/124347978> .
+
+<place/medford-or>
+    a dcterms:Location ;
+    rdfs:label "Medford, OR" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n82006804> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q836663> ;
+    rdfs:seeAlso <http://viaf.org/viaf/150113333> .
+
+<place/riverside-unified-ca>
+    a dcterms:Location ;
+    rdfs:label "Riverside Unified, CA" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n85176793> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7338637> ;
+    rdfs:seeAlso <http://viaf.org/viaf/150163448> .
+
+<place/ussr>
+    a dcterms:Location ;
+    rdfs:label "USSR" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n80126312> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q15180> ;
+    rdfs:seeAlso <http://viaf.org/viaf/124251745> .
+
+<place/united-kingdom>
+    a dcterms:Location ;
+    rdfs:label "United Kingdom" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n79023147> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q145> ;
+    rdfs:seeAlso <http://viaf.org/viaf/127756949> .
+
+<place/united-states>
+    a dcterms:Location ;
+    rdfs:label "United States" ;
+    madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n78095330> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q30> ;
+    rdfs:seeAlso <http://viaf.org/viaf/130168302> .
+
+<place/west-ada-sd-id>
+    a dcterms:Location ;
+    rdfs:label "West Ada SD, ID" .
+
+<W.A.2#lineage-W.A.1>
+    a rdf:Statement ;
+    rdf:subject <W.A.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.A.1> ;
+    ccv:influenceEvidence ccv:evidence-critical-attribution .
+
+<W.A.3#lineage-W.A.2>
+    a rdf:Statement ;
+    rdf:subject <W.A.3> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.A.2> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.A.3-I1#lineage-W.A.3>
+    a rdf:Statement ;
+    rdf:subject <W.A.3-I1> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.A.3> ;
+    ccv:influenceEvidence ccv:evidence-adaptation .
+
+<W.A.4#lineage-W.S.8>
+    a rdf:Statement ;
+    rdf:subject <W.A.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.8> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.A.6#lineage-W.A.2>
+    a rdf:Statement ;
+    rdf:subject <W.A.6> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.A.2> ;
+    ccv:influenceEvidence ccv:evidence-genre-lineage .
+
+<W.A.6#lineage-W.A.4>
+    a rdf:Statement ;
+    rdf:subject <W.A.6> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.A.4> ;
+    ccv:influenceEvidence ccv:evidence-genre-lineage .
+
+<W.A.7#lineage-W.S.3>
+    a rdf:Statement ;
+    rdf:subject <W.A.7> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.3> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.B.2#lineage-W.B.1>
+    a rdf:Statement ;
+    rdf:subject <W.B.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.B.1> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.2#lineage-W.B.3>
+    a rdf:Statement ;
+    rdf:subject <W.B.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.B.3> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.2#lineage-W.B.4>
+    a rdf:Statement ;
+    rdf:subject <W.B.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.B.4> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.2#lineage-W.B.5>
+    a rdf:Statement ;
+    rdf:subject <W.B.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.B.5> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.2#lineage-W.B.6>
+    a rdf:Statement ;
+    rdf:subject <W.B.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.B.6> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.2#lineage-W.S.33>
+    a rdf:Statement ;
+    rdf:subject <W.B.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.33> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.2#lineage-W.S.6>
+    a rdf:Statement ;
+    rdf:subject <W.B.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.6> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.7#lineage-W.S.13>
+    a rdf:Statement ;
+    rdf:subject <W.B.7> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.13> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.7#lineage-W.S.34>
+    a rdf:Statement ;
+    rdf:subject <W.B.7> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.34> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.8#lineage-W.S.7>
+    a rdf:Statement ;
+    rdf:subject <W.B.8> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.7> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.B.9#lineage-W.S.20>
+    a rdf:Statement ;
+    rdf:subject <W.B.9> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.20> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.10#lineage-W.B.11>
+    a rdf:Statement ;
+    rdf:subject <W.B.10> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.B.11> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.10#lineage-W.S.29>
+    a rdf:Statement ;
+    rdf:subject <W.B.10> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.29> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.B.12#lineage-W.S.22>
+    a rdf:Statement ;
+    rdf:subject <W.B.12> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.22> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.C.2#lineage-W.C.1>
+    a rdf:Statement ;
+    rdf:subject <W.C.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.C.1> ;
+    ccv:influenceEvidence ccv:evidence-critical-attribution .
+
+<W.C.3#lineage-W.C.2>
+    a rdf:Statement ;
+    rdf:subject <W.C.3> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.C.2> ;
+    ccv:influenceEvidence ccv:evidence-same-author .
+
+<W.C.4#lineage-W.C.2>
+    a rdf:Statement ;
+    rdf:subject <W.C.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.C.2> ;
+    ccv:influenceEvidence ccv:evidence-critical-attribution .
+
+<W.C.4#lineage-W.S.24>
+    a rdf:Statement ;
+    rdf:subject <W.C.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.24> ;
+    ccv:influenceEvidence ccv:evidence-critical-attribution .
+
+<W.C.6#lineage-W.S.32>
+    a rdf:Statement ;
+    rdf:subject <W.C.6> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.32> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.C.8#lineage-W.C.7>
+    a rdf:Statement ;
+    rdf:subject <W.C.8> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.C.7> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.C.9#lineage-W.S.26>
+    a rdf:Statement ;
+    rdf:subject <W.C.9> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.26> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.C.11#lineage-W.S.5>
+    a rdf:Statement ;
+    rdf:subject <W.C.11> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.5> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.C.12#lineage-W.C.10>
+    a rdf:Statement ;
+    rdf:subject <W.C.12> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.C.10> ;
+    ccv:influenceEvidence ccv:evidence-same-author .
+
+<W.C.14#lineage-W.C.13>
+    a rdf:Statement ;
+    rdf:subject <W.C.14> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.C.13> ;
+    ccv:influenceEvidence ccv:evidence-retelling .
+
+<W.D.1-I1#lineage-W.D.1>
+    a rdf:Statement ;
+    rdf:subject <W.D.1-I1> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.D.1> ;
+    ccv:influenceEvidence ccv:evidence-adaptation .
+
+<W.D.3#lineage-W.D.2>
+    a rdf:Statement ;
+    rdf:subject <W.D.3> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.D.2> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.D.4#lineage-W.E.1>
+    a rdf:Statement ;
+    rdf:subject <W.D.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.E.1> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.D.4#lineage-W.S.28>
+    a rdf:Statement ;
+    rdf:subject <W.D.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.28> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.D.4#lineage-W.S.27>
+    a rdf:Statement ;
+    rdf:subject <W.D.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.27> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.D.4#lineage-W.S.30>
+    a rdf:Statement ;
+    rdf:subject <W.D.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.30> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.D.4#lineage-W.S.25>
+    a rdf:Statement ;
+    rdf:subject <W.D.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.25> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.D.4#lineage-W.B.4>
+    a rdf:Statement ;
+    rdf:subject <W.D.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.B.4> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.E.1#lineage-W.S.1>
+    a rdf:Statement ;
+    rdf:subject <W.E.1> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.1> ;
+    ccv:influenceEvidence ccv:evidence-retelling .
+
+<W.E.2#lineage-W.S.1>
+    a rdf:Statement ;
+    rdf:subject <W.E.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.1> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.E.3#lineage-W.S.2>
+    a rdf:Statement ;
+    rdf:subject <W.E.3> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.2> ;
+    ccv:influenceEvidence ccv:evidence-retelling .
+
+<W.E.4#lineage-W.S.12>
+    a rdf:Statement ;
+    rdf:subject <W.E.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.12> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.E.4#lineage-W.S.31>
+    a rdf:Statement ;
+    rdf:subject <W.E.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.31> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.5#lineage-W.S.31>
+    a rdf:Statement ;
+    rdf:subject <W.E.5> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.31> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.7#lineage-W.S.18>
+    a rdf:Statement ;
+    rdf:subject <W.E.7> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.18> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.7#lineage-W.S.9>
+    a rdf:Statement ;
+    rdf:subject <W.E.7> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.9> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.7#lineage-W.S.19>
+    a rdf:Statement ;
+    rdf:subject <W.E.7> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.19> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.7#lineage-W.S.10>
+    a rdf:Statement ;
+    rdf:subject <W.E.7> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.10> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.8#lineage-W.S.14>
+    a rdf:Statement ;
+    rdf:subject <W.E.8> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.14> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.8#lineage-W.S.16>
+    a rdf:Statement ;
+    rdf:subject <W.E.8> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.16> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.9#lineage-W.S.15>
+    a rdf:Statement ;
+    rdf:subject <W.E.9> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.15> ;
+    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+
+<W.E.10#lineage-W.B.11>
+    a rdf:Statement ;
+    rdf:subject <W.E.10> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.B.11> ;
+    ccv:influenceEvidence ccv:evidence-parody .
+
+<W.F.2#lineage-W.S.21>
+    a rdf:Statement ;
+    rdf:subject <W.F.2> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.21> ;
+    ccv:influenceEvidence ccv:evidence-explicit-reference .
+
+<W.F.3#lineage-W.S.4>
+    a rdf:Statement ;
+    rdf:subject <W.F.3> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.4> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.F.4#lineage-W.S.11>
+    a rdf:Statement ;
+    rdf:subject <W.F.4> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.11> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.F.5#lineage-W.S.17>
+    a rdf:Statement ;
+    rdf:subject <W.F.5> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.17> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+
+<W.F.6#lineage-W.S.23>
+    a rdf:Statement ;
+    rdf:subject <W.F.6> ;
+    rdf:predicate ccv:challengeLineage ;
+    rdf:object <W.S.23> ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .

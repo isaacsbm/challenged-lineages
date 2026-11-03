@@ -1,0 +1,11 @@
+# CQ5, Dublin Core + ccv: challenges whose venue is a censor, court, customs, or publisher.
+SELECT ?challenge ?title ?venue ?date WHERE {
+  VALUES ?setting { ccv:venue-government-censor ccv:venue-court
+                    ccv:venue-customs-or-postal-authority ccv:venue-publisher }
+  ?challenge ccv:challengeVenue ?setting ;
+             dcterms:relation ?work .
+  ?setting skos:prefLabel ?venue .
+  ?work dcterms:title ?title .
+  OPTIONAL { ?challenge dcterms:date ?date }
+}
+ORDER BY ?title
