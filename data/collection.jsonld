@@ -450,6 +450,9 @@
       "dcterms:spatial": {
         "@id": "place/medford-or"
       },
+      "dcterms:source": [
+        "Neumann, E. (2022, June 5). Medford School District book removal amounts to 'censorship', says state library association. OPB. https://www.opb.org/article/2022/06/05/medford-school-district-library-book-removal/"
+      ],
       "dcterms:relation": [
         {
           "@id": "W.A.3-I1"
@@ -470,18 +473,21 @@
       "@id": "W.A.3-I1-C2",
       "@type": "dcmitype:Event",
       "dcterms:identifier": "W.A.3 I1 C2",
-      "dcterms:date": "2024",
+      "dcterms:date": "2023",
       "dcterms:type": [
         {
           "@id": "dcmitype:Event"
         }
       ],
       "dcterms:description": [
-        "Removed from school libraries: West Ada SD, ID (2024)"
+        "Removed from school libraries: West Ada SD, ID (2023)"
       ],
       "dcterms:spatial": {
         "@id": "place/west-ada-sd-id"
       },
+      "dcterms:source": [
+        "Flandro, C. (2023, December 14). West Ada pulls 10 books from library shelves; considers removing dozens. Idaho Education News. https://www.idahoednews.org/news/west-ada-pulls-10-books-from-library-shelves-considers-removing-dozens/"
+      ],
       "dcterms:relation": [
         {
           "@id": "W.A.3-I1"
@@ -3175,6 +3181,9 @@
       "dcterms:spatial": {
         "@id": "place/lexington-richland-5-sc"
       },
+      "dcterms:source": [
+        "Grenier, I. (2023, June 19). After SC school stopped teaching of book on racism, officials' explanations differ. The Post and Courier. https://www.postandcourier.com/columbia/education/after-sc-school-stopped-teaching-of-book-on-racism-officials-explanations-differ/article_fe9fbb60-0a32-11ee-ab73-db35323b0c0a.html"
+      ],
       "dcterms:relation": [
         {
           "@id": "W.C.6"
@@ -4574,6 +4583,9 @@
       "dcterms:spatial": {
         "@id": "place/mcminn-county-tn"
       },
+      "dcterms:source": [
+        "Hernandez, J. (2022, January 27). Art Spiegelman decries Tennessee school board for removing 'Maus' from its curriculum. NPR. https://www.npr.org/2022/01/27/1076180329/tennessee-school-district-ban-holocaust-graphic-novel-maus"
+      ],
       "dcterms:relation": [
         {
           "@id": "W.D.2"
