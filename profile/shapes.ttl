@@ -444,6 +444,20 @@ ccvp:LineageLinkShape
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:pattern "^https://isaacsbm\\.github\\.io/challenged\\-lineages/terms\\#evidence\\-"
+    ], [
+        sh:path dcterms:source ;
+        sh:name "Source"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:description "A citation for the evidence, where it lies outside the later work."@en
+    ], [
+        sh:path dcterms:description ;
+        sh:name "Description"@en ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:description "What the evidence is, and how far it was checked."@en
     ] .
 
 ccvp:AgentShape

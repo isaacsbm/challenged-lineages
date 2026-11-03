@@ -344,6 +344,8 @@ code { font-family: var(--serif); font-size: 0.95em; color: var(--red); }
 .lineage li { padding: 0.15rem 0; }
 .evidence { color: var(--red); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; }
 .pairing { color: var(--grey); font-size: 0.78rem; font-style: italic; }
+.link-note { display: block; margin-top: 0.15rem; font-size: 0.85rem; }
+.link-source { display: block; color: var(--grey); font-size: 0.78rem; overflow-wrap: anywhere; }
 
 .challenge {
   margin: 0.5rem 0;

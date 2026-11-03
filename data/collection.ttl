@@ -1062,7 +1062,7 @@
     dcterms:relation <W.C.2>, <W.S.24> ;
     dcterms:isPartOf <cluster/C> ;
     ccv:challengeLineage <W.C.2>, <W.S.24> ;
-    ccv:influenceEvidence ccv:evidence-critical-attribution ;
+    ccv:influenceEvidence ccv:evidence-critical-attribution, ccv:evidence-author-acknowledged ;
     madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/no2006009070> ;
     owl:sameAs <http://www.wikidata.org/entity/Q1784288> ;
     rdfs:seeAlso <http://viaf.org/viaf/176059326> .
@@ -1779,7 +1779,7 @@
     dcterms:relation <W.S.31> ;
     dcterms:isPartOf <cluster/E> ;
     ccv:challengeLineage <W.S.12>, <W.S.31> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion, ccv:evidence-author-acknowledged ;
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion, ccv:evidence-critical-attribution ;
     madsrdf:isIdentifiedByAuthority <http://id.loc.gov/authorities/names/n98047895> ;
     rdfs:seeAlso <http://viaf.org/viaf/185877295> .
 
@@ -3221,403 +3221,480 @@
     rdf:subject <W.A.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.A.1> ;
-    ccv:influenceEvidence ccv:evidence-critical-attribution .
+    ccv:influenceEvidence ccv:evidence-critical-attribution ;
+    dcterms:source "Orwell, G. (1946, January 4). Freedom and happiness [Review of the book We, by Y. Zamyatin]. Tribune. https://orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/freedom-and-happiness-review-of-we-by-yevgeny-zamyatin/" ;
+    dcterms:description "Orwell reviewed We in 1946, three years before Nineteen Eighty-Four; the link itself is drawn by critics." .
 
 <W.A.3#lineage-W.A.2>
     a rdf:Statement ;
     rdf:subject <W.A.3> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.A.2> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Atwood, M. (2003, June 16). Orwell and me. The Guardian." ;
+    dcterms:description "Atwood on Nineteen Eighty-Four and the Newspeak appendix she says shaped her novel's epilogue. Not checked against the original." .
 
 <W.A.3-I1#lineage-W.A.3>
     a rdf:Statement ;
     rdf:subject <W.A.3-I1> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.A.3> ;
-    ccv:influenceEvidence ccv:evidence-adaptation .
+    ccv:influenceEvidence ccv:evidence-adaptation ;
+    dcterms:description "The later work adapts it." .
 
 <W.A.4#lineage-W.S.8>
     a rdf:Statement ;
     rdf:subject <W.A.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.8> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.A.6#lineage-W.A.2>
     a rdf:Statement ;
     rdf:subject <W.A.6> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.A.2> ;
-    ccv:influenceEvidence ccv:evidence-genre-lineage .
+    ccv:influenceEvidence ccv:evidence-genre-lineage ;
+    dcterms:source "Hintz, C., & Ostry, E. (Eds.). (2003). Utopian and dystopian writing for children and young adults. Routledge." ;
+    dcterms:description "In an interview here, Lowry denies borrowing consciously from Nineteen Eighty-Four or Brave New World but allows that elements of both are present. Not checked against the original." .
 
 <W.A.6#lineage-W.A.4>
     a rdf:Statement ;
     rdf:subject <W.A.6> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.A.4> ;
-    ccv:influenceEvidence ccv:evidence-genre-lineage .
+    ccv:influenceEvidence ccv:evidence-genre-lineage ;
+    dcterms:source "Hintz, C., & Ostry, E. (Eds.). (2003). Utopian and dystopian writing for children and young adults. Routledge." ;
+    dcterms:description "In an interview here, Lowry denies borrowing consciously from Nineteen Eighty-Four or Brave New World but allows that elements of both are present. Not checked against the original." .
 
 <W.A.7#lineage-W.S.3>
     a rdf:Statement ;
     rdf:subject <W.A.7> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.3> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Margolis, R. (2008, September 1). A killer story: An interview with Suzanne Collins, author of The Hunger Games. School Library Journal. https://slj.com/story/a-killer-story-an-interview-with-suzanne-collins-author-of-the-hunger-games" ;
+    dcterms:description "Collins describes the myth of Theseus and the Minotaur as a source for the novel. Not checked against the original." .
 
 <W.B.2#lineage-W.B.1>
     a rdf:Statement ;
     rdf:subject <W.B.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.B.1> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Among the books the narrator reads." .
 
 <W.B.2#lineage-W.B.3>
     a rdf:Statement ;
     rdf:subject <W.B.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.B.3> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Among the books the narrator reads." .
 
 <W.B.2#lineage-W.B.4>
     a rdf:Statement ;
     rdf:subject <W.B.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.B.4> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Among the books the narrator reads." .
 
 <W.B.2#lineage-W.B.5>
     a rdf:Statement ;
     rdf:subject <W.B.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.B.5> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Among the books the narrator reads." .
 
 <W.B.2#lineage-W.B.6>
     a rdf:Statement ;
     rdf:subject <W.B.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.B.6> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Among the books the narrator reads." .
 
 <W.B.2#lineage-W.S.33>
     a rdf:Statement ;
     rdf:subject <W.B.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.33> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Among the books the narrator reads." .
 
 <W.B.2#lineage-W.S.6>
     a rdf:Statement ;
     rdf:subject <W.B.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.6> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Among the books the narrator reads." .
 
 <W.B.7#lineage-W.S.13>
     a rdf:Statement ;
     rdf:subject <W.B.7> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.13> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.B.7#lineage-W.S.34>
     a rdf:Statement ;
     rdf:subject <W.B.7> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.34> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.B.8#lineage-W.S.7>
     a rdf:Statement ;
     rdf:subject <W.B.8> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.7> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.B.9#lineage-W.S.20>
     a rdf:Statement ;
     rdf:subject <W.B.9> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.20> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Class reading in the novel." .
 
 <W.B.10#lineage-W.B.11>
     a rdf:Statement ;
     rdf:subject <W.B.10> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.B.11> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.B.10#lineage-W.S.29>
     a rdf:Statement ;
     rdf:subject <W.B.10> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.29> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.B.12#lineage-W.S.22>
     a rdf:Statement ;
     rdf:subject <W.B.12> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.22> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Presley, N. (2017, June 30). Lord of the Flies and The Coral Island. William Golding. https://william-golding.co.uk/lord-flies-coral-island" ;
+    dcterms:description "The Golding estate's account of the novel's relation to The Coral Island, quoting Golding by way of John Carey's biography." .
 
 <W.C.2#lineage-W.C.1>
     a rdf:Statement ;
     rdf:subject <W.C.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.C.1> ;
-    ccv:influenceEvidence ccv:evidence-critical-attribution .
+    ccv:influenceEvidence ccv:evidence-critical-attribution ;
+    dcterms:description "No source found (checked 2026-11-03)." .
 
 <W.C.3#lineage-W.C.2>
     a rdf:Statement ;
     rdf:subject <W.C.3> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.C.2> ;
-    ccv:influenceEvidence ccv:evidence-same-author .
+    ccv:influenceEvidence ccv:evidence-same-author ;
+    dcterms:description "Both are by the same author." .
 
 <W.C.4#lineage-W.C.2>
     a rdf:Statement ;
     rdf:subject <W.C.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.C.2> ;
-    ccv:influenceEvidence ccv:evidence-critical-attribution .
+    ccv:influenceEvidence ccv:evidence-critical-attribution ;
+    dcterms:description "No source found (checked 2026-11-03)." .
 
 <W.C.4#lineage-W.S.24>
     a rdf:Statement ;
     rdf:subject <W.C.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.24> ;
-    ccv:influenceEvidence ccv:evidence-critical-attribution .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Ellison, R. (1982). Introduction. In Invisible man (30th anniversary ed.). Random House." ;
+    dcterms:description "Ellison associates his narrator \"ever so distantly\" with Dostoevsky's underground man. Not checked against the original." .
 
 <W.C.6#lineage-W.S.32>
     a rdf:Statement ;
     rdf:subject <W.C.6> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.32> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Souza, G. (2015, September). Q&A with Ta-Nehisi Coates. Baltimore Magazine. https://www.baltimoremagazine.com/2015/8/21/q-a-with-ta-nehisi-coates" ;
+    dcterms:description "Coates says he \"really looked up to\" The Fire Next Time; its range, more than its letter form, was the model." .
 
 <W.C.8#lineage-W.C.7>
     a rdf:Statement ;
     rdf:subject <W.C.8> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.C.7> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Walker, A. (1975, March). In search of Zora Neale Hurston. Ms." ;
+    dcterms:description "Walker's essay on finding Hurston's grave shows her debt to Hurston, but it predates The Color Purple (1982) and does not mention it." .
 
 <W.C.9#lineage-W.S.26>
     a rdf:Statement ;
     rdf:subject <W.C.9> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.26> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.C.11#lineage-W.S.5>
     a rdf:Statement ;
     rdf:subject <W.C.11> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.5> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.C.12#lineage-W.C.10>
     a rdf:Statement ;
     rdf:subject <W.C.12> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.C.10> ;
-    ccv:influenceEvidence ccv:evidence-same-author .
+    ccv:influenceEvidence ccv:evidence-same-author ;
+    dcterms:description "Both are by the same author." .
 
 <W.C.14#lineage-W.C.13>
     a rdf:Statement ;
     rdf:subject <W.C.14> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.C.13> ;
-    ccv:influenceEvidence ccv:evidence-retelling .
+    ccv:influenceEvidence ccv:evidence-retelling ;
+    dcterms:description "The later work retells it." .
 
 <W.D.1-I1#lineage-W.D.1>
     a rdf:Statement ;
     rdf:subject <W.D.1-I1> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.D.1> ;
-    ccv:influenceEvidence ccv:evidence-adaptation .
+    ccv:influenceEvidence ccv:evidence-adaptation ;
+    dcterms:description "The later work adapts it." .
 
 <W.D.3#lineage-W.D.2>
     a rdf:Statement ;
     rdf:subject <W.D.3> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.D.2> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Mohammad, A. (2023, April 13). Marjane Satrapi: An Iranian icon returns to Sotheby's. Sotheby's. https://www.sothebys.com/en/articles/marjane-satrapi-an-iranian-icon-returns-to-sothebys" ;
+    dcterms:description "Satrapi says reading Maus showed her \"you can actually write anything in this format.\"" .
 
 <W.D.4#lineage-W.E.1>
     a rdf:Statement ;
     rdf:subject <W.D.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.E.1> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.D.4#lineage-W.S.28>
     a rdf:Statement ;
     rdf:subject <W.D.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.28> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.D.4#lineage-W.S.27>
     a rdf:Statement ;
     rdf:subject <W.D.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.27> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.D.4#lineage-W.S.30>
     a rdf:Statement ;
     rdf:subject <W.D.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.30> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.D.4#lineage-W.S.25>
     a rdf:Statement ;
     rdf:subject <W.D.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.25> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.D.4#lineage-W.B.4>
     a rdf:Statement ;
     rdf:subject <W.D.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.B.4> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.E.1#lineage-W.S.1>
     a rdf:Statement ;
     rdf:subject <W.E.1> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.1> ;
-    ccv:influenceEvidence ccv:evidence-retelling .
+    ccv:influenceEvidence ccv:evidence-retelling ;
+    dcterms:description "A structural retelling." .
 
 <W.E.2#lineage-W.S.1>
     a rdf:Statement ;
     rdf:subject <W.E.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.1> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.E.3#lineage-W.S.2>
     a rdf:Statement ;
     rdf:subject <W.E.3> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.2> ;
-    ccv:influenceEvidence ccv:evidence-retelling .
+    ccv:influenceEvidence ccv:evidence-retelling ;
+    dcterms:description "The later work retells it." .
 
 <W.E.4#lineage-W.S.12>
     a rdf:Statement ;
     rdf:subject <W.E.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.12> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.E.4#lineage-W.S.31>
     a rdf:Statement ;
     rdf:subject <W.E.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.31> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-critical-attribution ;
+    dcterms:source "Pullman, P. (1998). The dark side of Narnia. The Guardian." ;
+    dcterms:description "Critics read the trilogy as a reply to Narnia. Pullman's essay attacks Narnia but does not say his trilogy answers it. Not checked against the original." .
 
 <W.E.5#lineage-W.S.31>
     a rdf:Statement ;
     rdf:subject <W.E.5> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.31> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "9 memorable facts about \"Bridge to Terabithia\". (n.d.). Mental Floss. https://www.mentalfloss.com/article/650438/bridge-to-terabithia-book-facts" ;
+    dcterms:description "Reports Paterson's 2005 remark that the name Terabithia probably came from Lewis's island Terebinthia; in the novel, Leslie lends Jess the Narnia books. Not checked against the original." .
 
 <W.E.7#lineage-W.S.18>
     a rdf:Statement ;
     rdf:subject <W.E.7> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.18> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Meyer, S. (2011). The Twilight saga: The official illustrated guide. Little, Brown." ;
+    dcterms:description "Meyer names a classic behind each book in the saga. Not checked against the original." .
 
 <W.E.7#lineage-W.S.9>
     a rdf:Statement ;
     rdf:subject <W.E.7> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.9> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Meyer, S. (2011). The Twilight saga: The official illustrated guide. Little, Brown." ;
+    dcterms:description "Meyer names a classic behind each book in the saga. Not checked against the original." .
 
 <W.E.7#lineage-W.S.19>
     a rdf:Statement ;
     rdf:subject <W.E.7> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.19> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Meyer, S. (2011). The Twilight saga: The official illustrated guide. Little, Brown." ;
+    dcterms:description "Meyer names a classic behind each book in the saga. Not checked against the original." .
 
 <W.E.7#lineage-W.S.10>
     a rdf:Statement ;
     rdf:subject <W.E.7> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.10> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Meyer, S. (2011). The Twilight saga: The official illustrated guide. Little, Brown." ;
+    dcterms:description "Meyer names a classic behind each book in the saga. Not checked against the original." .
 
 <W.E.8#lineage-W.S.14>
     a rdf:Statement ;
     rdf:subject <W.E.8> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.14> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "BookPage. (2015, May 5). [Interview with Sarah J. Maas on A Court of Thorns and Roses]. https://bookpage.com/?p=115257" ;
+    dcterms:description "Maas says the book began as a retelling of several tales, including Beauty and the Beast and Tam Lin. Not checked against the original." .
 
 <W.E.8#lineage-W.S.16>
     a rdf:Statement ;
     rdf:subject <W.E.8> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.16> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "BookPage. (2015, May 5). [Interview with Sarah J. Maas on A Court of Thorns and Roses]. https://bookpage.com/?p=115257" ;
+    dcterms:description "Maas says the book began as a retelling of several tales, including Beauty and the Beast and Tam Lin. Not checked against the original." .
 
 <W.E.9#lineage-W.S.15>
     a rdf:Statement ;
     rdf:subject <W.E.9> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.15> ;
-    ccv:influenceEvidence ccv:evidence-author-acknowledged .
+    ccv:influenceEvidence ccv:evidence-author-acknowledged ;
+    dcterms:source "Tejeda, V. (2014, September 5). Best-selling author Sarah J. Maas talks about her latest, Heir of Fire. HuffPost. https://www.huffpost.com/valerie-tejeda/bestselling-author-sarah-_b_5770042.html" ;
+    dcterms:description "Maas says the Throne of Glass series, of which Empire of Storms is book 5, \"started off as a Cinderella retelling.\"" .
 
 <W.E.10#lineage-W.B.11>
     a rdf:Statement ;
     rdf:subject <W.E.10> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.B.11> ;
-    ccv:influenceEvidence ccv:evidence-parody .
+    ccv:influenceEvidence ccv:evidence-parody ;
+    dcterms:description "The later work parodies it." .
 
 <W.F.2#lineage-W.S.21>
     a rdf:Statement ;
     rdf:subject <W.F.2> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.21> ;
-    ccv:influenceEvidence ccv:evidence-explicit-reference .
+    ccv:influenceEvidence ccv:evidence-explicit-reference ;
+    dcterms:description "Named in the text of the later work." .
 
 <W.F.3#lineage-W.S.4>
     a rdf:Statement ;
     rdf:subject <W.F.3> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.4> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.F.4#lineage-W.S.11>
     a rdf:Statement ;
     rdf:subject <W.F.4> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.11> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.F.5#lineage-W.S.17>
     a rdf:Statement ;
     rdf:subject <W.F.5> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.17> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .
 
 <W.F.6#lineage-W.S.23>
     a rdf:Statement ;
     rdf:subject <W.F.6> ;
     rdf:predicate ccv:challengeLineage ;
     rdf:object <W.S.23> ;
-    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion .
+    ccv:influenceEvidence ccv:evidence-title-or-epigraph-allusion ;
+    dcterms:description "Alluded to in the later work's title or epigraph." .

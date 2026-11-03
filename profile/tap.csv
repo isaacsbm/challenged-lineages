@@ -61,6 +61,8 @@ LineageLink,,rdf:subject,Subject,TRUE,FALSE,IRI,,,,Work Instance,The later work.
 LineageLink,,rdf:predicate,Predicate,TRUE,FALSE,IRI,,ccv:challengeLineage,picklist,,
 LineageLink,,rdf:object,Object,TRUE,FALSE,IRI,,,,Work,The earlier work.
 LineageLink,,ccv:influenceEvidence,Influence Evidence,TRUE,FALSE,IRI,,ccv:evidence-,IRIstem,,
+LineageLink,,dcterms:source,Source,FALSE,FALSE,literal,xsd:string,,,,"A citation for the evidence, where it lies outside the later work."
+LineageLink,,dcterms:description,Description,FALSE,FALSE,literal,xsd:string,,,,"What the evidence is, and how far it was checked."
 Agent,Agent,rdf:type,Type,TRUE,FALSE,IRI,,foaf:Person,picklist,,"A creator. dcterms:creator points here, since its range is dcterms:Agent."
 Agent,,foaf:name,Name,TRUE,FALSE,literal,xsd:string,,,,The name as the collection records it.
 Agent,,madsrdf:isIdentifiedByAuthority,Identified By Authority,FALSE,FALSE,IRI,,http://id.loc.gov/authorities/names/,IRIstem,,The Library of Congress Name Authority record.

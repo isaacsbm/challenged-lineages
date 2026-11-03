@@ -270,6 +270,16 @@ export function createDetailPanel(container, model, { onNavigate, onClose }) {
     }).join("");
   }
 
+  /** A link's own dcterms:description (what the evidence is) and dcterms:source (its citation). */
+  function linkEvidenceHtml(statement) {
+    if (!statement) return "";
+    const note = statement["dcterms:description"], source = statement["dcterms:source"];
+    const cite = source && escapeHtml(source).replace(/https?:\/\/\S+/g,
+      (url) => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`);
+    return (note ? `<span class="link-note">${escapeHtml(note)}</span>` : "") +
+           (cite ? `<span class="link-source">${cite}</span>` : "");
+  }
+
   /** The ccv: layer for a work: each lineage link with its evidence and its DC partner. */
   function ccvHtml(node) {
     const out = model.links.filter((l) => l.source === node.id);
@@ -278,7 +288,7 @@ export function createDetailPanel(container, model, { onNavigate, onClose }) {
       parts.push(`<div class="row"><dt>${termHtml("ccv:challengeLineage")}<br>+ ${termHtml("ccv:influenceEvidence")}</dt><dd><ul class="lineage">${
         out.map((l) => `<li>${valueHtml({ "@id": l.target })}<br><span class="evidence">${
           l.evidence === DC_ONLY ? "no ccv evidence recorded" : escapeHtml(l.evidence)
-        }</span> <span class="pairing">paired with ${l.dcRelation}</span></li>`).join("")
+        }</span> <span class="pairing">paired with ${l.dcRelation}</span>${linkEvidenceHtml(l.statement)}</li>`).join("")
       }</ul></dd></div>`);
     }
     if (node.record["ccv:challengeOutcome"]) {

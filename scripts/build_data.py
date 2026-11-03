@@ -67,9 +67,13 @@ COLUMNS = [
     "dcterms:source", "dcterms:isVersionOf", "dcterms:references", "dcterms:relation",
     "dcterms:isPartOf", "ccv:challengeLineage", "ccv:influenceEvidence",
     "ccv:challengeVenue", "ccv:challengeOutcome", "ccv:challengeReason", "ccv:challengeInitiator",
-    "ccv:challengeSource",
+    "ccv:challengeSource", "lineageSource", "lineageNote",
 ]
 SEP = " | "  # separator for multi-value cells
+# Evidence for each lineage link, one value per ccv:challengeLineage target in the same order
+# (a blank between bars means none for that target). They describe the link, not the work, so
+# they go on its rdf:Statement as dcterms:source and dcterms:description.
+LINK_COLUMNS = {"lineageSource": "dcterms:source", "lineageNote": "dcterms:description"}
 MULTI_VALUE = {
     "dcterms:creator", "dcterms:type", "dcterms:language", "dcterms:subject",
     "dcterms:description", "dcterms:source", "dcterms:references", "dcterms:relation",
@@ -99,7 +103,9 @@ class Record:
         self.values = {}
         for col in COLUMNS:
             cell = (row.get(col) or "").strip()
-            if col in MULTI_VALUE:
+            if col in LINK_COLUMNS:
+                self.values[col] = [v.strip() for v in cell.split("|")] if cell else []
+            elif col in MULTI_VALUE:
                 self.values[col] = [v.strip() for v in cell.split("|") if v.strip()]
             else:
                 self.values[col] = [cell] if cell else []
@@ -189,7 +195,7 @@ def validate(records, clusters):
         if date and not DATE_RE.match(date):
             err(rec, f"dcterms:date '{date}' should be YYYY or YYYY/YYYY")
         for col in COLUMNS:
-            if col not in MULTI_VALUE and len(rec.all(col)) > 1:
+            if col not in MULTI_VALUE and col not in LINK_COLUMNS and len(rec.all(col)) > 1:
                 err(rec, f"{col} takes a single value")
 
         if rec.type in ("Work", "Instance"):
@@ -247,6 +253,13 @@ def validate_described_work(rec, by_id, clusters, challenged, linked_to, err, wa
     if len(evidence) > 1 and len(evidence) != len(targets):
         err(rec, f"{len(targets)} lineage targets but {len(evidence)} evidence values; "
                  "give one value for all, or one per target in the same order")
+    for col in LINK_COLUMNS:
+        given = rec.all(col)
+        if given and not targets:
+            err(rec, f"{col} given without any ccv:challengeLineage target")
+        elif given and len(given) != len(targets):
+            err(rec, f"{len(targets)} lineage targets but {len(given)} {col} values; give one per "
+                     "target in the same order, leaving a blank between bars where there is none")
 
     # Each ccv link must be paired with the matching Dublin Core relation, and vice versa.
     for target, ev in lineage_pairs(rec):
@@ -375,7 +388,7 @@ def to_node(rec):
 
     for col in COLUMNS:
         values = rec.all(col)
-        if col == "recordType" or not values:
+        if col == "recordType" or col in LINK_COLUMNS or not values:
             continue
         if col == "dcterms:type":
             out = [{"@id": f"dcmitype:{v}"} for v in values]
@@ -403,17 +416,22 @@ def lineage_statements(rec):
     """ccv:influenceEvidence describes one link, not the whole work. Plain triples can't
     say which evidence goes with which link when a work has several, so each link also
     gets a standard RDF reification node: (subject, ccv:challengeLineage, object)
-    + ccv:influenceEvidence."""
+    + ccv:influenceEvidence, and where given, the source and note for that link."""
     out = []
-    for target, ev in lineage_pairs(rec):
-        out.append({
+    for i, (target, ev) in enumerate(lineage_pairs(rec)):
+        node = {
             "@id": f"{slug(rec.id)}#lineage-{slug(target)}",
             "@type": "rdf:Statement",
             "rdf:subject": ref(rec.id),
             "rdf:predicate": {"@id": "ccv:challengeLineage"},
             "rdf:object": ref(target),
             "ccv:influenceEvidence": {"@id": VOCAB.concept("ccv:influenceEvidence", ev)},
-        })
+        }
+        for col, prop in LINK_COLUMNS.items():
+            values = rec.all(col)
+            if i < len(values) and values[i]:
+                node[prop] = values[i]
+        out.append(node)
     return out
 
 

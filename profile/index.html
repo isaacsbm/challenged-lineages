@@ -23,7 +23,7 @@
     <p class="lede">Which properties each kind of record uses, which are required, and what their values may be. Dublin Core describes every record; <code>ccv:</code> properties, shown in red, appear only where Dublin Core cannot express something.</p>
     <dl class="meta">
       <dt>Format</dt><dd><a href="https://www.dublincore.org/specifications/dctap/">DCMI Tabular Application Profile (DC-TAP)</a>, compiled to <a href="https://www.w3.org/TR/shacl/">SHACL</a></dd>
-      <dt>Shapes</dt><dd>8 (Dataset: 6 properties, Lineage cluster: 4 properties, Work: 17 properties, Instance: 13 properties, Challenge record: 12 properties, Lineage link: 4 properties, Agent: 4 properties, Location: 4 properties)</dd>
+      <dt>Shapes</dt><dd>8 (Dataset: 6 properties, Lineage cluster: 4 properties, Work: 17 properties, Instance: 13 properties, Challenge record: 12 properties, Lineage link: 6 properties, Agent: 4 properties, Location: 4 properties)</dd>
       <dt>Download</dt><dd><a href="tap.csv">tap.csv</a> · <a href="namespaces.csv">namespaces.csv</a> · <a href="shapes.ttl">shapes.ttl</a></dd>
     </dl>
   </header>
@@ -485,6 +485,20 @@ pyshacl -s profile/shapes.ttl -e terms/ccv.ttl data/collection.ttl</code></pre>
             <td>No</td>
             <td>IRI<br>a concept in <a href="../terms/#EvidenceScheme"><code>ccv:EvidenceScheme</code></a></td>
             <td></td>
+          </tr>
+          <tr class="">
+            <th scope="row"><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/source/"><code>dcterms:source</code></a></th>
+            <td>No</td>
+            <td>No</td>
+            <td>literal</td>
+            <td>A citation for the evidence, where it lies outside the later work.</td>
+          </tr>
+          <tr class="">
+            <th scope="row"><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/description/"><code>dcterms:description</code></a></th>
+            <td>No</td>
+            <td>No</td>
+            <td>literal</td>
+            <td>What the evidence is, and how far it was checked.</td>
           </tr></tbody>
         </table></div>
       </section>

@@ -62,6 +62,13 @@ On the later work's row:
 
 A work can have several links. List the targets in `ccv:challengeLineage` and either give one evidence value for all of them, or one per target in the same order.
 
+Two more columns record the evidence for each link, one value per target in the same order:
+
+- `lineageSource`: a citation, where the evidence lies outside the later work (an interview, an essay, a critic).
+- `lineageNote`: one line saying what the evidence is, and whether the source was checked against the original.
+
+Leave a blank between the bars for a target with nothing to record, so the values stay in step with the targets: `Orwell, G. (1946)… |  | Souza, G. (2015)…`. They go on the link itself, as `dcterms:source` and `dcterms:description`, and the map shows them in the record.
+
 ### Editing the vocabulary
 
 `data/ccv-terms.csv` holds each ccv property's label, definition, domain, range, and comment, quoted from the metadata analysis. `data/ccv-concepts.csv` holds the controlled values. To add a value, such as a new challenge reason, add a row with its scheme, an `id` (lowercase words joined by hyphens, such as `reason-offensive-language`), and its label. The `id` becomes its URI (`ccv:reason-offensive-language`), so don't change an `id` once data uses it. Change the label instead.
